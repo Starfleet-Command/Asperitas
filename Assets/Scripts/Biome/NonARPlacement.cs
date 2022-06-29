@@ -14,9 +14,13 @@ public class NonARPlacement : MonoBehaviour
     [Tooltip("Button that spawns the agent object")]
     private Button[] _spawnButton;
 
-        [SerializeField]
+    [SerializeField]
     [Tooltip("Button that places the agent object")]
     private Button _doneButton;
+
+    [SerializeField]
+    [Tooltip("Button that cancels the placement of the agent object")]
+    private Button _cancelButton;
     
     #pragma warning restore 0649
 
@@ -113,6 +117,8 @@ public class NonARPlacement : MonoBehaviour
             _agent = _selectedGameObject.GetComponent<GameboardAgent>();
             _agent.State = GameboardAgent.AgentNavigationState.Paused;
             _isReplacing = true;
+            _doneButton.gameObject.SetActive(true);
+            _cancelButton.gameObject.SetActive(true);
             HandlePlacement();
         }
 
@@ -126,5 +132,13 @@ public class NonARPlacement : MonoBehaviour
                 
             _selectedGameObject = null;
             
+        }
+
+        public void CancelButtonOnClick()
+        {
+            _isReplacing = false;
+            InventoryEvents.ItemCheckedInEvent(ownAttributes.sourceItem);
+            Destroy(_selectedGameObject);
+            _selectedGameObject = null;
         }
 }

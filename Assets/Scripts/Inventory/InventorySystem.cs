@@ -8,6 +8,16 @@ using System;
 public class InventorySystem: MonoBehaviour
 {
 
+    private void OnEnable()
+    {
+        InventoryEvents.OnItemCheckedIn+=ReAddToInventory;
+    }
+
+        private void OnDisable()
+    {
+        InventoryEvents.OnItemCheckedIn-=ReAddToInventory;
+    }
+
     public InventoryItem[] inventory;
     public void SortInventory()
     {
@@ -57,6 +67,11 @@ public class InventorySystem: MonoBehaviour
 
         BiomeEditingEvents.ItemGeneratedEvent(spawnedItem);
     }
+
+    public void ReAddToInventory(InventoryItem _item)
+    {
+        _item.addItems(1);
+    }
 }
 
 [System.Serializable]
@@ -75,6 +90,19 @@ public class InventoryItem
         itemSprite = _pastItem.getItemSprite();
         itemTags = _pastItem.getTagsList();
         quantity = _pastItem.getItemQuantity();
+    }
+
+    public void setItems(int _newQuantity)
+    {
+        if(_newQuantity>quantity)
+        {
+            this.addItems(_newQuantity-quantity);
+        }
+        else if(_newQuantity<quantity)
+        {
+            this.removeItems(quantity-_newQuantity);
+        }
+        else return;
     }
     public void addItems(int quantityToAdd)
     {

@@ -51,3 +51,9 @@ public enum BiomeType
     Desert,
     None
 }
+
+public enum InteractionSocketType
+{
+    Feeding,
+    Petting,
+}
