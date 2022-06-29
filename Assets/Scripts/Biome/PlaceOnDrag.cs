@@ -6,6 +6,7 @@ using UnityEngine.EventSystems;
 using Niantic.ARDK.Extensions.Gameboard;
 using Niantic.ARDK.Utilities;
 using Niantic.ARDK.Utilities.Input.Legacy;
+using UnityEngine.Serialization;
 
 public class PlaceOnDrag : MonoBehaviour
 {
@@ -18,9 +19,14 @@ public class PlaceOnDrag : MonoBehaviour
         [Tooltip("Button that spawns the agent object")]
         private Button[] _spawnButton;
 
-            [SerializeField]
+        [SerializeField]
         [Tooltip("Button that places the agent object")]
         private Button _doneButton;
+        
+        [FormerlySerializedAs("_isFreeForm")]
+        [SerializeField]
+        [Tooltip("Free Form Toggle Button")]
+        private Toggle _freeFormToggle;
     
     #pragma warning restore 0649
 
@@ -98,6 +104,7 @@ public class PlaceOnDrag : MonoBehaviour
 
         private void Update()
         {
+            Debug.Log("Is FreeForm: " + _freeFormToggle.isOn);
             if (!_gameboardIsRunning)
                 return;
 
@@ -109,7 +116,7 @@ public class PlaceOnDrag : MonoBehaviour
             {
                 foreach (Button item in _spawnButton)
                 {
-                item.interactable = _gameboard.Area > 0;
+                    item.interactable = _gameboard.Area > 0;
                 }
                 // Only allow placing the actor if at least one surface is discovered
                 HandleTouch();
@@ -169,6 +176,11 @@ public class PlaceOnDrag : MonoBehaviour
           // Otherwise, use FindRandomPosition() to try to place the object automatically.
 
           // Get a ray pointing in the user's look direction
+          if (_freeFormToggle.isOn)
+          {
+              FreeFormPlacementHandler();
+          }
+
           var cameraTransform = _arCamera.transform;
           var ray = new Ray(cameraTransform.position, cameraTransform.forward);
           
@@ -176,28 +188,37 @@ public class PlaceOnDrag : MonoBehaviour
           {
               PlacedObjectAttributes collidingAttributes=null;
               normalRaycastHit.collider.gameObject.TryGetComponent<PlacedObjectAttributes>(out collidingAttributes);
-              if(normalRaycastHit.collider.gameObject != _selectedGameObject)
+              if (normalRaycastHit.collider.gameObject != _selectedGameObject)
               {
-                if(collidingAttributes!=null && ownAttributes!=null)
-                {
-                    if( ownAttributes.CanPlace(collidingAttributes.stackabilityType))
-                    {
-                        CreatePlacementGuide(cameraTransform, normalRaycastHit.point);
-                    }  
-                }
+                  if (collidingAttributes != null && ownAttributes != null)
+                  {
+                      if (ownAttributes.CanPlace(collidingAttributes.stackabilityType))
+                      {
+                          CreatePlacementGuide(cameraTransform, normalRaycastHit.point);
+                      }
+                  }
 
-                else if (_gameboard.RayCast(ray, out Vector3 hitPoint))
-                {
-                    // Check whether the object can be fit in the resulting position
-                    if(_gameboard.CheckFit(center: hitPoint, 0.4f) && ownAttributes.CanPlace(StackabilityType.Gameboard))
-                    {
-                        CreatePlacementGuide(cameraTransform,hitPoint);
-                    }
-                }
+                  else if (_gameboard.RayCast(ray, out Vector3 hitPoint))
+                  {
+                      // Check whether the object can be fit in the resulting position
+                      if (_gameboard.CheckFit(center: hitPoint, 0.4f) &&
+                          ownAttributes.CanPlace(StackabilityType.Gameboard))
+                      {
+                          CreatePlacementGuide(cameraTransform, hitPoint);
+                      }
+                  }
               }
-              
-
           }
+        }
+
+        private void FreeFormPlacementHandler()
+        {
+            Vector3 followPosition = _arCamera.transform.position + _arCamera.transform.forward * 2;
+            _selectedGameObject.transform.position = followPosition;
+            
+            // if (!colide with anythig) {
+            //     place based on higherarchy
+            // }
         }
 
         private void CreatePlacementGuide(Transform cameraTransform,Vector3 hitPoint)
@@ -228,8 +249,11 @@ public class PlaceOnDrag : MonoBehaviour
             _selectedGameObject.TryGetComponent<PlacedObjectAttributes>(out ownAttributes);
             _agent = _selectedGameObject.GetComponent<GameboardAgent>();
             _agent.State = GameboardAgent.AgentNavigationState.Paused;
-            
-
+            if (_freeFormToggle.isOn)
+            {
+                Vector3 followPosition = _arCamera.transform.position + _arCamera.transform.forward * 2;
+                _selectedGameObject.transform.position = followPosition;
+            }
             _isReplacing = !_isReplacing;
         }
 
@@ -241,6 +265,11 @@ public class PlaceOnDrag : MonoBehaviour
             _agent = _selectedGameObject.GetComponent<GameboardAgent>();
             _agent.State = GameboardAgent.AgentNavigationState.Paused;
             _isReplacing = !_isReplacing;
+            if (_freeFormToggle.isOn)
+            {
+                Vector3 followPosition = _arCamera.transform.position + _arCamera.transform.forward * 2;
+                _selectedGameObject.transform.position = followPosition;
+            }
             HandlePlacement();
         }
 
