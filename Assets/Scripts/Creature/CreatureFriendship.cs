@@ -31,7 +31,7 @@ public class CreatureFriendship : MonoBehaviour
 
     void Start()
     {
-        
+        CreatureEvents.CreaturePlacedEvent(this.gameObject);
     }
 
     private void ProcessInteraction(InteractionSocketType _interactionType)
@@ -40,7 +40,7 @@ public class CreatureFriendship : MonoBehaviour
         {
             if(tuple.interactionType==_interactionType)
             {
-                CreatureEvents.FriendshipGainedEvent(tuple.friendshipGain);
+                CreatureEvents.FriendshipGainedEvent(tuple.friendshipGain*frGrowthMultiplier);
             }
         }
     }
@@ -48,11 +48,6 @@ public class CreatureFriendship : MonoBehaviour
     public void AddFriendship(float frGrowth)
     {
         currentFriendship += (frGrowth*frGrowthMultiplier);
-    }
-
-    public void ShowFriendship()
-    {
-
     }
 
     //If changed biome is creature's preferred biome, adjust the rate of friendship growth.  
@@ -68,8 +63,19 @@ public class CreatureFriendship : MonoBehaviour
     {
         frGrowthMultiplier = newMultiplier;
     }
+
+    public float getCurrentFriendship()
+    {
+        return currentFriendship;
+    }
+
+    public float getMaxFriendship()
+    {
+        return maxFriendship;
+    }
 }
 
+[System.Serializable]
 public class BondGainPerInteraction
 {
     public InteractionSocketType interactionType;

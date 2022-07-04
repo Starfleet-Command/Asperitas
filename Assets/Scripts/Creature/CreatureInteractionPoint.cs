@@ -8,7 +8,6 @@ public class CreatureInteractionPoint : MonoBehaviour
 
     public void TriggerInteractionEvent(LeanSelectableByFinger _selectStatus)
     {
-        Debug.Log(" "+socketType.ToString());
         CreatureEvents.InteractionTriggeredEvent(socketType);
     }
     
