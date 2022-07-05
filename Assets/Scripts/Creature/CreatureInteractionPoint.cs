@@ -4,7 +4,7 @@ using UnityEngine;
 using Lean.Touch;
 public class CreatureInteractionPoint : MonoBehaviour
 {
-    [SerializeField] private InteractionSocketType socketType;
+    public InteractionSocketType socketType;
 
     public void TriggerInteractionEvent(LeanSelectableByFinger _selectStatus)
     {
