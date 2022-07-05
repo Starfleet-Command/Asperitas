@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
@@ -23,15 +24,33 @@ public class PlaceOnDrag : MonoBehaviour
         [Tooltip("Button that places the agent object")]
         private Button _doneButton;
         
+        [SerializeField]
+        [Tooltip("Undo button")]
+        private Button _undoButton;
+        
         [FormerlySerializedAs("_isFreeForm")]
         [SerializeField]
         [Tooltip("Free Form Toggle Button")]
         private Toggle _freeFormToggle;
-    
+
+        [FormerlySerializedAs("solidWhiteMaterial")]
+        [SerializeField] 
+        [Tooltip("Solid White Material")]
+        private Material foundationMaterial;
+        
+        [SerializeField] 
+        [Tooltip("Solid White Material")]
+        private Material stackableMaterial;
+        
+        [SerializeField] 
+        [Tooltip("Solid White Material")]
+        private Material noneStackableMaterial;
+        
     #pragma warning restore 0649
 
     private IGameboard _gameboard;
     private GameObject _selectedGameObject;
+    private List<GameObject> _placedObjects = new List<GameObject>();
     private GameboardAgent _agent;
     private bool _isReplacing;
     private bool _arIsRunning;
@@ -104,7 +123,6 @@ public class PlaceOnDrag : MonoBehaviour
 
         private void Update()
         {
-            Debug.Log("Is FreeForm: " + _freeFormToggle.isOn);
             if (!_gameboardIsRunning)
                 return;
 
@@ -179,6 +197,7 @@ public class PlaceOnDrag : MonoBehaviour
           if (_freeFormToggle.isOn)
           {
               FreeFormPlacementHandler();
+              return;
           }
 
           var cameraTransform = _arCamera.transform;
@@ -213,9 +232,36 @@ public class PlaceOnDrag : MonoBehaviour
 
         private void FreeFormPlacementHandler()
         {
-            Vector3 followPosition = _arCamera.transform.position + _arCamera.transform.forward * 2;
-            _selectedGameObject.transform.position = followPosition;
-            
+            PlaceObjectWithFixedDistance();
+            Ray ray = new Ray(_selectedGameObject.transform.position, -1.0f * _selectedGameObject.transform.up);
+            Debug.DrawRay(ray.origin, ray.direction, Color.red);
+            RaycastHit downwardHit;
+            // _selectedGameObject.GetComponent<Collider>().enabled = false;
+            if (Physics.Raycast(ray, out downwardHit))
+            {
+                PlacedObjectAttributes objectUnderneathAttributes=null;
+                downwardHit.collider.gameObject.TryGetComponent<PlacedObjectAttributes>(out objectUnderneathAttributes);
+                if (objectUnderneathAttributes == null && ownAttributes.stackabilityType == StackabilityType.Foundation)
+                {
+                    _doneButton.interactable = true;
+                } else if (objectUnderneathAttributes == null)
+                {
+                    _doneButton.interactable = false;
+                } else if (downwardHit.collider.gameObject != _selectedGameObject)
+                {
+                    Debug.Log("Object below is: " + objectUnderneathAttributes.stackabilityType);
+                    Debug.Log(ownAttributes.CanPlace(objectUnderneathAttributes.stackabilityType));
+                    if (objectUnderneathAttributes != null && ownAttributes != null)
+                    {
+                        _doneButton.interactable = ownAttributes.CanPlace(objectUnderneathAttributes.stackabilityType);
+                    }
+                }
+            }
+            else
+            {
+                _doneButton.interactable = false;
+            }
+
             // if (!colide with anythig) {
             //     place based on higherarchy
             // }
@@ -251,8 +297,7 @@ public class PlaceOnDrag : MonoBehaviour
             _agent.State = GameboardAgent.AgentNavigationState.Paused;
             if (_freeFormToggle.isOn)
             {
-                Vector3 followPosition = _arCamera.transform.position + _arCamera.transform.forward * 2;
-                _selectedGameObject.transform.position = followPosition;
+                PlaceObjectWithFixedDistance();
             }
             _isReplacing = !_isReplacing;
         }
@@ -267,22 +312,79 @@ public class PlaceOnDrag : MonoBehaviour
             _isReplacing = !_isReplacing;
             if (_freeFormToggle.isOn)
             {
-                Vector3 followPosition = _arCamera.transform.position + _arCamera.transform.forward * 2;
-                _selectedGameObject.transform.position = followPosition;
+                PlaceObjectWithFixedDistance();
             }
             HandlePlacement();
+        }
+        
+        /**
+         * <summmery </summmery>
+         */
+        private void PlaceObjectWithFixedDistance()
+        {
+            float distanceMultiplyer = 1f;
+            switch (ownAttributes.stackabilityType)
+            {
+                case StackabilityType.Foundation:
+                    distanceMultiplyer = 2f;
+                    break;
+                case StackabilityType.Stackable:
+                    distanceMultiplyer = 1.5f;
+                    break;
+                case StackabilityType.Nonstackable:
+                    distanceMultiplyer = 1f;
+                    break;
+                default:
+                    distanceMultiplyer = 5f;
+                    break;
+            }
+            Vector3 followPosition = _arCamera.transform.position + _arCamera.transform.forward * distanceMultiplyer;
+            _selectedGameObject.transform.position = followPosition;
         }
 
         public void DoneButtonOnClick()
         {
             _isReplacing = !_isReplacing;
             BiomeEditingEvents.ItemPlacedEvent(_selectedGameObject);
+            var objectRenderer = _selectedGameObject.GetComponent<Renderer>();
+            
+            switch (ownAttributes.stackabilityType)
+            {
+                case StackabilityType.Foundation:
+                    objectRenderer.material = foundationMaterial;
+                    break;
+                case StackabilityType.Stackable:
+                    objectRenderer.material = stackableMaterial;
+                    break;
+                case StackabilityType.Nonstackable:
+                    objectRenderer.material = noneStackableMaterial;
+                    break;
+            }
+            
+            _placedObjects.Add(_selectedGameObject);
+            if (_placedObjects.Count > 0)
+            {
+                _undoButton.interactable = true;
+            }
 
             if(ownAttributes.biomeEffect!=null)
                 BiomeEditingEvents.BiomeHabitabilityModifiedEvent(ownAttributes.biomeEffect);
         }
 
+        public void UndoButtonOnClick()
+        {
+            if (_placedObjects.Count < 1)
+                return;
+            
+            Destroy(_placedObjects.Last());
+            _placedObjects.RemoveAt(_placedObjects.Count - 1);
 
+            if (_placedObjects.Count < 1)
+            {
+                _undoButton.interactable = false;
+            }
+        }
+        
         public float RoundToDecimal(float number, int decPoints)
         {          
             float pow = Mathf.Pow(10,decPoints);

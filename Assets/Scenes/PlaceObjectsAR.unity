@@ -374,8 +374,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -777.2, y: 85.42}
-  m_SizeDelta: {x: 160, y: 63.81}
+  m_AnchoredPosition: {x: -777.2, y: 350}
+  m_SizeDelta: {x: 300, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &375008474
 MonoBehaviour:
@@ -685,7 +685,7 @@ PrefabInstance:
     - target: {fileID: 7963815754292762357, guid: 9f82ecc5afc3c4c2695d9cf37d46f25c,
         type: 3}
       propertyPath: _useInvisibleMaterial
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9f82ecc5afc3c4c2695d9cf37d46f25c, type: 3}
@@ -1039,8 +1039,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -777.2, y: -91.27}
-  m_SizeDelta: {x: 160, y: 63.81}
+  m_AnchoredPosition: {x: -777.2, y: 0}
+  m_SizeDelta: {x: 300, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &768007765
 MonoBehaviour:
@@ -1330,8 +1330,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -777.2, y: 0}
-  m_SizeDelta: {x: 160, y: 63.81}
+  m_AnchoredPosition: {x: -777.2, y: 180}
+  m_SizeDelta: {x: 300, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &988550664
 MonoBehaviour:
@@ -2274,7 +2274,7 @@ MonoBehaviour:
   _arCamera: {fileID: 1724626590}
   _spawnButton: []
   _doneButton: {fileID: 797339021}
-  _isFreeForm: {fileID: 1566807747}
+  _freeFormToggle: {fileID: 1566807747}
 --- !u!4 &1539856926
 Transform:
   m_ObjectHideFlags: 0
@@ -2487,7 +2487,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -756.3, y: -182}
-  m_SizeDelta: {x: 200, y: 50}
+  m_SizeDelta: {x: 200, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1566807747
 MonoBehaviour:
