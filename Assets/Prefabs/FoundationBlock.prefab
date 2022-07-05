@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1f49d822a798eb9449894381f2b44803, type: 2}
+  - {fileID: 2100000, guid: a3ddcf3e185104896a3ad8ea42e092cb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -111,6 +111,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stackabilityType: 1
   offsetAfterPlacement: {x: 0, y: 0, z: 0}
+  biomeEffect:
+    biome: 0
+    affinityPercentage: 0
   sourceItem:
     name: 
     itemPrefab: {fileID: 0}
