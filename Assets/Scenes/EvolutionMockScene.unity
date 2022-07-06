@@ -3422,7 +3422,7 @@ PrefabInstance:
     - target: {fileID: 607453921710280323, guid: 2d5b939b2bf014447bcbf8f52577ee5d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.007016
+      value: 4.407
       objectReference: {fileID: 0}
     - target: {fileID: 607453921710280323, guid: 2d5b939b2bf014447bcbf8f52577ee5d,
         type: 3}
@@ -3472,6 +3472,133 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1602903279}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1602903281 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 226812425662747705, guid: 2d5b939b2bf014447bcbf8f52577ee5d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1602903279}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1602903282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1602903281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e008bb997f9e8cc42a7861ed1e5b45ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxAcceleration: 40
+  wallDetection: 1
+  castMask:
+    serializedVersion: 2
+    m_Bits: 115
+  wallAvoidDistance: 0.5
+  mainWhiskerLen: 1.25
+  sideWhiskerLen: 0.701
+  sideWhiskerAngle: 45
+--- !u!114 &1602903283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1602903281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 049423ef460e2524186c56ba0e274368, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stopRadius: 0.005
+  pathOffset: 0.71
+  pathDirection: 1
+--- !u!54 &1602903284
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1602903281}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &1602903285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1602903281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7857a346b86a4e4ea2b03e8db88b9b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canFly: 1
+  stayGrounded: 0
+  groundFollowDistance: 0.1
+  groundCheckMask:
+    serializedVersion: 2
+    m_Bits: 4294967291
+  slopeLimit: 80
+--- !u!114 &1602903286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1602903281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e09b033aa7b983469142324db471025, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  path:
+    nodes:
+    - {x: 10, y: 4, z: -5}
+    - {x: 8, y: 9, z: -5}
+    - {x: 2, y: 9, z: -3}
+--- !u!114 &1602903287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1602903281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6f58141e9f357e448fd2fa6f1afc1f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxVelocity: 3.5
+  maxAcceleration: 10
+  turnSpeed: 20
+  targetRadius: 0.005
+  slowRadius: 1
+  timeToTarget: 0.1
+  smoothing: 1
+  numSamplesForSmoothing: 5
+--- !u!135 &1602903288
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1602903281}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 5.82
+  m_Center: {x: -2.971404, y: -0.11603451, z: 0}
 --- !u!1 &1667141712
 GameObject:
   m_ObjectHideFlags: 0
@@ -3764,7 +3891,7 @@ GameObject:
   - component: {fileID: 1850177660}
   - component: {fileID: 1850177659}
   - component: {fileID: 1850177662}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Collider (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3950,7 +4077,7 @@ GameObject:
   - component: {fileID: 1896347304}
   - component: {fileID: 1896347303}
   - component: {fileID: 1896347302}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Collider (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
