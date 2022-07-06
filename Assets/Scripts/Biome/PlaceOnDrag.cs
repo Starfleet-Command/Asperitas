@@ -55,6 +55,7 @@ public class PlaceOnDrag : MonoBehaviour
     private bool _isReplacing;
     private bool _arIsRunning;
     private bool _gameboardIsRunning;
+    private Collider selectedObjCollider;
 
     //[SerializeField] private int decimalToSnapTo =1;
 
@@ -222,20 +223,15 @@ public class PlaceOnDrag : MonoBehaviour
         {
             _selectedGameObject.SetActive(true);
             // add offset so object spawns at correct height
-            hitPoint.y = hitPoint.y +_selectedGameObject.transform.localScale.y/2;
-
+            hitPoint.y = hitPoint.y +selectedObjCollider.bounds.extents.y;
             // If in Snap mode, snap placement to closest decimal position
             // hitPoint = new Vector3(RoundToDecimal(hitPoint.x,decimalToSnapTo),RoundToDecimal(hitPoint.y,decimalToSnapTo+1), RoundToDecimal(hitPoint.z,decimalToSnapTo));
-
-
+            
             //All 
             _selectedGameObject.transform.position = hitPoint+ownAttributes.offsetAfterPlacement;
 
             var rotation = Vector3.ProjectOnPlane(cameraTransform.forward, Vector3.up).normalized;
             _selectedGameObject.transform.rotation = Quaternion.LookRotation(-rotation);
-
-            
-            
         }
 
         public void SpawnButtonOnClick(GameObject spawnObject)
@@ -247,6 +243,7 @@ public class PlaceOnDrag : MonoBehaviour
             }
 
             _selectedGameObject = Instantiate(spawnObject);
+            selectedObjCollider = _selectedGameObject.GetComponent<Collider>();
             ownAttributes = null;
             _selectedGameObject.TryGetComponent<PlacedObjectAttributes>(out ownAttributes);
             _agent = _selectedGameObject.GetComponent<GameboardAgent>();
@@ -267,6 +264,7 @@ public class PlaceOnDrag : MonoBehaviour
                 _selectedGameObject = null;
             }
             _selectedGameObject = spawnedItem;
+            selectedObjCollider = _selectedGameObject.GetComponent<Collider>();
             _selectedGameObject.TryGetComponent<PlacedObjectAttributes>(out ownAttributes);
             _agent = _selectedGameObject.GetComponent<GameboardAgent>();
             _agent.State = GameboardAgent.AgentNavigationState.Paused;
