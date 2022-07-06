@@ -11,29 +11,43 @@ public class SwipeDetection : MonoBehaviour
     [SerializeField] private float distancePerRaycast;
     [SerializeField] private int swipesRequired;
     [SerializeField] private Camera levelCamera;
+
+    private bool canSwipe = true;
     // Start is called before the first frame update
     void Start()
     {
         
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnEnable()
     {
-        
+        UiEvents.OnIsThrowingStatusChanged+=ToggleSwiping;
+    }
+
+        private void OnDisable()
+    {
+        UiEvents.OnIsThrowingStatusChanged-=ToggleSwiping;
+    }
+
+    private void ToggleSwiping(bool _status)
+    {
+        canSwipe = !_status;
     }
 
     public void CatchSwipeStart(Vector3 startPos)
     {
-         
-        swipeStartPosition = startPos;
+        if(canSwipe)
+            swipeStartPosition = startPos;
     }
 
     public void CatchSwipeDelta(Vector3 _delta)
     {
-        
-        swipeDelta = _delta;
-        TryHitCreature();
+        if(canSwipe)
+        {
+            swipeDelta = _delta;
+            TryHitCreature();
+        }
+
     }
 
     public void TryHitCreature()
@@ -54,7 +68,6 @@ public class SwipeDetection : MonoBehaviour
           Debug.DrawRay(_ray.origin,_ray.direction,Color.red);
           if(Physics.Raycast(_ray, out RaycastHit normalRaycastHit,Mathf.Infinity))
           {
-             Debug.Log("Raycast sent at"+trajectory.ToString()+ " hit "+normalRaycastHit.collider.gameObject.name);
             if(normalRaycastHit.collider.gameObject.TryGetComponent<CreatureInteractionPoint>(out CreatureInteractionPoint interactScript))
             {
                 if(interactScript.socketType==InteractionSocketType.Petting)

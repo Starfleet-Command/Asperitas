@@ -134,10 +134,10 @@ MonoBehaviour:
     biome: 0
     affinityPercentage: 5
   sourceItem:
-    name: 
-    itemPrefab: {fileID: 0}
-    itemSprite: {fileID: 0}
-    itemTags: 03000000
+    name: Springs
+    itemPrefab: {fileID: 799807908151586493}
+    itemSprite: {fileID: 21300000, guid: 65a9c40e4a9232b4088998e7cb595f14, type: 3}
+    tags: 03000000
     quantity: 0
 --- !u!114 &7787157776150860526
 MonoBehaviour:

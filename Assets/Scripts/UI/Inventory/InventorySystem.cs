@@ -80,7 +80,7 @@ public class InventoryItem
     [SerializeField]private string name;
     [SerializeField]private GameObject itemPrefab;
     [SerializeField]private Sprite itemSprite;
-    [SerializeField]private List<int> itemTags = new List<int>();
+    [SerializeField]private List<ItemTag> tags = new List<ItemTag>();
     [SerializeField]private int quantity;
 
     public InventoryItem(InventoryItem _pastItem)
@@ -88,7 +88,7 @@ public class InventoryItem
         name = _pastItem.getName();
         itemPrefab = _pastItem.getItemPrefab();
         itemSprite = _pastItem.getItemSprite();
-        itemTags = _pastItem.getTagsList();
+        tags = _pastItem.getTagsList();
         quantity = _pastItem.getItemQuantity();
     }
 
@@ -133,31 +133,29 @@ public class InventoryItem
 
     public void addTag(ItemTag newTag)
     {
-        this.itemTags.Add((int) newTag);
+        this.tags.Add(newTag);
     }
 
     public ItemTag getTag(int index)
     {
-        return (ItemTag)this.itemTags[index];
+        return this.tags[index];
     }
 
-    public int[] getTags()
+    public ItemTag[] getTags()
     {
-        return itemTags.ToArray();
+        return tags.ToArray();
     }
 
-    public List<int> getTagsList()
+    public List<ItemTag> getTagsList()
     {
-        return itemTags;
+        return tags;
     }
 
     public bool hasTag(ItemTag tag)
     {
-        int tagIndex = (int)tag;
-
-        foreach (int singleTag in itemTags)
+        foreach (ItemTag singleTag in tags)
         {
-            if(tagIndex == singleTag)
+            if(tag == singleTag)
             {
                 return true;
             }

@@ -6,10 +6,25 @@ public class CreatureInteractionPoint : MonoBehaviour
 {
     public InteractionSocketType socketType;
 
-    public void TriggerInteractionEvent(LeanSelectableByFinger _selectStatus)
+    private bool canCollide = true;
+    private void OnCollisionEnter(Collision other)
     {
-        CreatureEvents.InteractionTriggeredEvent(socketType);
+        if(socketType == InteractionSocketType.Feeding)
+        {
+            if(other.gameObject.tag =="Food" && canCollide)
+            {
+                CreatureEvents.InteractionTriggeredEvent(socketType);
+                Destroy(other.gameObject);
+                StartCoroutine("CollisionCooldown");
+            }
+        }
     }
-    
+
+    IEnumerator CollisionCooldown()
+    {
+        canCollide = false;
+        yield return new WaitForSeconds(2);
+        canCollide = true;
+    }
 
 }

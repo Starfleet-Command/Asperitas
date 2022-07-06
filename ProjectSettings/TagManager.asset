@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Prop
   - Stop
+  - Food
   layers:
   - Default
   - TransparentFX
