@@ -126,7 +126,7 @@ public class PlaceOnDrag : MonoBehaviour
             if (!_gameboardIsRunning)
                 return;
 
-            if (_isReplacing)
+            if (_isReplacing && _selectedGameObject != null)
             {
                 HandlePlacement();
             }
@@ -136,56 +136,7 @@ public class PlaceOnDrag : MonoBehaviour
                 {
                     item.interactable = _gameboard.Area > 0;
                 }
-                // Only allow placing the actor if at least one surface is discovered
-                HandleTouch();
             }
-        }
-
-            private void HandleTouch()
-        {
-            //if there is a touch call our function
-            if (PlatformAgnosticInput.touchCount <= 0)
-                return;
-
-            var touch = PlatformAgnosticInput.GetTouch(0);
-
-            //if there is no touch or touch selects UI element
-            if (PlatformAgnosticInput.touchCount <= 0 || EventSystem.current.currentSelectedGameObject != null)
-                return;
-
-            if (touch.phase == TouchPhase.Began)
-            {
-                TouchBegan(touch);
-            }
-        }
-
-        private void TouchBegan(Touch touch)
-        {
-            if (!_arIsRunning || _agent == null || _arCamera == null)
-                return;
-
-            //as we are using meshing we can use a standard ray cast
-            Ray ray = _arCamera.ScreenPointToRay(touch.position);
-
-            RaycastHit hit;
-            if (Physics.Raycast(ray, out hit))
-            {
-                /* if(hit.collider.gameObject.tag=="Prop")
-                {
-                // offset
-                mouseOffset = (Input.mousePosition - mouseReference);
-                
-                // apply rotation
-                rotation.y = -(mouseOffset.x + mouseOffset.y) * _sensitivity;
-                
-                // rotate
-                hit.collider.gameObject.transform.Rotate(rotation);
-                
-                // store mouse
-                mouseReference = Input.mousePosition;
-                //_agent.SetDestination(hit.point);
-                } */
-            } 
         }
 
         private void HandlePlacement()
@@ -289,7 +240,12 @@ public class PlaceOnDrag : MonoBehaviour
 
         public void SpawnButtonOnClick(GameObject spawnObject)
         {
-            
+            if (_selectedGameObject != null)
+            {
+                Destroy(_selectedGameObject);
+                _selectedGameObject = null;
+            }
+
             _selectedGameObject = Instantiate(spawnObject);
             ownAttributes = null;
             _selectedGameObject.TryGetComponent<PlacedObjectAttributes>(out ownAttributes);
@@ -299,12 +255,17 @@ public class PlaceOnDrag : MonoBehaviour
             {
                 PlaceObjectWithFixedDistance();
             }
-            _isReplacing = !_isReplacing;
+            _isReplacing = true;
         }
 
         //Todo: hook this up to OnItemGeneratedEvent
         public void OnInventoryItemSpawned(GameObject spawnedItem)
         {
+            if (_selectedGameObject != null)
+            {
+                Destroy(_selectedGameObject);
+                _selectedGameObject = null;
+            }
             _selectedGameObject = spawnedItem;
             _selectedGameObject.TryGetComponent<PlacedObjectAttributes>(out ownAttributes);
             _agent = _selectedGameObject.GetComponent<GameboardAgent>();
@@ -318,7 +279,7 @@ public class PlaceOnDrag : MonoBehaviour
         }
         
         /**
-         * <summmery </summmery>
+         * <summmery> Places _selectedGameObject with a fixed distance from the camera.</summmery>
          */
         private void PlaceObjectWithFixedDistance()
         {
@@ -369,6 +330,7 @@ public class PlaceOnDrag : MonoBehaviour
 
             if(ownAttributes.biomeEffect!=null)
                 BiomeEditingEvents.BiomeHabitabilityModifiedEvent(ownAttributes.biomeEffect);
+            _selectedGameObject = null;
         }
 
         public void UndoButtonOnClick()
