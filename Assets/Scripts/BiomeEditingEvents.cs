@@ -31,6 +31,24 @@ public class BiomeEditingEvents : MonoBehaviour
     {
         OnItemPlaced?.Invoke(_item);
     }
+    
+    public delegate void ObjectSelected(GameObject _item);
+
+    public static event ObjectSelected OnObjectSelected;
+
+    public static void ObjectSelectedEvent(GameObject _item)
+    {
+        OnObjectSelected?.Invoke(_item);
+    }
+    
+    public delegate void ObjectDeselected(GameObject _item);
+
+    public static event ObjectDeselected OnObjectDeselected;
+
+    public static void ObjectDeselectedEvent(GameObject _item)
+    {
+        OnObjectDeselected?.Invoke(_item);
+    }
 
     //InventoryItem to prevent reference being lost on deletion
     public delegate void PlacedItemRemoved(InventoryItem _item);
