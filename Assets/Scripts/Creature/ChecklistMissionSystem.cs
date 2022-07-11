@@ -18,6 +18,7 @@ public class ChecklistMissionSystem : MonoBehaviour
         CreatureEvents.OnMissionFinished+=StageCompleteCheck;
         CreatureEvents.OnCreatureEvolving+=SwitchChecklist;
         CreatureEvents.OnFriendshipGained+=FriendshipMissionProgressedCheck;
+        CreatureEvents.OnCreaturePlaced+=GetFriendshipScript;
         BiomeEditingEvents.OnBiomeHabitabilityModified+=BiomeMissionProgressedCheck;
     }
 
@@ -27,6 +28,7 @@ public class ChecklistMissionSystem : MonoBehaviour
         CreatureEvents.OnMissionFinished-=StageCompleteCheck;
         CreatureEvents.OnCreatureEvolving-=SwitchChecklist;
         CreatureEvents.OnFriendshipGained-=FriendshipMissionProgressedCheck;
+        CreatureEvents.OnCreaturePlaced+=GetFriendshipScript;
         BiomeEditingEvents.OnBiomeHabitabilityModified-=BiomeMissionProgressedCheck;
     }
 
@@ -34,6 +36,11 @@ public class ChecklistMissionSystem : MonoBehaviour
     {
         currentChecklist = allMissions[currentStage].stageChecklist;
         uiFromChecklistScript.GenerateAllUI(currentChecklist);
+    }
+
+    private void GetFriendshipScript(GameObject _creatureObject)
+    {
+        _creatureObject.TryGetComponent<CreatureFriendship>(out creatureFriendshipScript);
     }
 
     //Currently only checks for placed object progress. 

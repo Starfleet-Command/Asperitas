@@ -517,7 +517,8 @@ namespace UnityMovementAI
                 {
                     if (canFly)
                     {
-                        rb3D.velocity = value;
+                        if(!float.IsNaN(value.x))
+                            rb3D.velocity = value;
                     }
                     /* Assume the value is given as a vector on the x/z plane for grounded chars*/
                     else

@@ -15,6 +15,8 @@ namespace UnityMovementAI
         /// </summary>
         public float wanderRadius = 4;
 
+        public float wanderRadiusY = 4;
+
         /// <summary>
         /// The rate at which the wander orientation can change in radians
         /// </summary>
@@ -78,7 +80,7 @@ namespace UnityMovementAI
 
             /* Calculate the target position */
             targetPosition = targetPosition + (SteeringBasics.OrientationToVector(targetOrientation, rb.is3D) * wanderRadius);
-
+            targetPosition.y = Random.Range(targetPosition.y-wanderRadiusY,targetPosition.y+wanderRadiusY);
             return targetPosition;
         }
 

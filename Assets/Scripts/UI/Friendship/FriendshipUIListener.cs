@@ -35,7 +35,8 @@ public class FriendshipUIListener : MonoBehaviour
 
     public void InitialSliderSetup(float currentFriendship,float maxFriendship)
     {
-        friendshipBar.minValue = currentFriendship;
+        friendshipBar.minValue = 0;
+        friendshipBar.value = currentFriendship;
         friendshipBar.maxValue = maxFriendship;
         progressText.text = ""+currentFriendship+"/"+maxFriendship;
         savedMaxFriendship = maxFriendship;

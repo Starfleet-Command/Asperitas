@@ -112,8 +112,12 @@ public class NonARPlacement : MonoBehaviour
         {
             _selectedGameObject = spawnedItem;
             _selectedGameObject.TryGetComponent<PlacedObjectAttributes>(out ownAttributes);
-            _agent = _selectedGameObject.GetComponent<GameboardAgent>();
-            _agent.State = GameboardAgent.AgentNavigationState.Paused;
+
+            
+            if(_selectedGameObject.TryGetComponent<GameboardAgent>(out _agent))
+                _agent.State = GameboardAgent.AgentNavigationState.Paused;
+
+
             _isReplacing = true;
             _doneButton.gameObject.SetActive(true);
             _cancelButton.gameObject.SetActive(true);
@@ -123,10 +127,18 @@ public class NonARPlacement : MonoBehaviour
         public void DoneButtonOnClick()
         {
             _isReplacing = false;
-            BiomeEditingEvents.ItemPlacedEvent(_selectedGameObject);
 
-            if(ownAttributes.biomeEffect!=null)
-                BiomeEditingEvents.BiomeHabitabilityModifiedEvent(ownAttributes.biomeEffect);
+            if(_selectedGameObject.tag=="Creature")
+            {
+                CreatureEvents.CreaturePlacedEvent(_selectedGameObject);
+            }
+
+            else
+                BiomeEditingEvents.ItemPlacedEvent(_selectedGameObject);
+            
+            if(ownAttributes!= null)
+                if(ownAttributes.biomeEffect!=null)
+                    BiomeEditingEvents.BiomeHabitabilityModifiedEvent(ownAttributes.biomeEffect);
                 
             _selectedGameObject = null;
             
