@@ -8,6 +8,8 @@ public class ChecklistMissionSystem : MonoBehaviour
 
     [SerializeField] private GenerateMissionUI uiFromChecklistScript;
     [SerializeField] private BiomeHabitability habitabilityTrackingScript;
+
+    [SerializeField] private CreatureFriendship creatureFriendshipScript;
     public ChecklistWrapper[] allMissions;
     [HideInInspector] public ChecklistMission[] currentChecklist;
     private void OnEnable()
@@ -16,6 +18,7 @@ public class ChecklistMissionSystem : MonoBehaviour
         CreatureEvents.OnMissionFinished+=StageCompleteCheck;
         CreatureEvents.OnCreatureEvolving+=SwitchChecklist;
         CreatureEvents.OnFriendshipGained+=FriendshipMissionProgressedCheck;
+        CreatureEvents.OnCreaturePlaced+=GetFriendshipScript;
         BiomeEditingEvents.OnBiomeHabitabilityModified+=BiomeMissionProgressedCheck;
     }
 
@@ -25,6 +28,7 @@ public class ChecklistMissionSystem : MonoBehaviour
         CreatureEvents.OnMissionFinished-=StageCompleteCheck;
         CreatureEvents.OnCreatureEvolving-=SwitchChecklist;
         CreatureEvents.OnFriendshipGained-=FriendshipMissionProgressedCheck;
+        CreatureEvents.OnCreaturePlaced+=GetFriendshipScript;
         BiomeEditingEvents.OnBiomeHabitabilityModified-=BiomeMissionProgressedCheck;
     }
 
@@ -34,10 +38,15 @@ public class ChecklistMissionSystem : MonoBehaviour
         uiFromChecklistScript.GenerateAllUI(currentChecklist);
     }
 
+    private void GetFriendshipScript(GameObject _creatureObject)
+    {
+        _creatureObject.TryGetComponent<CreatureFriendship>(out creatureFriendshipScript);
+    }
+
     //Currently only checks for placed object progress. 
     private void PlacedMissionProgressedCheck(GameObject placedItem)
     {
-        int[] itemTags = placedItem.GetComponent<PlacedObjectAttributes>().sourceItem.getTags();
+        ItemTag[] itemTags = placedItem.GetComponent<PlacedObjectAttributes>().sourceItem.getTags();
 
         
 
@@ -45,10 +54,10 @@ public class ChecklistMissionSystem : MonoBehaviour
         {
             if(!mission.CheckMissionComplete() && mission.getMissionType()==MissionType.PlaceItems)
             {
-                foreach(int tag in itemTags)
+                foreach(ItemTag tag in itemTags)
                 {
                 
-                    if(tag == mission.getMissionTagAsInt())
+                    if(tag == mission.getMissionTag())
                     {
                         HandleMissionEvents(mission,1);
                         break;
@@ -65,7 +74,7 @@ public class ChecklistMissionSystem : MonoBehaviour
         {
             if(!mission.CheckMissionComplete() && mission.getMissionType() == MissionType.FriendshipPercentage)
             {
-                HandleMissionEvents(mission,Mathf.CeilToInt(friendshipGain));
+                HandleMissionEvents(mission,Mathf.RoundToInt(friendshipGain));
             }
         }
     }
@@ -119,6 +128,11 @@ public class ChecklistMissionSystem : MonoBehaviour
                         HandleMissionEvents(mission,biomeStatus.getBiomeAffinity());
                     }
                 }
+            }
+
+            else if(mission.getMissionType()==MissionType.FriendshipPercentage)
+            {
+                HandleMissionEvents(mission,(int)creatureFriendshipScript.getCurrentFriendship());
             }
         }
         

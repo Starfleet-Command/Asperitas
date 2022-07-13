@@ -11,6 +11,7 @@ public class CreatureFriendship : MonoBehaviour
     [SerializeField] private float biomeToGrowthMult=0.01f;
 
     [SerializeField] private CreatureData _creatureData;
+    [SerializeField] private BondGainPerInteraction[] friendshipGainTable;
 
     // Start is called before the first frame update
 
@@ -18,26 +19,35 @@ public class CreatureFriendship : MonoBehaviour
     {
         CreatureEvents.OnFriendshipGained+=AddFriendship;
         BiomeEditingEvents.OnBiomeHabitabilityModified+=CheckBiomeChange;
+        CreatureEvents.OnInteractionTriggered+=ProcessInteraction;
     }
 
     private void OnDisable()
     {
         CreatureEvents.OnFriendshipGained-=AddFriendship;
+        BiomeEditingEvents.OnBiomeHabitabilityModified-=CheckBiomeChange;
+        CreatureEvents.OnInteractionTriggered-=ProcessInteraction;
     }
 
     void Start()
     {
-        
+        CreatureEvents.CreaturePlacedEvent(this.gameObject);
+    }
+
+    private void ProcessInteraction(InteractionSocketType _interactionType)
+    {
+        foreach (BondGainPerInteraction tuple in friendshipGainTable)
+        {
+            if(tuple.interactionType==_interactionType)
+            {
+                CreatureEvents.FriendshipGainedEvent(tuple.friendshipGain*frGrowthMultiplier);
+            }
+        }
     }
 
     public void AddFriendship(float frGrowth)
     {
-        currentFriendship += (frGrowth*frGrowthMultiplier);
-    }
-
-    public void ShowFriendship()
-    {
-
+        currentFriendship += frGrowth;
     }
 
     //If changed biome is creature's preferred biome, adjust the rate of friendship growth.  
@@ -53,4 +63,21 @@ public class CreatureFriendship : MonoBehaviour
     {
         frGrowthMultiplier = newMultiplier;
     }
+
+    public float getCurrentFriendship()
+    {
+        return currentFriendship;
+    }
+
+    public float getMaxFriendship()
+    {
+        return maxFriendship;
+    }
+}
+
+[System.Serializable]
+public class BondGainPerInteraction
+{
+    public InteractionSocketType interactionType;
+    public float friendshipGain;
 }

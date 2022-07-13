@@ -40,6 +40,15 @@ public class CreatureEvents : MonoBehaviour
         OnFriendshipGained(_friendship);
     }
 
+    public delegate void InteractionTriggered(InteractionSocketType _interactionType);
+
+    public static event InteractionTriggered OnInteractionTriggered;
+
+    public static void InteractionTriggeredEvent(InteractionSocketType _interactionType)
+    {
+        OnInteractionTriggered(_interactionType);
+    }
+
     public delegate void CreatureEvolving();
 
     public static event CreatureEvolving OnCreatureEvolving;
@@ -56,6 +65,15 @@ public class CreatureEvents : MonoBehaviour
     public static void CreatureEvolvedEvent()
     {
         OnCreatureEvolved();
+    }
+
+    public delegate void CreaturePlaced(GameObject _creature);
+
+    public static event CreaturePlaced OnCreaturePlaced;
+
+    public static void CreaturePlacedEvent(GameObject _creature)
+    {
+        OnCreaturePlaced(_creature);
     }
 
 }

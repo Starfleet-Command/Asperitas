@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Prop
   - Stop
+  - Food
+  - Creature
   layers:
   - Default
   - TransparentFX
@@ -14,7 +16,7 @@ TagManager:
   - Water
   - UI
   - ARDK_MockWorld
-  - 
+  - Transparent Meshes
   - 
   - 
   - 
