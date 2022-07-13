@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.UI;
 public class PlacedObjectAttributes : MonoBehaviour
@@ -11,8 +12,11 @@ public class PlacedObjectAttributes : MonoBehaviour
 
     public InventoryItem sourceItem;
 
+    public GameObject baseObject;
+
     private void Start()
     {
+        baseObject = gameObject;
     }
 
     public bool CanPlace(StackabilityType collidedObjectStackability)

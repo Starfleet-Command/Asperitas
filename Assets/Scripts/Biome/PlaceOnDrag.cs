@@ -58,15 +58,11 @@ public class PlaceOnDrag : MonoBehaviour
     private Collider selectedObjCollider;
 
     //[SerializeField] private int decimalToSnapTo =1;
-
-    private Vector3 mouseReference;
-    private Vector3 mouseOffset;
-    private Vector3 rotation;
-    private PlacedObjectAttributes ownAttributes;
-
     
-
-            /// Inform about started ARSession.
+    private PlacedObjectAttributes _ownAttributes;
+    private Transform _currentBaseTranform;
+        
+        /// Inform about started ARSession.
         public void ARSessionStarted()
         {
             _arIsRunning = true;
@@ -161,9 +157,9 @@ public class PlaceOnDrag : MonoBehaviour
               normalRaycastHit.collider.gameObject.TryGetComponent<PlacedObjectAttributes>(out collidingAttributes);
               if (normalRaycastHit.collider.gameObject != _selectedGameObject)
               {
-                  if (collidingAttributes != null && ownAttributes != null)
+                  if (collidingAttributes != null && _ownAttributes != null)
                   {
-                      if (ownAttributes.CanPlace(collidingAttributes.stackabilityType))
+                      if (_ownAttributes.CanPlace(collidingAttributes.stackabilityType))
                       {
                           CreatePlacementGuide(cameraTransform, normalRaycastHit.point);
                       }
@@ -173,7 +169,7 @@ public class PlaceOnDrag : MonoBehaviour
                   {
                       // Check whether the object can be fit in the resulting position
                       if (_gameboard.CheckFit(center: hitPoint, 0.4f) &&
-                          ownAttributes.CanPlace(StackabilityType.Gameboard))
+                          _ownAttributes.CanPlace(StackabilityType.Gameboard))
                       {
                           CreatePlacementGuide(cameraTransform, hitPoint);
                       }
@@ -193,7 +189,7 @@ public class PlaceOnDrag : MonoBehaviour
             {
                 PlacedObjectAttributes objectUnderneathAttributes=null;
                 downwardHit.collider.gameObject.TryGetComponent<PlacedObjectAttributes>(out objectUnderneathAttributes);
-                if (objectUnderneathAttributes == null && ownAttributes.stackabilityType == StackabilityType.Foundation)
+                if (objectUnderneathAttributes == null && _ownAttributes.stackabilityType == StackabilityType.Foundation)
                 {
                     _doneButton.interactable = true;
                 } else if (objectUnderneathAttributes == null)
@@ -201,11 +197,19 @@ public class PlaceOnDrag : MonoBehaviour
                     _doneButton.interactable = false;
                 } else if (downwardHit.collider.gameObject != _selectedGameObject)
                 {
-                    Debug.Log("Object below is: " + objectUnderneathAttributes.stackabilityType);
-                    Debug.Log(ownAttributes.CanPlace(objectUnderneathAttributes.stackabilityType));
-                    if (objectUnderneathAttributes != null && ownAttributes != null)
+                    if (objectUnderneathAttributes.stackabilityType == StackabilityType.Foundation)
                     {
-                        _doneButton.interactable = ownAttributes.CanPlace(objectUnderneathAttributes.stackabilityType);
+                        _currentBaseTranform = downwardHit.collider.gameObject.transform;
+                    } else if (objectUnderneathAttributes.stackabilityType == StackabilityType.Stackable)
+                    {
+                        _currentBaseTranform = downwardHit.collider.gameObject.transform.parent;
+                    }
+
+                    Debug.Log("Object below is: " + objectUnderneathAttributes.stackabilityType);
+                    Debug.Log(_ownAttributes.CanPlace(objectUnderneathAttributes.stackabilityType));
+                    if (objectUnderneathAttributes != null && _ownAttributes != null)
+                    {
+                        _doneButton.interactable = _ownAttributes.CanPlace(objectUnderneathAttributes.stackabilityType);
                     }
                 }
             }
@@ -228,7 +232,7 @@ public class PlaceOnDrag : MonoBehaviour
             // hitPoint = new Vector3(RoundToDecimal(hitPoint.x,decimalToSnapTo),RoundToDecimal(hitPoint.y,decimalToSnapTo+1), RoundToDecimal(hitPoint.z,decimalToSnapTo));
             
             //All 
-            _selectedGameObject.transform.position = hitPoint+ownAttributes.offsetAfterPlacement;
+            _selectedGameObject.transform.position = hitPoint+_ownAttributes.offsetAfterPlacement;
 
             var rotation = Vector3.ProjectOnPlane(cameraTransform.forward, Vector3.up).normalized;
             _selectedGameObject.transform.rotation = Quaternion.LookRotation(-rotation);
@@ -244,8 +248,8 @@ public class PlaceOnDrag : MonoBehaviour
 
             _selectedGameObject = Instantiate(spawnObject);
             selectedObjCollider = _selectedGameObject.GetComponent<Collider>();
-            ownAttributes = null;
-            _selectedGameObject.TryGetComponent<PlacedObjectAttributes>(out ownAttributes);
+            _ownAttributes = null;
+            _selectedGameObject.TryGetComponent<PlacedObjectAttributes>(out _ownAttributes);
             _agent = _selectedGameObject.GetComponent<GameboardAgent>();
             _agent.State = GameboardAgent.AgentNavigationState.Paused;
             if (_freeFormToggle.isOn)
@@ -265,7 +269,7 @@ public class PlaceOnDrag : MonoBehaviour
             }
             _selectedGameObject = spawnedItem;
             selectedObjCollider = _selectedGameObject.GetComponent<Collider>();
-            _selectedGameObject.TryGetComponent<PlacedObjectAttributes>(out ownAttributes);
+            _selectedGameObject.TryGetComponent<PlacedObjectAttributes>(out _ownAttributes);
             _agent = _selectedGameObject.GetComponent<GameboardAgent>();
             _agent.State = GameboardAgent.AgentNavigationState.Paused;
             _isReplacing = !_isReplacing;
@@ -277,18 +281,18 @@ public class PlaceOnDrag : MonoBehaviour
         }
         
         /**
-         * <summmery> Places _selectedGameObject with a fixed distance from the camera.</summmery>
+         * <summmary> Places _selectedGameObject with a fixed distance from the camera.</summmary>
          */
         private void PlaceObjectWithFixedDistance()
         {
             float distanceMultiplyer = 1f;
-            switch (ownAttributes.stackabilityType)
+            switch (_ownAttributes.stackabilityType)
             {
                 case StackabilityType.Foundation:
-                    distanceMultiplyer = 2f;
+                    distanceMultiplyer = 1.5f;
                     break;
                 case StackabilityType.Stackable:
-                    distanceMultiplyer = 1.5f;
+                    distanceMultiplyer = 1.25f;
                     break;
                 case StackabilityType.Nonstackable:
                     distanceMultiplyer = 1f;
@@ -307,16 +311,18 @@ public class PlaceOnDrag : MonoBehaviour
             BiomeEditingEvents.ItemPlacedEvent(_selectedGameObject);
             var objectRenderer = _selectedGameObject.GetComponent<Renderer>();
             
-            switch (ownAttributes.stackabilityType)
+            switch (_ownAttributes.stackabilityType)
             {
                 case StackabilityType.Foundation:
                     objectRenderer.material = foundationMaterial;
                     break;
                 case StackabilityType.Stackable:
                     objectRenderer.material = stackableMaterial;
+                    _selectedGameObject.transform.SetParent(_currentBaseTranform);
                     break;
                 case StackabilityType.Nonstackable:
                     objectRenderer.material = noneStackableMaterial;
+                    _selectedGameObject.transform.SetParent(_currentBaseTranform);
                     break;
             }
             
@@ -326,8 +332,8 @@ public class PlaceOnDrag : MonoBehaviour
                 _undoButton.interactable = true;
             }
 
-            if(ownAttributes.biomeEffect!=null)
-                BiomeEditingEvents.BiomeHabitabilityModifiedEvent(ownAttributes.biomeEffect);
+            if(_ownAttributes.biomeEffect!=null)
+                BiomeEditingEvents.BiomeHabitabilityModifiedEvent(_ownAttributes.biomeEffect);
             _selectedGameObject = null;
         }
 
