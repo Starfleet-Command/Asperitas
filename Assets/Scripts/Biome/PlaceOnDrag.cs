@@ -46,10 +46,14 @@ public class PlaceOnDrag : MonoBehaviour
         [Tooltip("Solid White Material")]
         private Material noneStackableMaterial;
         
+        [SerializeField]
+        [Tooltip("Button that cancels placement of the object")]
+        private Button _cancelButton;
+        
     #pragma warning restore 0649
 
     private IGameboard _gameboard;
-    private GameObject _selectedGameObject;
+    public GameObject _selectedGameObject;
     private List<GameObject> _placedObjects = new List<GameObject>();
     private GameboardAgent _agent;
     private bool _isReplacing;
@@ -185,7 +189,7 @@ public class PlaceOnDrag : MonoBehaviour
         private void FreeFormPlacementHandler()
         {
             PlaceObjectWithFixedDistance();
-            Ray ray = new Ray(_selectedGameObject.transform.position, -1.0f * _selectedGameObject.transform.up);
+            Ray ray = new Ray(_selectedGameObject.transform.position, Vector3.down);
             Debug.DrawRay(ray.origin, ray.direction, Color.red);
             RaycastHit downwardHit;
             // _selectedGameObject.GetComponent<Collider>().enabled = false;
@@ -246,8 +250,6 @@ public class PlaceOnDrag : MonoBehaviour
             selectedObjCollider = _selectedGameObject.GetComponent<Collider>();
             ownAttributes = null;
             _selectedGameObject.TryGetComponent<PlacedObjectAttributes>(out ownAttributes);
-            _agent = _selectedGameObject.GetComponent<GameboardAgent>();
-            _agent.State = GameboardAgent.AgentNavigationState.Paused;
             if (_freeFormToggle.isOn)
             {
                 PlaceObjectWithFixedDistance();
@@ -266,14 +268,15 @@ public class PlaceOnDrag : MonoBehaviour
             _selectedGameObject = spawnedItem;
             selectedObjCollider = _selectedGameObject.GetComponent<Collider>();
             _selectedGameObject.TryGetComponent<PlacedObjectAttributes>(out ownAttributes);
-            _agent = _selectedGameObject.GetComponent<GameboardAgent>();
-            _agent.State = GameboardAgent.AgentNavigationState.Paused;
             _isReplacing = !_isReplacing;
             if (_freeFormToggle.isOn)
             {
                 PlaceObjectWithFixedDistance();
             }
+            _doneButton.gameObject.SetActive(true);
+            _cancelButton.gameObject.SetActive(true);
             HandlePlacement();
+            _isReplacing = true;
         }
         
         /**
@@ -305,19 +308,21 @@ public class PlaceOnDrag : MonoBehaviour
         {
             _isReplacing = !_isReplacing;
             BiomeEditingEvents.ItemPlacedEvent(_selectedGameObject);
-            var objectRenderer = _selectedGameObject.GetComponent<Renderer>();
-            
-            switch (ownAttributes.stackabilityType)
+            Renderer objectRenderer;
+            if (_selectedGameObject.TryGetComponent<Renderer>(out objectRenderer))
             {
-                case StackabilityType.Foundation:
-                    objectRenderer.material = foundationMaterial;
-                    break;
-                case StackabilityType.Stackable:
-                    objectRenderer.material = stackableMaterial;
-                    break;
-                case StackabilityType.Nonstackable:
-                    objectRenderer.material = noneStackableMaterial;
-                    break;
+                switch (ownAttributes.stackabilityType)
+                {
+                    case StackabilityType.Foundation:
+                        objectRenderer.material = foundationMaterial;
+                        break;
+                    case StackabilityType.Stackable:
+                        objectRenderer.material = stackableMaterial;
+                        break;
+                    case StackabilityType.Nonstackable:
+                        objectRenderer.material = noneStackableMaterial;
+                        break;
+                }
             }
             
             _placedObjects.Add(_selectedGameObject);
@@ -343,6 +348,14 @@ public class PlaceOnDrag : MonoBehaviour
             {
                 _undoButton.interactable = false;
             }
+        }
+        
+        public void CancelButtonOnClick()
+        {
+            _isReplacing = false;
+            InventoryEvents.ItemCheckedInEvent(ownAttributes.sourceItem);
+            Destroy(_selectedGameObject);
+            _selectedGameObject = null;
         }
         
         public float RoundToDecimal(float number, int decPoints)

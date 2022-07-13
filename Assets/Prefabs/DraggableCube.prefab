@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 5365563053166808629}
   - component: {fileID: 5163226405430703110}
   - component: {fileID: 3957016908274451303}
-  - component: {fileID: 3347335621836832079}
   - component: {fileID: 5616799319057935979}
   - component: {fileID: 2669696018952068172}
   - component: {fileID: -275427413343409142}
@@ -103,22 +102,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &3347335621836832079
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7382518445037136056}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c704f170ed31f4c5f9701b5b92cb874f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  walkingSpeed: 3
-  jumpDistance: 1
-  jumpPenalty: 2
-  pathFindingBehaviour: 2
 --- !u!114 &5616799319057935979
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -140,7 +123,7 @@ MonoBehaviour:
     name: 
     itemPrefab: {fileID: 0}
     itemSprite: {fileID: 0}
-    itemTags: 
+    tags: 
     quantity: 0
 --- !u!114 &2669696018952068172
 MonoBehaviour:

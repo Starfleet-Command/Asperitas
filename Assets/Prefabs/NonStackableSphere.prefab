@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 8049829651644104480}
   - component: {fileID: 8049829651644104487}
   - component: {fileID: 8049829651644104486}
-  - component: {fileID: 8049829651644104485}
   - component: {fileID: 8049829651644104484}
   - component: {fileID: 1232914133079414697}
   - component: {fileID: -2383147076958279437}
@@ -102,22 +101,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &8049829651644104485
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8049829651644102875}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c704f170ed31f4c5f9701b5b92cb874f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  walkingSpeed: 3
-  jumpDistance: 1
-  jumpPenalty: 2
-  pathFindingBehaviour: 2
 --- !u!114 &8049829651644104484
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -139,7 +122,7 @@ MonoBehaviour:
     name: 
     itemPrefab: {fileID: 0}
     itemSprite: {fileID: 0}
-    itemTags: 
+    tags: 
     quantity: 0
 --- !u!114 &1232914133079414697
 MonoBehaviour:

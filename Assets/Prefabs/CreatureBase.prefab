@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6932973193551974885}
   - component: {fileID: 6932973193551974884}
   - component: {fileID: 6932973193551974886}
+  - component: {fileID: 3198562592427570593}
   m_Layer: 0
   m_Name: CreatureBase
   m_TagString: Creature
@@ -78,6 +79,29 @@ MonoBehaviour:
     friendshipGain: 10
   - interactionType: 1
     friendshipGain: 5
+--- !u!114 &3198562592427570593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6932973193551974891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af9f0456ff30f8b4f9d1cfcb3aae96ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stackabilityType: 3
+  offsetAfterPlacement: {x: 0, y: 0, z: 0}
+  biomeEffect:
+    biome: 0
+    affinityPercentage: 0
+  sourceItem:
+    name: 
+    itemPrefab: {fileID: 0}
+    itemSprite: {fileID: 0}
+    tags: 
+    quantity: 0
 --- !u!1001 &5241268846027090403
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -98,27 +122,32 @@ PrefabInstance:
     - target: {fileID: 8721497875637679350, guid: a92a6202f821c74468cd83c8ec7cb8b6,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 74.99997
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8721497875637679350, guid: a92a6202f821c74468cd83c8ec7cb8b6,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 74.99998
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721497875637679350, guid: a92a6202f821c74468cd83c8ec7cb8b6,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8721497875637679350, guid: a92a6202f821c74468cd83c8ec7cb8b6,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.22
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8721497875637679350, guid: a92a6202f821c74468cd83c8ec7cb8b6,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.426
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8721497875637679350, guid: a92a6202f821c74468cd83c8ec7cb8b6,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.17
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8721497875637679350, guid: a92a6202f821c74468cd83c8ec7cb8b6,
         type: 3}
