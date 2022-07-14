@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641234, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5358,7 +5358,7 @@ MonoBehaviour:
   _doneButton: {fileID: 168567875}
   _undoButton: {fileID: 1639177670}
   _freeFormToggle: {fileID: 1566807747}
-  foundationMaterial: {fileID: 2100000, guid: 76faf991067580843ac08b25fcaedec1, type: 2}
+  foundationMaterial: {fileID: 2100000, guid: a666b261a86120f4ca2735fde20d6067, type: 2}
   stackableMaterial: {fileID: 2100000, guid: fbe9ba2df5bc349188ff08303fcf94d8, type: 2}
   noneStackableMaterial: {fileID: 2100000, guid: 273514c4e60c548b8933778787cc0161,
     type: 2}
