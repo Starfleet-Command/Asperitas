@@ -1370,31 +1370,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 334958934, guid: 512234a6b8ce9c74f8d65826549f7f9e, type: 3}
-      propertyPath: maxAltitude
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 334958934, guid: 512234a6b8ce9c74f8d65826549f7f9e, type: 3}
-      propertyPath: minAltitude
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 334958934, guid: 512234a6b8ce9c74f8d65826549f7f9e, type: 3}
-      propertyPath: initialPointQuantity
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 334958934, guid: 512234a6b8ce9c74f8d65826549f7f9e, type: 3}
-      propertyPath: timeBetweenPathAdditions
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 6108331178192487786, guid: 512234a6b8ce9c74f8d65826549f7f9e,
         type: 3}
       propertyPath: m_Name
       value: LP_SmallCreature Variant
-      objectReference: {fileID: 0}
-    - target: {fileID: 6108331178192487786, guid: 512234a6b8ce9c74f8d65826549f7f9e,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6885711889581154256, guid: 512234a6b8ce9c74f8d65826549f7f9e,
         type: 3}
