@@ -19,6 +19,7 @@ public class ChecklistMissionSystem : MonoBehaviour
         CreatureEvents.OnCreatureEvolving+=SwitchChecklist;
         CreatureEvents.OnFriendshipGained+=FriendshipMissionProgressedCheck;
         CreatureEvents.OnCreaturePlaced+=GetFriendshipScript;
+        CreatureEvents.OnInteractionTriggered+=InteractionMissionProgressedCheck;
         BiomeEditingEvents.OnBiomeHabitabilityModified+=BiomeMissionProgressedCheck;
     }
 
@@ -29,6 +30,7 @@ public class ChecklistMissionSystem : MonoBehaviour
         CreatureEvents.OnCreatureEvolving-=SwitchChecklist;
         CreatureEvents.OnFriendshipGained-=FriendshipMissionProgressedCheck;
         CreatureEvents.OnCreaturePlaced+=GetFriendshipScript;
+        CreatureEvents.OnInteractionTriggered-=InteractionMissionProgressedCheck;
         BiomeEditingEvents.OnBiomeHabitabilityModified-=BiomeMissionProgressedCheck;
     }
 

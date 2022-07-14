@@ -198,7 +198,7 @@ PrefabInstance:
     - target: {fileID: 226812425662747705, guid: 2d5b939b2bf014447bcbf8f52577ee5d,
         type: 3}
       propertyPath: m_Name
-      value: LP_SmallCreature Variant
+      value: MobileSmallCreature
       objectReference: {fileID: 0}
     - target: {fileID: 607453921710280323, guid: 2d5b939b2bf014447bcbf8f52577ee5d,
         type: 3}
@@ -415,6 +415,18 @@ MonoBehaviour:
   wanderRadius: 20
   wanderRadiusY: 4
   wanderRate: 0.25
+--- !u!114 &-2713813861860524913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6108331178192487786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f164746d1950a5c49a9ecfefe99ad6cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &6745548344569963908
 PrefabInstance:
   m_ObjectHideFlags: 0

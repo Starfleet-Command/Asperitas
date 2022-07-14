@@ -48,6 +48,7 @@ public class CreatureFriendship : MonoBehaviour
     public void AddFriendship(float frGrowth)
     {
         currentFriendship += frGrowth;
+        currentFriendship = Mathf.Round(currentFriendship);
     }
 
     //If changed biome is creature's preferred biome, adjust the rate of friendship growth.  
