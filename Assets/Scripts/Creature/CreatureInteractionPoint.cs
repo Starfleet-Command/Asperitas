@@ -4,13 +4,27 @@ using UnityEngine;
 using Lean.Touch;
 public class CreatureInteractionPoint : MonoBehaviour
 {
-    [SerializeField] private InteractionSocketType socketType;
+    public InteractionSocketType socketType;
 
-    public void TriggerInteractionEvent(LeanSelectableByFinger _selectStatus)
+    private bool canCollide = true;
+    private void OnCollisionEnter(Collision other)
     {
-        Debug.Log(" "+socketType.ToString());
-        CreatureEvents.InteractionTriggeredEvent(socketType);
+        if(socketType == InteractionSocketType.Feeding)
+        {
+            if(other.gameObject.tag =="Food" && canCollide)
+            {
+                CreatureEvents.InteractionTriggeredEvent(socketType);
+                Destroy(other.gameObject);
+                StartCoroutine("CollisionCooldown");
+            }
+        }
     }
-    
+
+    IEnumerator CollisionCooldown()
+    {
+        canCollide = false;
+        yield return new WaitForSeconds(2);
+        canCollide = true;
+    }
 
 }

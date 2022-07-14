@@ -11,7 +11,7 @@ public class BiomeEditingEvents : MonoBehaviour
 
     public static void ItemGeneratedEvent(GameObject _item)
     {
-        OnItemGenerated(_item);
+        OnItemGenerated?.Invoke(_item);
     }
 
     public delegate void ItemSelected(GameObject _item);
@@ -20,7 +20,7 @@ public class BiomeEditingEvents : MonoBehaviour
 
     public static void ItemChangedEvent(GameObject _item)
     {
-        OnItemSelected(_item);
+        OnItemSelected?.Invoke(_item);
     }
 
     public delegate void ItemPlaced(GameObject _item);
@@ -29,7 +29,25 @@ public class BiomeEditingEvents : MonoBehaviour
 
     public static void ItemPlacedEvent(GameObject _item)
     {
-        OnItemPlaced(_item);
+        OnItemPlaced?.Invoke(_item);
+    }
+    
+    public delegate void ObjectSelected(GameObject _item);
+
+    public static event ObjectSelected OnObjectSelected;
+
+    public static void ObjectSelectedEvent(GameObject _item)
+    {
+        OnObjectSelected?.Invoke(_item);
+    }
+    
+    public delegate void ObjectDeselected(GameObject _item);
+
+    public static event ObjectDeselected OnObjectDeselected;
+
+    public static void ObjectDeselectedEvent(GameObject _item)
+    {
+        OnObjectDeselected?.Invoke(_item);
     }
 
     //InventoryItem to prevent reference being lost on deletion
@@ -39,7 +57,7 @@ public class BiomeEditingEvents : MonoBehaviour
 
     public static void PlacedItemRemovedEvent(InventoryItem _item)
     {
-        OnPlacedItemRemoved(_item);
+        OnPlacedItemRemoved?.Invoke(_item);
     }
 
     public delegate void PlacedItemMoved(GameObject _item);
@@ -48,7 +66,7 @@ public class BiomeEditingEvents : MonoBehaviour
 
     public static void PlacedItemMovedEvent(GameObject _item)
     {
-        OnPlacedItemMoved(_item);
+        OnPlacedItemMoved?.Invoke(_item);
     }
 
     public delegate void BiomeHabitabilityModified(BiomePercentageTuple modifiedBiome);
@@ -57,7 +75,7 @@ public class BiomeEditingEvents : MonoBehaviour
 
     public static void BiomeHabitabilityModifiedEvent(BiomePercentageTuple modifiedBiome)
     {
-        OnBiomeHabitabilityModified(modifiedBiome);
+        OnBiomeHabitabilityModified?.Invoke(modifiedBiome);
     }
 
     

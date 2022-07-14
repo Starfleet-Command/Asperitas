@@ -81,7 +81,7 @@ public class NonARPlacement : MonoBehaviour
                 _selectedGameObject.SetActive(true);
 
             // add offset so object spawns at correct height
-            hitPoint.y = hitPoint.y +_selectedGameObject.transform.localScale.y/2;
+            hitPoint.y = hitPoint.y +_selectedGameObject.GetComponent<Collider>().bounds.extents.y;
 
             // If in Snap mode, snap placement to closest decimal position
             // hitPoint = new Vector3(RoundToDecimal(hitPoint.x,decimalToSnapTo),RoundToDecimal(hitPoint.y,decimalToSnapTo+1), RoundToDecimal(hitPoint.z,decimalToSnapTo));
@@ -90,8 +90,6 @@ public class NonARPlacement : MonoBehaviour
             //All 
             _selectedGameObject.transform.position = hitPoint+ownAttributes.offsetAfterPlacement;
 
-            var rotation = Vector3.ProjectOnPlane(cameraTransform.forward, Vector3.up).normalized;
-            _selectedGameObject.transform.rotation = Quaternion.LookRotation(-rotation);
 
             
             
@@ -114,8 +112,12 @@ public class NonARPlacement : MonoBehaviour
         {
             _selectedGameObject = spawnedItem;
             _selectedGameObject.TryGetComponent<PlacedObjectAttributes>(out ownAttributes);
-            _agent = _selectedGameObject.GetComponent<GameboardAgent>();
-            _agent.State = GameboardAgent.AgentNavigationState.Paused;
+
+            
+            if(_selectedGameObject.TryGetComponent<GameboardAgent>(out _agent))
+                _agent.State = GameboardAgent.AgentNavigationState.Paused;
+
+
             _isReplacing = true;
             _doneButton.gameObject.SetActive(true);
             _cancelButton.gameObject.SetActive(true);
@@ -125,10 +127,18 @@ public class NonARPlacement : MonoBehaviour
         public void DoneButtonOnClick()
         {
             _isReplacing = false;
-            BiomeEditingEvents.ItemPlacedEvent(_selectedGameObject);
 
-            if(ownAttributes.biomeEffect!=null)
-                BiomeEditingEvents.BiomeHabitabilityModifiedEvent(ownAttributes.biomeEffect);
+            if(_selectedGameObject.tag=="Creature")
+            {
+                CreatureEvents.CreaturePlacedEvent(_selectedGameObject);
+            }
+
+            else
+                BiomeEditingEvents.ItemPlacedEvent(_selectedGameObject);
+            
+            if(ownAttributes!= null)
+                if(ownAttributes.biomeEffect!=null)
+                    BiomeEditingEvents.BiomeHabitabilityModifiedEvent(ownAttributes.biomeEffect);
                 
             _selectedGameObject = null;
             

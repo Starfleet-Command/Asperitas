@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 2818350995953584176}
   - component: {fileID: 3084388948278276611}
   - component: {fileID: 6593447489589773666}
-  - component: {fileID: 4836483799485332298}
   - component: {fileID: 2348738668375828590}
   - component: {fileID: 7787157776150860526}
   - component: {fileID: 886065523528724720}
@@ -100,22 +99,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4836483799485332298
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 799807908151586493}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c704f170ed31f4c5f9701b5b92cb874f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  walkingSpeed: 3
-  jumpDistance: 1
-  jumpPenalty: 2
-  pathFindingBehaviour: 2
 --- !u!114 &2348738668375828590
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -134,10 +117,10 @@ MonoBehaviour:
     biome: 0
     affinityPercentage: 5
   sourceItem:
-    name: 
-    itemPrefab: {fileID: 0}
-    itemSprite: {fileID: 0}
-    itemTags: 03000000
+    name: Springs
+    itemPrefab: {fileID: 799807908151586493}
+    itemSprite: {fileID: 21300000, guid: 65a9c40e4a9232b4088998e7cb595f14, type: 3}
+    tags: 03000000
     quantity: 0
 --- !u!114 &7787157776150860526
 MonoBehaviour:
