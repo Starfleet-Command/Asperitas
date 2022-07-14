@@ -27,10 +27,7 @@ public class CreatureData : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if(this.gameObject.transform.childCount >0 && currentCreatureMesh==null)
-        {
-            currentCreatureMesh = this.gameObject.transform.GetChild(0).gameObject;
-        }
+        ReplaceCreatureMesh(EvolutionStage.Egg);
     }
 
     private void EvolveCreature()
@@ -57,7 +54,10 @@ public class CreatureData : MonoBehaviour
         if(newMesh!=null)
         {
             GameObject newMeshInstance = Instantiate(newMesh,currentCreatureMesh.transform.position,newMesh.transform.rotation);
-            Destroy(currentCreatureMesh);
+            newMeshInstance.transform.SetParent(this.gameObject.transform);
+            if(currentCreatureMesh!= null)
+                Destroy(currentCreatureMesh);
+
             currentCreatureMesh = newMeshInstance;
         }
         
