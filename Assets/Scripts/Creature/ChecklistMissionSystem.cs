@@ -90,6 +90,20 @@ public class ChecklistMissionSystem : MonoBehaviour
         }
     }
 
+    private void InteractionMissionProgressedCheck(InteractionSocketType missionType)
+    {
+        if(missionType==InteractionSocketType.Feeding)
+        {
+            foreach(ChecklistMission mission in currentChecklist)
+            {
+                if(!mission.CheckMissionComplete() && mission.getMissionType()==MissionType.TimesFed)
+                {
+                    HandleMissionEvents(mission,1);
+                }
+            }
+        }
+    }
+
     private void StageCompleteCheck(ChecklistMission _completedMission)
     {
         bool isComplete = true;

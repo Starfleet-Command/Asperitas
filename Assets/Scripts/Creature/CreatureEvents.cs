@@ -58,15 +58,6 @@ public class CreatureEvents : MonoBehaviour
         OnCreatureEvolving();
     }
 
-    public delegate void CreatureEvolved();
-
-    public static event CreatureEvolved OnCreatureEvolved;
-
-    public static void CreatureEvolvedEvent()
-    {
-        OnCreatureEvolved();
-    }
-
     public delegate void CreaturePlaced(GameObject _creature);
 
     public static event CreaturePlaced OnCreaturePlaced;
