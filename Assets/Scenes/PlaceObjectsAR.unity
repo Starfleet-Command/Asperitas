@@ -489,8 +489,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: NonARPlacement, Assembly-CSharp
+      - m_Target: {fileID: 1539856925}
+        m_TargetAssemblyTypeName: PlaceOnDrag, Assembly-CSharp
         m_MethodName: DoneButtonOnClick
         m_Mode: 1
         m_Arguments:
@@ -1229,7 +1229,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &375008473
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2621,7 +2621,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1177674817}
         m_TargetAssemblyTypeName: InventoryUiBuilder, Assembly-CSharp
         m_MethodName: CloseUI
         m_Mode: 1
@@ -3677,7 +3677,7 @@ MonoBehaviour:
       type: 3}
     itemSprite: {fileID: 21300000, guid: e904585d2e7df415da1a57b4078299bd, type: 3}
     tags: 
-    quantity: 0
+    quantity: 1
 --- !u!1 &1195415630
 GameObject:
   m_ObjectHideFlags: 0
@@ -3990,8 +3990,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: NonARPlacement, Assembly-CSharp
+      - m_Target: {fileID: 1539856925}
+        m_TargetAssemblyTypeName: PlaceOnDrag, Assembly-CSharp
         m_MethodName: CancelButtonOnClick
         m_Mode: 1
         m_Arguments:
@@ -5405,13 +5405,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _arCamera: {fileID: 1724626590}
   _spawnButton: []
-  _doneButton: {fileID: 797339021}
+  _doneButton: {fileID: 168567875}
   _undoButton: {fileID: 1639177670}
   _freeFormToggle: {fileID: 1566807747}
-  foundationMaterial: {fileID: 2100000, guid: 145a364e8bf3d174ea3dfaf401dcca44, type: 2}
+  foundationMaterial: {fileID: 2100000, guid: 76faf991067580843ac08b25fcaedec1, type: 2}
   stackableMaterial: {fileID: 2100000, guid: fbe9ba2df5bc349188ff08303fcf94d8, type: 2}
   noneStackableMaterial: {fileID: 2100000, guid: 273514c4e60c548b8933778787cc0161,
     type: 2}
+  _cancelButton: {fileID: 1215839298}
+  _selectedGameObject: {fileID: 0}
 --- !u!4 &1539856926
 Transform:
   m_ObjectHideFlags: 0
