@@ -9,6 +9,7 @@ public class CreatureScriptReferences : MonoBehaviour
 
     public GenerateMissionUI uiFromChecklistScript;
     public BiomeHabitability habitabilityTrackingScript;
+    public ChecklistMissionSystem missionSystemScript;
     public GameObject sceneCamera;
 
 }

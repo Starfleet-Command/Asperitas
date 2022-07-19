@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class ChecklistMissionSystem : MonoBehaviour
 {
-    private int currentStage=0;
 
     [SerializeField] private GenerateMissionUI uiFromChecklistScript;
     [SerializeField] private BiomeHabitability habitabilityTrackingScript;
@@ -12,6 +11,7 @@ public class ChecklistMissionSystem : MonoBehaviour
     [SerializeField] private CreatureFriendship creatureFriendshipScript;
     public ChecklistWrapper[] allMissions;
     [HideInInspector] public ChecklistMission[] currentChecklist;
+    [HideInInspector] public int currentStage=0;
     private void OnEnable()
     {
         BiomeEditingEvents.OnItemPlaced+=PlacedMissionProgressedCheck;
