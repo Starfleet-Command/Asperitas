@@ -13,4 +13,22 @@ public class UiEvents : MonoBehaviour
         OnIsThrowingStatusChanged(_status);
     }
 
+    public delegate void ChangeAlarmState(bool _newState);
+
+    public static event ChangeAlarmState OnChangeAlarmState;
+    
+    public static void ChangeAlarmStateEvent(bool _newState)
+    {
+        OnChangeAlarmState(_newState);
+    }
+
+    public delegate void MissionSetChanged(int _newSet);
+
+    public static event MissionSetChanged OnMissionSetChanged;
+
+    public static void MissionSetChangedEvent(int _newSet)
+    {
+        OnMissionSetChanged(_newSet);
+    }
+
 }

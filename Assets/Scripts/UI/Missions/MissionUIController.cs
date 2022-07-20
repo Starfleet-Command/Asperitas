@@ -11,13 +11,14 @@ public class MissionUIController : MonoBehaviour
     [SerializeField] private Color filledSliderColor;
     [SerializeField] private GameObject missionEntryPrefab;
     private ChecklistMissionSystem missionDatabase;
+    
     private int currentStage=0;
-    private bool isFirstTimeOpening = true;
     // Start is called before the first frame update
     void Start()
     {
         CreatureScriptReferences levelData = CreatureScriptReferences.Instance;
         missionDatabase = levelData.missionSystemScript;
+        FirstTimeBuildUI();
     }
 
     
@@ -25,14 +26,14 @@ public class MissionUIController : MonoBehaviour
     {
         CreatureEvents.OnMissionProgressed+=PollForMissionUpdates;
         CreatureEvents.OnMissionFinished+=HandleMissionFinished;
-        CreatureEvents.OnCreatureEvolving+=HandleChecklistFinished;
+        UiEvents.OnMissionSetChanged+=HandleChecklistFinished;
     }
 
     private void OnDisable()
     {
         CreatureEvents.OnMissionProgressed-=PollForMissionUpdates;
         CreatureEvents.OnMissionFinished-=HandleMissionFinished;
-        CreatureEvents.OnCreatureEvolving-=HandleChecklistFinished;
+        UiEvents.OnMissionSetChanged-=HandleChecklistFinished;
     }
 
 
@@ -49,11 +50,10 @@ public class MissionUIController : MonoBehaviour
                 {
                     if(_entryData.trackedMission.getMissionID()==_progressedMission.getMissionID())
                     {
-                        int missionProgressPercent = Mathf.RoundToInt(_progressedMission.getMissionProgress()/_progressedMission.getRequiredProgress());
-                        _holderData.alarmIcon.SetActive(true);
-                        //Toggle main menu alarm icon
+                        int missionProgressPercent = Mathf.RoundToInt(((float)_progressedMission.getMissionProgress()/(float)_progressedMission.getRequiredProgress())*100);
+                        
                         _entryData.progressBar.value= _progressedMission.getMissionProgress();
-                        _entryData.progressText.text = ""+missionProgressPercent+" %";
+                        _entryData.progressText.text = ""+missionProgressPercent+"%";
 
                         if(missionProgressPercent==100)
                         {
@@ -71,19 +71,21 @@ public class MissionUIController : MonoBehaviour
         GameObject currentStageHolder = stageMissionHolders[currentStage];
         if(currentStageHolder.TryGetComponent<MissionHolderData>(out MissionHolderData _holderData))
         {
-            _holderData.percentageText.text= ""+GetCategoryProgressPercentage()+" %";
+            _holderData.percentageText.text= ""+GetCategoryProgressPercentage()+"%";
+            _holderData.alarmIcon.SetActive(true);
             
         }
+        UiEvents.ChangeAlarmStateEvent(true);
     }
 
-    public void HandleChecklistFinished()
+    public void HandleChecklistFinished(int newStage)
     {
         if(connectingArrows[currentStage].TryGetComponent<Text>(out Text _arrow))
         {
             _arrow.color=activeMissionColor;
         }
 
-        currentStage++;
+        currentStage=newStage;
 
         if(stageMissionHolders.Length>currentStage)
         {
@@ -93,19 +95,14 @@ public class MissionUIController : MonoBehaviour
 
     public void OpenUI()
     {
-        if(isFirstTimeOpening)
-        {
-            FirstTimeBuildUI();
-            isFirstTimeOpening = false;
-        }
-        else
-        {
-            missionCanvas.SetActive(true);
-        }
+        
+        missionCanvas.SetActive(true);
     }
 
     private void FirstTimeBuildUI()
     {
+        
+        missionCanvas.SetActive(true);
         int currentSet = 0;
         MissionHolderData _holderData;
         foreach (ChecklistWrapper missionSet in missionDatabase.allMissions)
@@ -121,6 +118,7 @@ public class MissionUIController : MonoBehaviour
                     _entryData.descriptionText.text = mission.getMissionText();
                     _entryData.progressBar.maxValue = mission.getRequiredProgress();
                     _entryData.progressBar.value = mission.getMissionProgress();
+                    _entryData.progressText.text="0%";
                 }
 
                 _holderData.missionObjects.Add(missionEntry);
@@ -128,10 +126,11 @@ public class MissionUIController : MonoBehaviour
             }
             currentSet++;
         }
+        
+        SetHolderAsInteractable();
+        missionCanvas.SetActive(false);    
 
-        SetHolderAsInteractable();    
-
-        missionCanvas.SetActive(true);
+        
     }
 
     private void SetHolderAsInteractable()

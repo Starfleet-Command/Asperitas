@@ -44,7 +44,11 @@ public class HabitabilityUIListener : MonoBehaviour
             newTrackedBiome = habitatScript.getBiomeTuple(currentBiome);
 
             if(newTrackedBiome.getBiomeIcon()!=null)
+            {
+                biomeIcon.gameObject.SetActive(true);
                 biomeIcon.sprite= newTrackedBiome.getBiomeIcon();
+            }
+                
 
             if(isSliderInactive)
             {

@@ -56,10 +56,10 @@ public class ThrowableInventoryHandler : MonoBehaviour
             if(swipeStartPos.y < swipeEndPos.y)
             {
 
-                if(throwableInstance.GetComponent<Rigidbody>())
+                if(throwableInstance.TryGetComponent<Rigidbody>(out Rigidbody rb))
                 {
                     Vector3 swipeDelta = swipeEndPos-swipeStartPos;
-
+                    rb.isKinematic=false;
                     throwableInstance.transform.SetParent(null);
 
                     Vector3 forwardImpulse = sceneCamera.transform.forward;
@@ -69,9 +69,9 @@ public class ThrowableInventoryHandler : MonoBehaviour
                     forwardImpulse= forwardImpulse*selectedObject.forwardMagnitude*swipeDelta.magnitude;
                     upwardImpulse = upwardImpulse * selectedObject.upwardMagnitude*swipeDelta.magnitude;
 
-                    throwableInstance.GetComponent<Rigidbody>().AddForce(forwardImpulse,ForceMode.Impulse);
-                    throwableInstance.GetComponent<Rigidbody>().AddForce(upwardImpulse,ForceMode.Impulse);
-                    throwableInstance.GetComponent<Rigidbody>().useGravity= true;
+                    rb.AddForce(forwardImpulse,ForceMode.Impulse);
+                    rb.AddForce(upwardImpulse,ForceMode.Impulse);
+                    rb.useGravity= true;
                     
                 }
 

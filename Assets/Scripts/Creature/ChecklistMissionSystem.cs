@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class ChecklistMissionSystem : MonoBehaviour
 {
-
-    [SerializeField] private GenerateMissionUI uiFromChecklistScript;
     [SerializeField] private BiomeHabitability habitabilityTrackingScript;
 
     [SerializeField] private CreatureFriendship creatureFriendshipScript;
@@ -37,7 +35,6 @@ public class ChecklistMissionSystem : MonoBehaviour
     private void Start()
     {
         currentChecklist = allMissions[currentStage].stageChecklist;
-        uiFromChecklistScript.GenerateAllUI(currentChecklist);
     }
 
     private void GetFriendshipScript(GameObject _creatureObject)
@@ -126,8 +123,9 @@ public class ChecklistMissionSystem : MonoBehaviour
     private void SwitchChecklist()
     {
         currentStage++;
+        UiEvents.MissionSetChangedEvent(currentStage);
         currentChecklist = allMissions[currentStage].stageChecklist;
-        uiFromChecklistScript.GenerateAllUI(currentChecklist);
+        
         PollFriendshipAndBiomeStatus();
     }
 
