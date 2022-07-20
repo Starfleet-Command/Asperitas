@@ -256,8 +256,7 @@ public class PlaceOnDrag : MonoBehaviour
             }
             _isReplacing = true;
         }
-
-        //Todo: hook this up to OnItemGeneratedEvent
+        
         public void OnInventoryItemSpawned(GameObject spawnedItem)
         {
             if (_selectedGameObject != null)
