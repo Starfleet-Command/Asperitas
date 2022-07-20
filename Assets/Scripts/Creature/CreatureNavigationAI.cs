@@ -35,6 +35,21 @@ public class CreatureNavigationAI : MonoBehaviour
     private float objectWidth;
     private float objectHeight;
 
+    private bool isBeingSummoned=false;
+    private Vector3 summonCoords;
+
+    private void OnEnable()
+    {
+        CreatureEvents.OnCreatureSummoned+=HandleSummoning;
+        CreatureEvents.OnCreatureReleased+=ReleaseFromSummon;
+    }
+
+    private void OnDisable()
+    {
+        CreatureEvents.OnCreatureSummoned-=HandleSummoning;
+        CreatureEvents.OnCreatureReleased-=ReleaseFromSummon;
+    }
+
     void Start()
     {
         if(mainCamera==null)
@@ -86,14 +101,35 @@ public class CreatureNavigationAI : MonoBehaviour
 
     private Vector3 GenerateNode()
     {
-        Vector3 newPoint = wander.GenerateWanderPoint();
+        Vector3 newPoint;
 
-        /*while(newPoint.z < minZ)
+        if(isBeingSummoned)
+        {
+            newPoint = summonCoords;
+        }
+        else
         {
             newPoint = wander.GenerateWanderPoint();
-        } */
-        newPoint = PreventOutOfBounds(newPoint);
+
+            /*while(newPoint.z < minZ)
+            {
+                newPoint = wander.GenerateWanderPoint();
+            } */
+            newPoint = PreventOutOfBounds(newPoint);
+        }
+
         return newPoint;
+    }
+
+    private void HandleSummoning(Vector3 _location)
+    {
+        summonCoords= _location;
+        isBeingSummoned=true;
+    }
+
+    private void ReleaseFromSummon()
+    {
+        isBeingSummoned=false;
     }
 
 

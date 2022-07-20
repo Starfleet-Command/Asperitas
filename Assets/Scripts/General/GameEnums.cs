@@ -57,4 +57,5 @@ public enum InteractionSocketType
 {
     Feeding,
     Petting,
+    Playing,
 }
