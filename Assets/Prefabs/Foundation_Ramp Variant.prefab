@@ -15,17 +15,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: feda470e680b1ea4ba1c0c05f3d16a8c,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 12
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: feda470e680b1ea4ba1c0c05f3d16a8c,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 12
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: feda470e680b1ea4ba1c0c05f3d16a8c,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 12
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: feda470e680b1ea4ba1c0c05f3d16a8c,
         type: 3}
@@ -112,6 +112,7 @@ MonoBehaviour:
   biomeEffect:
     biome: 0
     affinityPercentage: 0
+    biomeIcon: {fileID: 0}
   sourceItem:
     name: 
     itemPrefab: {fileID: 0}

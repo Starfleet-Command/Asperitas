@@ -110,7 +110,8 @@ MonoBehaviour:
   offsetAfterPlacement: {x: 0, y: 0, z: 0}
   biomeEffect:
     biome: 0
-    affinityPercentage: 0
+    affinityPercentage: 30
+    biomeIcon: {fileID: 0}
   sourceItem:
     name: 
     itemPrefab: {fileID: 0}
