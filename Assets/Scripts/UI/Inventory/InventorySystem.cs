@@ -7,6 +7,7 @@ using System;
 
 public class InventorySystem: MonoBehaviour
 {
+    private InventoryItem _checkedItem;
 
     private void OnEnable()
     {
@@ -50,22 +51,26 @@ public class InventorySystem: MonoBehaviour
 
     public void CheckoutAndSpawnItem(string _name)
     {
-        InventoryItem checkedItem = null;
+        _checkedItem = null;
         PlacedObjectAttributes objectAttributeScript = null;
         GameObject spawnedItem = null;
-        checkedItem = FindByName(_name);
+        _checkedItem = FindByName(_name);
         
-        if(checkedItem != null)
+        if(_checkedItem != null)
         {
-            checkedItem.removeItems(1);
-            spawnedItem = Instantiate(checkedItem.getItemPrefab());
+            spawnedItem = Instantiate(_checkedItem.getItemPrefab());
             if(spawnedItem.TryGetComponent<PlacedObjectAttributes>(out objectAttributeScript))
             {
-                objectAttributeScript.sourceItem = checkedItem;
+                objectAttributeScript.sourceItem = _checkedItem;
             }
         }
 
         BiomeEditingEvents.ItemGeneratedEvent(spawnedItem);
+    }
+
+    public void DoneButtonOnPressed()
+    {
+        _checkedItem?.removeItems(1);
     }
 
     public void ReAddToInventory(InventoryItem _item)
