@@ -77,10 +77,44 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: feda470e680b1ea4ba1c0c05f3d16a8c,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a666b261a86120f4ca2735fde20d6067, type: 2}
     - target: {fileID: 919132149155446097, guid: feda470e680b1ea4ba1c0c05f3d16a8c,
         type: 3}
       propertyPath: m_Name
-      value: Foundation_Ramp
+      value: Foundation_Ramp Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: feda470e680b1ea4ba1c0c05f3d16a8c, type: 3}
+--- !u!1 &5369998378245466215 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: feda470e680b1ea4ba1c0c05f3d16a8c,
+    type: 3}
+  m_PrefabInstance: {fileID: 5064149085849883958}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &-5620734573893523510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5369998378245466215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af9f0456ff30f8b4f9d1cfcb3aae96ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stackabilityType: 1
+  offsetAfterPlacement: {x: 0, y: 0, z: 0}
+  biomeEffect:
+    biome: 0
+    affinityPercentage: 0
+  sourceItem:
+    name: 
+    itemPrefab: {fileID: 0}
+    itemSprite: {fileID: 0}
+    tags: 
+    quantity: 0

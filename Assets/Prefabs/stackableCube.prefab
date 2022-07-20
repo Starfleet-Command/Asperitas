@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3258955585889456261}
-  - component: {fileID: 5365563053166808629}
   - component: {fileID: 5163226405430703110}
   - component: {fileID: 3957016908274451303}
   - component: {fileID: 5616799319057935979}
@@ -19,8 +18,9 @@ GameObject:
   - component: {fileID: 3450190750566366760}
   - component: {fileID: -9138544772942602438}
   - component: {fileID: 2613761356136768287}
+  - component: {fileID: -8264948241903044638}
   m_Layer: 0
-  m_Name: DraggableCube
+  m_Name: stackableCube
   m_TagString: Prop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -40,14 +40,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &5365563053166808629
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7382518445037136056}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &5163226405430703110
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -283,3 +275,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selectedObjectMaterial: {fileID: -6735840876270603378, guid: 49df469240e364815a9f07e7d4b3897e,
     type: 3}
+--- !u!33 &-8264948241903044638
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7382518445037136056}
+  m_Mesh: {fileID: -5495902117074765545, guid: de4da3906a001624fabcc7838ddf2eb4, type: 3}

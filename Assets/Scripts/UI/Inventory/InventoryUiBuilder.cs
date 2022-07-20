@@ -39,6 +39,7 @@ public class InventoryUiBuilder : MonoBehaviour
         if(!hasBeenCreated)
         {
             FirstTimeBuildUI();
+            Debug.Log("open Inventory pressed");
         }
         else
         {
