@@ -70,7 +70,8 @@ public class InventorySystem: MonoBehaviour
 
     public void ReAddToInventory(InventoryItem _item)
     {
-        _item.addItems(1);
+        InventoryItem itemRef = FindByName(_item.getName());
+        itemRef.addItems(1);
     }
 }
 

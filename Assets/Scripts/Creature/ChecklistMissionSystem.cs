@@ -4,14 +4,12 @@ using UnityEngine;
 
 public class ChecklistMissionSystem : MonoBehaviour
 {
-    private int currentStage=0;
-
-    [SerializeField] private GenerateMissionUI uiFromChecklistScript;
     [SerializeField] private BiomeHabitability habitabilityTrackingScript;
 
     [SerializeField] private CreatureFriendship creatureFriendshipScript;
     public ChecklistWrapper[] allMissions;
     [HideInInspector] public ChecklistMission[] currentChecklist;
+    [HideInInspector] public int currentStage=0;
     private void OnEnable()
     {
         BiomeEditingEvents.OnItemPlaced+=PlacedMissionProgressedCheck;
@@ -19,6 +17,7 @@ public class ChecklistMissionSystem : MonoBehaviour
         CreatureEvents.OnCreatureEvolving+=SwitchChecklist;
         CreatureEvents.OnFriendshipGained+=FriendshipMissionProgressedCheck;
         CreatureEvents.OnCreaturePlaced+=GetFriendshipScript;
+        CreatureEvents.OnInteractionTriggered+=InteractionMissionProgressedCheck;
         BiomeEditingEvents.OnBiomeHabitabilityModified+=BiomeMissionProgressedCheck;
     }
 
@@ -29,13 +28,13 @@ public class ChecklistMissionSystem : MonoBehaviour
         CreatureEvents.OnCreatureEvolving-=SwitchChecklist;
         CreatureEvents.OnFriendshipGained-=FriendshipMissionProgressedCheck;
         CreatureEvents.OnCreaturePlaced+=GetFriendshipScript;
+        CreatureEvents.OnInteractionTriggered-=InteractionMissionProgressedCheck;
         BiomeEditingEvents.OnBiomeHabitabilityModified-=BiomeMissionProgressedCheck;
     }
 
     private void Start()
     {
         currentChecklist = allMissions[currentStage].stageChecklist;
-        uiFromChecklistScript.GenerateAllUI(currentChecklist);
     }
 
     private void GetFriendshipScript(GameObject _creatureObject)
@@ -90,6 +89,20 @@ public class ChecklistMissionSystem : MonoBehaviour
         }
     }
 
+    private void InteractionMissionProgressedCheck(InteractionSocketType missionType)
+    {
+        if(missionType==InteractionSocketType.Feeding)
+        {
+            foreach(ChecklistMission mission in currentChecklist)
+            {
+                if(!mission.CheckMissionComplete() && mission.getMissionType()==MissionType.TimesFed)
+                {
+                    HandleMissionEvents(mission,1);
+                }
+            }
+        }
+    }
+
     private void StageCompleteCheck(ChecklistMission _completedMission)
     {
         bool isComplete = true;
@@ -110,8 +123,9 @@ public class ChecklistMissionSystem : MonoBehaviour
     private void SwitchChecklist()
     {
         currentStage++;
+        UiEvents.MissionSetChangedEvent(currentStage);
         currentChecklist = allMissions[currentStage].stageChecklist;
-        uiFromChecklistScript.GenerateAllUI(currentChecklist);
+        
         PollFriendshipAndBiomeStatus();
     }
 
