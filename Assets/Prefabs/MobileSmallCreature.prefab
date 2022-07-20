@@ -223,17 +223,17 @@ PrefabInstance:
     - target: {fileID: 607453921710280323, guid: 2d5b939b2bf014447bcbf8f52577ee5d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -26
+      value: -8.455309
       objectReference: {fileID: 0}
     - target: {fileID: 607453921710280323, guid: 2d5b939b2bf014447bcbf8f52577ee5d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2
+      value: 1.451
       objectReference: {fileID: 0}
     - target: {fileID: 607453921710280323, guid: 2d5b939b2bf014447bcbf8f52577ee5d,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -23.94
+      value: -13.951855
       objectReference: {fileID: 0}
     - target: {fileID: 607453921710280323, guid: 2d5b939b2bf014447bcbf8f52577ee5d,
         type: 3}
@@ -374,8 +374,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxVelocity: 3
-  maxAcceleration: 6
-  turnSpeed: 7
+  maxAcceleration: 5
+  turnSpeed: 5
   targetRadius: 2
   slowRadius: 1
   timeToTarget: 0.1
@@ -416,10 +416,10 @@ MonoBehaviour:
   timeBetweenPathAdditions: 3
   initialPointQuantity: 3
   mainCamera: {fileID: 0}
-  minDistanceFromPlayer: 5
-  maxDistanceFromPlayer: 10
-  minAltitude: 5
-  maxAltitude: 8
+  minDistanceFromPlayer: 1
+  maxDistanceFromPlayer: 3
+  minAltitude: 0.5
+  maxAltitude: 1.5
   path:
     nodes:
     - {x: 10, y: 2, z: -3}

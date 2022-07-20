@@ -55,6 +55,9 @@ MonoBehaviour:
   - creatureStage: 2
     stageCreaturePrefab: {fileID: 2223632638037285957, guid: 77fd1af8434ab574091828129d8024cd,
       type: 3}
+  - creatureStage: 3
+    stageCreaturePrefab: {fileID: 3903431813430831482, guid: b682f93b1d3293d4a8aee1df175b7725,
+      type: 3}
   currentCreatureMesh: {fileID: 5246188224821005948}
   preferredBiome: 0
 --- !u!114 &6932973193551974886
@@ -79,6 +82,8 @@ MonoBehaviour:
     friendshipGain: 10
   - interactionType: 1
     friendshipGain: 5
+  - interactionType: 2
+    friendshipGain: 7.5
 --- !u!114 &3198562592427570593
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -96,6 +101,7 @@ MonoBehaviour:
   biomeEffect:
     biome: 0
     affinityPercentage: 0
+    biomeIcon: {fileID: 0}
   sourceItem:
     name: 
     itemPrefab: {fileID: 0}
