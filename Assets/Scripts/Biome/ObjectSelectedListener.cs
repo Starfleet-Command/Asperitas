@@ -52,6 +52,10 @@ public class ObjectSelectedListener : MonoBehaviour
     {
         if (_selectedGameObject != null)
         {
+            if(_selectedGameObject.TryGetComponent<PlacedObjectAttributes>(out PlacedObjectAttributes objectData))
+            {
+                InventoryEvents.ItemCheckedInEvent(objectData.sourceItem);
+            }
             Destroy(_selectedGameObject);
         }
     }

@@ -40,7 +40,13 @@
             "m_Id": "81bd7634db054ad98bf862b2b3e45e91"
         },
         {
+            "m_Id": "adc732429e39419b8ee69452b0bbb012"
+        },
+        {
             "m_Id": "c4aca764683740828d4d605798351199"
+        },
+        {
+            "m_Id": "66e24172ddaf42ee999c22f02d6898e6"
         }
     ],
     "m_Keywords": [],
@@ -209,6 +215,12 @@
         },
         {
             "m_Id": "a03c24d3fdc84076ac714e3517066731"
+        },
+        {
+            "m_Id": "104686b684d04c168856cdf75a2c65f5"
+        },
+        {
+            "m_Id": "7d0c314b345e461d98d5cbd57716df9b"
         }
     ],
     "m_GroupDatas": [],
@@ -266,6 +278,20 @@
             "m_InputSlot": {
                 "m_Node": {
                     "m_Id": "ca0b5a865acd42ce9a9c1ce3ec48ccec"
+                },
+                "m_SlotId": 1
+            }
+        },
+        {
+            "m_OutputSlot": {
+                "m_Node": {
+                    "m_Id": "104686b684d04c168856cdf75a2c65f5"
+                },
+                "m_SlotId": 0
+            },
+            "m_InputSlot": {
+                "m_Node": {
+                    "m_Id": "a609faed16644cb7b161df974d37eb8e"
                 },
                 "m_SlotId": 1
             }
@@ -504,6 +530,20 @@
             "m_InputSlot": {
                 "m_Node": {
                     "m_Id": "ba2af99289e04cad893760fee5e7c811"
+                },
+                "m_SlotId": 3
+            }
+        },
+        {
+            "m_OutputSlot": {
+                "m_Node": {
+                    "m_Id": "7d0c314b345e461d98d5cbd57716df9b"
+                },
+                "m_SlotId": 0
+            },
+            "m_InputSlot": {
+                "m_Node": {
+                    "m_Id": "a609faed16644cb7b161df974d37eb8e"
                 },
                 "m_SlotId": 3
             }
@@ -1287,6 +1327,41 @@
 
 {
     "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.PropertyNode",
+    "m_ObjectId": "104686b684d04c168856cdf75a2c65f5",
+    "m_Group": {
+        "m_Id": ""
+    },
+    "m_Name": "Property",
+    "m_DrawState": {
+        "m_Expanded": true,
+        "m_Position": {
+            "serializedVersion": "2",
+            "x": -1316.7501220703125,
+            "y": 1047.650146484375,
+            "width": 0.0,
+            "height": 0.0
+        }
+    },
+    "m_Slots": [
+        {
+            "m_Id": "a74e5e1fd80145c2b3c8a1222bd00870"
+        }
+    ],
+    "synonyms": [],
+    "m_Precision": 0,
+    "m_PreviewExpanded": true,
+    "m_PreviewMode": 0,
+    "m_CustomColors": {
+        "m_SerializableColors": []
+    },
+    "m_Property": {
+        "m_Id": "66e24172ddaf42ee999c22f02d6898e6"
+    }
+}
+
+{
+    "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.DynamicVectorMaterialSlot",
     "m_ObjectId": "119c19569a04450cb915224a68680f2d",
     "m_Id": 1,
@@ -1452,7 +1527,7 @@
     "m_CustomColors": {
         "m_SerializableColors": []
     },
-    "m_Space": 0
+    "m_Space": 4
 }
 
 {
@@ -1577,6 +1652,21 @@
     },
     "m_Labels": [],
     "m_Channel": 0
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
+    "m_ObjectId": "1d373a5da23c463885abb5498f6fe266",
+    "m_Id": 0,
+    "m_DisplayName": "PomAmplitude",
+    "m_SlotType": 1,
+    "m_Hidden": false,
+    "m_ShaderOutputName": "Out",
+    "m_StageCapability": 3,
+    "m_Value": 0.0,
+    "m_DefaultValue": 0.0,
+    "m_Labels": []
 }
 
 {
@@ -2720,7 +2810,7 @@
     "m_Type": "UnityEditor.ShaderGraph.Texture2DMaterialSlot",
     "m_ObjectId": "5e01a595638545148249402c012de5a0",
     "m_Id": 0,
-    "m_DisplayName": "NoiseTexture",
+    "m_DisplayName": "GlitterTexture",
     "m_SlotType": 1,
     "m_Hidden": false,
     "m_ShaderOutputName": "Out",
@@ -3104,6 +3194,29 @@
         "m_SerializableColors": []
     },
     "m_SerializedDescriptor": "VertexDescription.Normal"
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.Internal.Texture2DShaderProperty",
+    "m_ObjectId": "66e24172ddaf42ee999c22f02d6898e6",
+    "m_Guid": {
+        "m_GuidSerialized": "522f5398-7c82-4c6a-bf5b-001ec267ad90"
+    },
+    "m_Name": "PomTextureNoise",
+    "m_DefaultReferenceName": "Texture2D_66e24172ddaf42ee999c22f02d6898e6",
+    "m_OverrideReferenceName": "",
+    "m_GeneratePropertyBlock": true,
+    "m_Precision": 0,
+    "overrideHLSLDeclaration": false,
+    "hlslDeclarationOverride": 0,
+    "m_Hidden": false,
+    "m_Value": {
+        "m_SerializedTexture": "{\"texture\":{\"fileID\":2800000,\"guid\":\"ef5c51cfa2ce46043a41a376b560c525\",\"type\":3}}",
+        "m_Guid": ""
+    },
+    "m_Modifiable": true,
+    "m_DefaultType": 0
 }
 
 {
@@ -3648,6 +3761,41 @@
 
 {
     "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.PropertyNode",
+    "m_ObjectId": "7d0c314b345e461d98d5cbd57716df9b",
+    "m_Group": {
+        "m_Id": ""
+    },
+    "m_Name": "Property",
+    "m_DrawState": {
+        "m_Expanded": true,
+        "m_Position": {
+            "serializedVersion": "2",
+            "x": -1241.0,
+            "y": 1129.0001220703125,
+            "width": 153.0,
+            "height": 34.0
+        }
+    },
+    "m_Slots": [
+        {
+            "m_Id": "1d373a5da23c463885abb5498f6fe266"
+        }
+    ],
+    "synonyms": [],
+    "m_Precision": 0,
+    "m_PreviewExpanded": true,
+    "m_PreviewMode": 0,
+    "m_CustomColors": {
+        "m_SerializableColors": []
+    },
+    "m_Property": {
+        "m_Id": "adc732429e39419b8ee69452b0bbb012"
+    }
+}
+
+{
+    "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.DynamicVectorMaterialSlot",
     "m_ObjectId": "7e44e574512f4d8d8fe5d96df64874ab",
     "m_Id": 0,
@@ -3791,7 +3939,7 @@
     "m_Guid": {
         "m_GuidSerialized": "2d3f379d-0c35-44b6-bdd5-a9f5d44adafb"
     },
-    "m_Name": "POM AMP",
+    "m_Name": "POM AMP Glitter",
     "m_DefaultReferenceName": "Vector1_81bd7634db054ad98bf862b2b3e45e91",
     "m_OverrideReferenceName": "",
     "m_GeneratePropertyBlock": true,
@@ -3819,9 +3967,9 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -3601.000244140625,
-            "y": 1392.0,
-            "width": 154.00001525878907,
+            "x": -3171.0,
+            "y": 1561.0,
+            "width": 154.0,
             "height": 34.0
         }
     },
@@ -4634,7 +4782,7 @@
     "m_Guid": {
         "m_GuidSerialized": "5a9a5904-9446-4307-bea1-9250123edbe6"
     },
-    "m_Name": "NoiseTexture",
+    "m_Name": "GlitterTexture",
     "m_DefaultReferenceName": "Texture2D_a61486eafbb64bd4ba843ad20dd598bf",
     "m_OverrideReferenceName": "",
     "m_GeneratePropertyBlock": true,
@@ -4728,6 +4876,19 @@
         "m_SerializableColors": []
     },
     "m_SerializedDescriptor": "SurfaceDescription.Occlusion"
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.Texture2DMaterialSlot",
+    "m_ObjectId": "a74e5e1fd80145c2b3c8a1222bd00870",
+    "m_Id": 0,
+    "m_DisplayName": "PomTextureNoise",
+    "m_SlotType": 1,
+    "m_Hidden": false,
+    "m_ShaderOutputName": "Out",
+    "m_StageCapability": 3,
+    "m_BareResource": false
 }
 
 {
@@ -4860,6 +5021,29 @@
     },
     "m_Property": {
         "m_Id": "6875fd2d96c14bac8693ab2f347ab4be"
+    }
+}
+
+{
+    "m_SGVersion": 1,
+    "m_Type": "UnityEditor.ShaderGraph.Internal.Vector1ShaderProperty",
+    "m_ObjectId": "adc732429e39419b8ee69452b0bbb012",
+    "m_Guid": {
+        "m_GuidSerialized": "f2218b67-d582-4668-9e60-1fad6dc2afda"
+    },
+    "m_Name": "PomAmplitudeNoise",
+    "m_DefaultReferenceName": "Vector1_adc732429e39419b8ee69452b0bbb012",
+    "m_OverrideReferenceName": "",
+    "m_GeneratePropertyBlock": true,
+    "m_Precision": 0,
+    "overrideHLSLDeclaration": false,
+    "hlslDeclarationOverride": 0,
+    "m_Hidden": false,
+    "m_Value": 1286.4000244140625,
+    "m_FloatType": 0,
+    "m_RangeValues": {
+        "x": 0.0,
+        "y": 1.0
     }
 }
 
@@ -5365,7 +5549,7 @@
     "m_Guid": {
         "m_GuidSerialized": "fd891cc2-fed2-4476-86c2-e3da6ad5c405"
     },
-    "m_Name": "PomTexture",
+    "m_Name": "PomTextureGlitter",
     "m_DefaultReferenceName": "Texture2D_c4aca764683740828d4d605798351199",
     "m_OverrideReferenceName": "",
     "m_GeneratePropertyBlock": true,

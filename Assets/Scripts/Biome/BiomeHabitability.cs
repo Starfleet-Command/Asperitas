@@ -27,6 +27,18 @@ public class BiomeHabitability : MonoBehaviour
             }
         }
     }
+
+    public BiomePercentageTuple getBiomeTuple(BiomeType chosenBiome)
+    {
+        foreach (BiomePercentageTuple tuple in biomeHabitabilityList)
+        {
+            if(tuple.getBiome() == chosenBiome)
+            {
+                return tuple;
+            }
+        }
+        return null;
+    }
 }
 
 
@@ -35,6 +47,7 @@ public class BiomePercentageTuple
 {
     [SerializeField] private BiomeType biome;
     [SerializeField] private int affinityPercentage;
+    [SerializeField] private Sprite biomeIcon;
 
     public BiomeType getBiome()
     {
@@ -46,10 +59,18 @@ public class BiomePercentageTuple
         return affinityPercentage;
     }
 
+    public Sprite getBiomeIcon()
+    {
+        return biomeIcon;
+    }
+
     public void setBiomeAffinity(int newAffinity)
     {
         if(newAffinity> 100)
             affinityPercentage=100;
+
+        if(newAffinity< 0)
+            affinityPercentage=0;
 
         else
         affinityPercentage = newAffinity;
