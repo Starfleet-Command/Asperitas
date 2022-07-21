@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Lean.Common;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
@@ -320,6 +321,13 @@ public class PlaceOnDrag : MonoBehaviour
             }
             
             _placedObjects.Add(_selectedGameObject);
+
+            var objSelectableComponent = _selectedGameObject.GetComponent<LeanSelectable>();
+            if (objSelectableComponent != null)
+            {
+                objSelectableComponent.enabled = true;
+
+            }
 
             if(ownAttributes.biomeEffect!=null)
                 BiomeEditingEvents.BiomeHabitabilityModifiedEvent(ownAttributes.biomeEffect);
