@@ -85,4 +85,13 @@ public class CreatureEvents : MonoBehaviour
         OnCreatureReleased();
     }
 
+    public delegate void CreatureBeginPet();
+    
+    public static event CreatureBeginPet OnCreatureBeginPet;
+
+    public static void CreatureBeginPetEvent()
+    {
+        OnCreatureBeginPet();
+    }
+
 }

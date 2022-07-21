@@ -50,7 +50,7 @@ MonoBehaviour:
   creatureName: Ajolote
   creatureStageData:
   - creatureStage: 1
-    stageCreaturePrefab: {fileID: 6108331178192487786, guid: 512234a6b8ce9c74f8d65826549f7f9e,
+    stageCreaturePrefab: {fileID: 3034809429399643004, guid: da470b6683b1bbf489f7c8330b2aff35,
       type: 3}
   - creatureStage: 2
     stageCreaturePrefab: {fileID: 2223632638037285957, guid: 77fd1af8434ab574091828129d8024cd,
@@ -75,6 +75,7 @@ MonoBehaviour:
   frGrowthMultiplier: 0.5
   currentFriendship: 0
   maxFriendship: 100
+  maxBiomeAffinity: 100
   biomeToGrowthMult: 0.01
   _creatureData: {fileID: 6932973193551974884}
   friendshipGainTable:

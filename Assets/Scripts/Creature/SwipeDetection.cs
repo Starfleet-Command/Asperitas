@@ -92,6 +92,11 @@ public class SwipeDetection : MonoBehaviour
 
     public void HandleSwipeHit()
     {
+        if(currentSwipes==0)
+        {
+            CreatureEvents.CreatureBeginPetEvent();
+        }
+
         currentSwipes++;
         if(currentSwipes>=swipesRequired)
         {

@@ -6867,7 +6867,7 @@ MonoBehaviour:
     tags: 04000000
     quantity: 4
   - name: Creature Egg
-    itemPrefab: {fileID: 1447427248400704773, guid: d32f67bbc6420d04390d8d755413ac89,
+    itemPrefab: {fileID: 6932973193551974891, guid: 5a35933d17672e349a4f5d6fdeaf8318,
       type: 3}
     itemSprite: {fileID: 21300000, guid: e904585d2e7df415da1a57b4078299bd, type: 3}
     tags: 
