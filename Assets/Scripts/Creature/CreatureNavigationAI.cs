@@ -147,12 +147,34 @@ public class CreatureNavigationAI : MonoBehaviour
     private Vector3 PreventOutOfBounds(Vector3 navPoint)
     {
         Vector3 viewPos = navPoint;
+
+        if(viewPos.x<mainCamera.transform.position.x+ minDistanceFromPlayer )
+        {
+            viewPos.x = viewPos.x + 2*((mainCamera.transform.position.x+ minDistanceFromPlayer)-viewPos.x);
+        }
+
+        else if(viewPos.x >mainCamera.transform.position.x+ maxDistanceFromPlayer)
+        {
+            viewPos.x = viewPos.x + 2*(viewPos.x-(mainCamera.transform.position.x+ minDistanceFromPlayer));
+        }
+        
         viewPos.x=Mathf.Clamp(viewPos.x, mainCamera.transform.position.x+ minDistanceFromPlayer,mainCamera.transform.position.x+ maxDistanceFromPlayer);
 
         if(canChangeAltitude)
             viewPos.y=Mathf.Clamp(navPoint.y,mainCamera.transform.position.y+minAltitude,mainCamera.transform.position.y+maxAltitude);
         else
             viewPos.y= maxAltitude;
+
+        
+        if(viewPos.z<mainCamera.transform.position.z+ minDistanceFromPlayer )
+        {
+            viewPos.z = viewPos.z + 2*((mainCamera.transform.position.z+ minDistanceFromPlayer)-viewPos.z);
+        }
+
+        else if(viewPos.z >mainCamera.transform.position.z+ maxDistanceFromPlayer)
+        {
+            viewPos.z = viewPos.z + 2*(viewPos.z-(mainCamera.transform.position.z+ minDistanceFromPlayer));
+        }
 
         viewPos.z=Mathf.Clamp(viewPos.z, mainCamera.transform.position.z+ minDistanceFromPlayer,mainCamera.transform.position.z+ maxDistanceFromPlayer);
         

@@ -14,10 +14,11 @@ public class CollisionRelay : MonoBehaviour
                 CreatureInteractionPoint colliderInfo;
             if(_coll.GetContact(0).thisCollider.gameObject.TryGetComponent<CreatureInteractionPoint>(out colliderInfo))
             {
-                if(colliderInfo.socketType == InteractionSocketType.Feeding)
+                if(colliderInfo.socketType == InteractionSocketType.Feeding && canCollide)
                 {
                     CreatureEvents.InteractionTriggeredEvent(colliderInfo.socketType);
                     Destroy(_coll.gameObject);
+                    StartCoroutine("CollisionCooldown");
                 }
             }
             

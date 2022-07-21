@@ -1714,6 +1714,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ARMesh
       objectReference: {fileID: 0}
+    - target: {fileID: 4544129020768840140, guid: 9f82ecc5afc3c4c2695d9cf37d46f25c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4544129020768840141, guid: 9f82ecc5afc3c4c2695d9cf37d46f25c,
         type: 3}
       propertyPath: m_RootOrder
@@ -1768,6 +1773,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7963815754292762357, guid: 9f82ecc5afc3c4c2695d9cf37d46f25c,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7963815754292762357, guid: 9f82ecc5afc3c4c2695d9cf37d46f25c,
         type: 3}
@@ -1939,6 +1949,43 @@ MonoBehaviour:
       missionBiomeType: 3
       missionRequiredTag: 9
       missionThreshold: 3
+      isRequired: 1
+      missionProgress: 0
+      isMissionComplete: 0
+  - stageChecklist:
+    - missionID: 6
+      flavourText: Place 2 Nature Items
+      missionType: 0
+      missionBiomeType: 3
+      missionRequiredTag: 4
+      missionThreshold: 2
+      isRequired: 1
+      missionProgress: 0
+      isMissionComplete: 0
+    - missionID: 7
+      flavourText: Raise Ocean Habitability to 80%
+      missionType: 1
+      missionBiomeType: 0
+      missionRequiredTag: 9
+      missionThreshold: 80
+      isRequired: 1
+      missionProgress: 0
+      isMissionComplete: 0
+    - missionID: 8
+      flavourText: Raise Friendship to 60%
+      missionType: 2
+      missionBiomeType: 3
+      missionRequiredTag: 9
+      missionThreshold: 60
+      isRequired: 1
+      missionProgress: 0
+      isMissionComplete: 0
+    - missionID: 9
+      flavourText: Feed Creature 2 times
+      missionType: 3
+      missionBiomeType: 3
+      missionRequiredTag: 9
+      missionThreshold: 2
       isRequired: 1
       missionProgress: 0
       isMissionComplete: 0
@@ -5559,7 +5606,7 @@ MonoBehaviour:
     type: 3}
   UiParent: {fileID: 353560898}
   inventoryCanvas: {fileID: 1321666992}
-  itemsPerRow: 4
+  itemsPerRow: 3
 --- !u!114 &1177674818
 MonoBehaviour:
   m_ObjectHideFlags: 0

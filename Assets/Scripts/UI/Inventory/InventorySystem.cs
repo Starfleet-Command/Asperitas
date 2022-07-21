@@ -12,6 +12,7 @@ public class InventorySystem: MonoBehaviour
     private void OnEnable()
     {
         InventoryEvents.OnItemCheckedIn+=ReAddToInventory;
+        BiomeEditingEvents.OnItemPlaced+=SubtractFromInventory;
     }
 
         private void OnDisable()
@@ -68,7 +69,7 @@ public class InventorySystem: MonoBehaviour
         BiomeEditingEvents.ItemGeneratedEvent(spawnedItem);
     }
 
-    public void DoneButtonOnPressed()
+    public void SubtractFromInventory(GameObject _ignoreThisItem)
     {
         _checkedItem?.removeItems(1);
     }

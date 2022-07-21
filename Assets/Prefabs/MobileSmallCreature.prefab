@@ -208,17 +208,17 @@ PrefabInstance:
     - target: {fileID: 607453921710280323, guid: 2d5b939b2bf014447bcbf8f52577ee5d,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.1
+      value: 0.075
       objectReference: {fileID: 0}
     - target: {fileID: 607453921710280323, guid: 2d5b939b2bf014447bcbf8f52577ee5d,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.1
+      value: 0.075
       objectReference: {fileID: 0}
     - target: {fileID: 607453921710280323, guid: 2d5b939b2bf014447bcbf8f52577ee5d,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.1
+      value: 0.075
       objectReference: {fileID: 0}
     - target: {fileID: 607453921710280323, guid: 2d5b939b2bf014447bcbf8f52577ee5d,
         type: 3}
@@ -412,7 +412,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44e1ffe84aab98544b4bb87b9c0ede26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canChangeAltitude: 0
+  canChangeAltitude: 1
   timeBetweenPathAdditions: 3
   initialPointQuantity: 3
   mainCamera: {fileID: 0}

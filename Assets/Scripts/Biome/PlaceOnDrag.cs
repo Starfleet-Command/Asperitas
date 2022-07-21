@@ -352,7 +352,7 @@ public class PlaceOnDrag : MonoBehaviour
         public void CancelButtonOnClick()
         {
             _isReplacing = false;
-            InventoryEvents.ItemCheckedInEvent(ownAttributes.sourceItem);
+            UiEvents.PlacementCanceledEvent();
             Destroy(_selectedGameObject);
             _selectedGameObject = null;
         }

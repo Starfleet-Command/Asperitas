@@ -25,7 +25,7 @@ public class ShowPlacingUI : MonoBehaviour
         BiomeEditingEvents.OnItemGenerated+=CatchGeneratedItem;
         BiomeEditingEvents.OnItemPlaced+=CloseOnPlace;
         CreatureEvents.OnCreaturePlaced+=CloseOnPlace;
-        InventoryEvents.OnItemCheckedIn+=CloseOnCancel;
+        UiEvents.OnPlacementCanceled+=CloseOnCancel;
     }
 
     private void OnDisable()
@@ -33,7 +33,7 @@ public class ShowPlacingUI : MonoBehaviour
         BiomeEditingEvents.OnItemGenerated-=CatchGeneratedItem;
         BiomeEditingEvents.OnItemPlaced-=CloseOnPlace;
         CreatureEvents.OnCreaturePlaced-=CloseOnPlace;
-        InventoryEvents.OnItemCheckedIn-=CloseOnCancel;
+        UiEvents.OnPlacementCanceled-=CloseOnCancel;
     }
 
     private void CatchGeneratedItem(GameObject _generatedItem)
@@ -52,7 +52,7 @@ public class ShowPlacingUI : MonoBehaviour
         itemBeingPlacedImage = null;
     }
 
-    private void CloseOnCancel(InventoryItem _ignoreThisItem)
+    private void CloseOnCancel()
     {
         ToggleUI(false);
         itemBeingPlacedImage = null;
