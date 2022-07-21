@@ -18,7 +18,7 @@ public class ObjectSelectedListener : MonoBehaviour
     private Button deleteButton;
     // Start is called before the first frame update
     
-    private GameObject _selectedGameObject;
+    private List<GameObject> _selectedGameObjects = new List<GameObject>();
     
     private void OnEnable()
     {
@@ -28,19 +28,23 @@ public class ObjectSelectedListener : MonoBehaviour
         BiomeEditingEvents.OnObjectDeselected += RemoveSelectedObject;
     }
 
-    private void RemoveSelectedObject(GameObject _item)
+    private void RemoveSelectedObject(GameObject item)
     {
-        _selectedGameObject = null;
+        _selectedGameObjects.Remove(item);
     }
 
     private void SaveSelectedObject(GameObject item)
     {
-        _selectedGameObject = item;
+        _selectedGameObjects.Add(item);
     }
 
     private void DisableDeleteButton(GameObject item)
     {
-        deleteButton.gameObject.SetActive(false);
+        if (_selectedGameObjects.Count <= 1)
+        {
+            deleteButton.gameObject.SetActive(false);
+        }
+        
     }
 
     private void EnableDeleteButton(GameObject item)
@@ -50,13 +54,17 @@ public class ObjectSelectedListener : MonoBehaviour
 
     public void DeleteGameObject()
     {
-        if (_selectedGameObject != null)
+        while (_selectedGameObjects.Count > 0)
         {
-            if(_selectedGameObject.TryGetComponent<PlacedObjectAttributes>(out PlacedObjectAttributes objectData))
+            if (_selectedGameObjects[0] != null)
             {
-                InventoryEvents.ItemCheckedInEvent(objectData.sourceItem);
+                if(_selectedGameObjects[0].TryGetComponent<PlacedObjectAttributes>(out PlacedObjectAttributes objectData))
+                {
+                    InventoryEvents.ItemCheckedInEvent(objectData.sourceItem);
+                }
+                Destroy(_selectedGameObjects[0]);
+                _selectedGameObjects.RemoveAt(0);
             }
-            Destroy(_selectedGameObject);
         }
     }
 

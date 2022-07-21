@@ -20,14 +20,9 @@ public class PlaceOnDrag : MonoBehaviour
         [Tooltip("Button that spawns the agent object")]
         private Button[] _spawnButton;
 
-        [SerializeField]
-        [Tooltip("Button that places the agent object")]
+        [SerializeField] [Tooltip("Button that places the agent object")]
         private Button _doneButton;
-        
-        [SerializeField]
-        [Tooltip("Undo button")]
-        private Button _undoButton;
-        
+
         [FormerlySerializedAs("_isFreeForm")]
         [SerializeField]
         [Tooltip("Free Form Toggle Button")]
@@ -325,30 +320,12 @@ public class PlaceOnDrag : MonoBehaviour
             }
             
             _placedObjects.Add(_selectedGameObject);
-            if (_placedObjects.Count > 0)
-            {
-                _undoButton.interactable = true;
-            }
 
             if(ownAttributes.biomeEffect!=null)
                 BiomeEditingEvents.BiomeHabitabilityModifiedEvent(ownAttributes.biomeEffect);
             _selectedGameObject = null;
         }
 
-        public void UndoButtonOnClick()
-        {
-            if (_placedObjects.Count < 1)
-                return;
-            
-            Destroy(_placedObjects.Last());
-            _placedObjects.RemoveAt(_placedObjects.Count - 1);
-
-            if (_placedObjects.Count < 1)
-            {
-                _undoButton.interactable = false;
-            }
-        }
-        
         public void CancelButtonOnClick()
         {
             _isReplacing = false;
