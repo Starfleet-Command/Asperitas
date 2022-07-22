@@ -45,12 +45,12 @@ public class SwipeDetection : MonoBehaviour
         if(canSwipe)
         {
             swipeDelta = _delta;
-            TryHitCreature();
+            RaycastOnSwipePath();
         }
 
     }
 
-    public void TryHitCreature()
+    public void RaycastOnSwipePath()
     {
         Vector3 trajectory = swipeStartPosition;
         var cameraTransform = levelCamera.transform;
@@ -77,6 +77,14 @@ public class SwipeDetection : MonoBehaviour
                 }
             }
 
+            else if(swipeDelta.y>0)
+            {
+                if(normalRaycastHit.collider.gameObject.TryGetComponent<ToyBehaviour>(out ToyBehaviour _toyTrigger))
+                {
+                    _toyTrigger.OnItemInteracted();
+                }
+            }
+
           }
         }
         currentSwipes=0;
@@ -84,6 +92,11 @@ public class SwipeDetection : MonoBehaviour
 
     public void HandleSwipeHit()
     {
+        if(currentSwipes==0)
+        {
+            CreatureEvents.CreatureBeginPetEvent();
+        }
+
         currentSwipes++;
         if(currentSwipes>=swipesRequired)
         {

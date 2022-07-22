@@ -12,6 +12,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: InteractionCollider (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7274722108685133058, guid: 1457d79d1702d884caa869ec7ef71109,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7274722108685133059, guid: 1457d79d1702d884caa869ec7ef71109,
         type: 3}
       propertyPath: m_RootOrder
@@ -105,6 +110,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: InteractionCollider (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7274722108685133058, guid: 1457d79d1702d884caa869ec7ef71109,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7274722108685133059, guid: 1457d79d1702d884caa869ec7ef71109,
         type: 3}
@@ -208,32 +218,32 @@ PrefabInstance:
     - target: {fileID: 607453921710280323, guid: 2d5b939b2bf014447bcbf8f52577ee5d,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.1
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 607453921710280323, guid: 2d5b939b2bf014447bcbf8f52577ee5d,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.1
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 607453921710280323, guid: 2d5b939b2bf014447bcbf8f52577ee5d,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.1
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 607453921710280323, guid: 2d5b939b2bf014447bcbf8f52577ee5d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -26
+      value: -8.455309
       objectReference: {fileID: 0}
     - target: {fileID: 607453921710280323, guid: 2d5b939b2bf014447bcbf8f52577ee5d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2
+      value: 1.451
       objectReference: {fileID: 0}
     - target: {fileID: 607453921710280323, guid: 2d5b939b2bf014447bcbf8f52577ee5d,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -23.94
+      value: -13.951855
       objectReference: {fileID: 0}
     - target: {fileID: 607453921710280323, guid: 2d5b939b2bf014447bcbf8f52577ee5d,
         type: 3}
@@ -313,6 +323,25 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 5.70677
   m_Center: {x: -2.971404, y: -0.11603451, z: 0}
+--- !u!95 &8010588047334368494
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6108331178192487786}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 583c966d17a166d48a142f4d3f12fc88, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &-2713813861860524913
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -356,7 +385,7 @@ MonoBehaviour:
   wallDetection: 1
   castMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 243
   wallAvoidDistance: 0.5
   mainWhiskerLen: 1.25
   sideWhiskerLen: 0.701
@@ -374,8 +403,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxVelocity: 3
-  maxAcceleration: 6
-  turnSpeed: 7
+  maxAcceleration: 5
+  turnSpeed: 5
   targetRadius: 2
   slowRadius: 1
   timeToTarget: 0.1
@@ -412,14 +441,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44e1ffe84aab98544b4bb87b9c0ede26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canChangeAltitude: 0
+  canChangeAltitude: 1
   timeBetweenPathAdditions: 3
   initialPointQuantity: 3
   mainCamera: {fileID: 0}
-  minDistanceFromPlayer: 5
-  maxDistanceFromPlayer: 10
-  minAltitude: 5
-  maxAltitude: 8
+  minDistanceFromPlayer: 1
+  maxDistanceFromPlayer: 8
+  minAltitude: 0.5
+  maxAltitude: 1.5
   path:
     nodes:
     - {x: 10, y: 2, z: -3}
@@ -439,9 +468,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wanderOffset: 1.5
-  wanderRadius: 5
+  wanderRadius: 20
   wanderRadiusY: 4
   wanderRate: 0.25
+--- !u!114 &4641852901693798009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6108331178192487786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8838c281d11dd74fbeff71a8543610f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animController: {fileID: 8010588047334368494}
 --- !u!1001 &6745548344569963908
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -458,6 +500,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: InteractionCollider
+      objectReference: {fileID: 0}
+    - target: {fileID: 7274722108685133058, guid: 1457d79d1702d884caa869ec7ef71109,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7274722108685133059, guid: 1457d79d1702d884caa869ec7ef71109,
         type: 3}

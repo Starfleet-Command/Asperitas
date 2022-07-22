@@ -67,4 +67,31 @@ public class CreatureEvents : MonoBehaviour
         OnCreaturePlaced(_creature);
     }
 
+    public delegate void CreatureSummoned(Vector3 _pos);
+
+    public static event CreatureSummoned OnCreatureSummoned;
+
+    public static void CreatureSummonedEvent(Vector3 _pos)
+    {
+        OnCreatureSummoned(_pos);
+    }
+
+    public delegate void CreatureReleased();
+
+    public static event CreatureReleased OnCreatureReleased;
+
+    public static void CreatureReleasedEvent()
+    {
+        OnCreatureReleased();
+    }
+
+    public delegate void CreatureBeginPet();
+    
+    public static event CreatureBeginPet OnCreatureBeginPet;
+
+    public static void CreatureBeginPetEvent()
+    {
+        OnCreatureBeginPet();
+    }
+
 }

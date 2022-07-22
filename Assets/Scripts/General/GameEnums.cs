@@ -27,6 +27,7 @@ public enum MissionType
     BiomePercentage,
     FriendshipPercentage,
     TimesFed,
+    TimesInteracted,
 }
 
 public enum StackabilityType
@@ -57,4 +58,5 @@ public enum InteractionSocketType
 {
     Feeding,
     Petting,
+    Playing,
 }

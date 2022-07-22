@@ -9,8 +9,7 @@ public class PlacedObjectAttributes : MonoBehaviour
 
     public BiomePercentageTuple biomeEffect;
 
-    public InventoryItem sourceItem;
-
+    [HideInInspector]public InventoryItem sourceItem;
     private void Start()
     {
     }

@@ -31,4 +31,13 @@ public class UiEvents : MonoBehaviour
         OnMissionSetChanged(_newSet);
     }
 
+    public delegate void PlacementCanceled();
+
+    public static event PlacementCanceled OnPlacementCanceled;
+
+    public static void PlacementCanceledEvent()
+    {
+        OnPlacementCanceled();
+    }
+
 }
