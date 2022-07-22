@@ -356,7 +356,7 @@ MonoBehaviour:
   wallDetection: 1
   castMask:
     serializedVersion: 2
-    m_Bits: 115
+    m_Bits: 0
   wallAvoidDistance: 0.5
   mainWhiskerLen: 1.25
   sideWhiskerLen: 0.701
@@ -439,7 +439,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wanderOffset: 1.5
-  wanderRadius: 20
+  wanderRadius: 5
   wanderRadiusY: 4
   wanderRate: 0.25
 --- !u!1001 &6745548344569963908

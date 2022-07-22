@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6932973193551974884}
   - component: {fileID: 6932973193551974886}
   - component: {fileID: 3198562592427570593}
+  - component: {fileID: 5115246157544809550}
   m_Layer: 0
   m_Name: CreatureBase
   m_TagString: Creature
@@ -96,12 +97,52 @@ MonoBehaviour:
   biomeEffect:
     biome: 0
     affinityPercentage: 0
+    biomeIcon: {fileID: 0}
   sourceItem:
     name: 
     itemPrefab: {fileID: 0}
     itemSprite: {fileID: 0}
     tags: 
     quantity: 0
+--- !u!114 &5115246157544809550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6932973193551974891}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 479d695282ba6cf4ba3ab3c4848f05e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deselectWithNothing: 0
+  limit: 0
+  maxSelectables: 5
+  reselect: 3
+  selectables: []
+  onSelected:
+    m_PersistentCalls:
+      m_Calls: []
+  onDeselected:
+    m_PersistentCalls:
+      m_Calls: []
+  onNothing:
+    m_PersistentCalls:
+      m_Calls: []
+  ScreenQuery:
+    Method: 0
+    Layers:
+      serializedVersion: 2
+      m_Bits: 4294967291
+    Search: 1
+    RequiredTag: 
+    Camera: {fileID: 0}
+    Distance: 50
+  deselectWithFingers: 0
+  onSelectedFinger:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &1188788593540241927
 PrefabInstance:
   m_ObjectHideFlags: 0

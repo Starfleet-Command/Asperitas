@@ -31,17 +31,13 @@ public class PlaceOnDrag : MonoBehaviour
 
         [FormerlySerializedAs("solidWhiteMaterial")]
         [SerializeField] 
-        [Tooltip("Solid White Material")]
-        private Material foundationMaterial;
+        [Tooltip("placeable material")]
+        private Material placeableMaterial;
         
         [SerializeField] 
-        [Tooltip("Solid White Material")]
-        private Material stackableMaterial;
-        
-        [SerializeField] 
-        [Tooltip("Solid White Material")]
-        private Material noneStackableMaterial;
-        
+        [Tooltip("Not placeable material")]
+        private Material notPlaceableMaterial;
+
         [SerializeField]
         [Tooltip("Button that cancels placement of the object")]
         private Button _cancelButton;
@@ -56,6 +52,7 @@ public class PlaceOnDrag : MonoBehaviour
     private bool _arIsRunning;
     private bool _gameboardIsRunning;
     private Collider selectedObjCollider;
+    private Material selectedObjMaterial;
 
     //[SerializeField] private int decimalToSnapTo =1;
 
@@ -196,6 +193,7 @@ public class PlaceOnDrag : MonoBehaviour
                 if (objectUnderneathAttributes == null && ownAttributes.stackabilityType == StackabilityType.Foundation)
                 {
                     _doneButton.interactable = true;
+                    
                 } else if (objectUnderneathAttributes == null)
                 {
                     _doneButton.interactable = false;
@@ -206,6 +204,7 @@ public class PlaceOnDrag : MonoBehaviour
                     if (objectUnderneathAttributes != null && ownAttributes != null)
                     {
                         _doneButton.interactable = ownAttributes.CanPlace(objectUnderneathAttributes.stackabilityType);
+                        
                     }
                 }
             }
@@ -213,10 +212,10 @@ public class PlaceOnDrag : MonoBehaviour
             {
                 _doneButton.interactable = false;
             }
-
-            // if (!colide with anythig) {
-            //     place based on higherarchy
-            // }
+            if (_selectedGameObject.TryGetComponent<Renderer>(out var objectRenderer))
+            {
+                objectRenderer.material = _doneButton.interactable ? placeableMaterial : notPlaceableMaterial;
+            }
         }
 
         private void CreatePlacementGuide(Transform cameraTransform,Vector3 hitPoint)
@@ -261,6 +260,11 @@ public class PlaceOnDrag : MonoBehaviour
                 _selectedGameObject = null;
             }
             _selectedGameObject = spawnedItem;
+            if (_selectedGameObject.TryGetComponent<Renderer>(out var objectRenderer))
+            {
+                selectedObjMaterial = objectRenderer.material;
+                objectRenderer.material = notPlaceableMaterial;
+            }
             selectedObjCollider = _selectedGameObject.GetComponent<Collider>();
             _selectedGameObject.TryGetComponent<PlacedObjectAttributes>(out ownAttributes);
             _isReplacing = !_isReplacing;
@@ -303,21 +307,9 @@ public class PlaceOnDrag : MonoBehaviour
         {
             _isReplacing = !_isReplacing;
             BiomeEditingEvents.ItemPlacedEvent(_selectedGameObject);
-            Renderer objectRenderer;
-            if (_selectedGameObject.TryGetComponent<Renderer>(out objectRenderer))
+            if (_selectedGameObject.TryGetComponent<Renderer>(out var objectRenderer))
             {
-                switch (ownAttributes.stackabilityType)
-                {
-                    case StackabilityType.Foundation:
-                        objectRenderer.material = foundationMaterial;
-                        break;
-                    case StackabilityType.Stackable:
-                        objectRenderer.material = stackableMaterial;
-                        break;
-                    case StackabilityType.Nonstackable:
-                        objectRenderer.material = noneStackableMaterial;
-                        break;
-                }
+                objectRenderer.material = selectedObjMaterial;
             }
             
             _placedObjects.Add(_selectedGameObject);
