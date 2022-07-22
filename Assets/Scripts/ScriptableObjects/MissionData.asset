@@ -21,8 +21,8 @@ MonoBehaviour:
       missionRequiredTag: 3
       missionThreshold: 3
       isRequired: 1
-      missionProgress: 3
-      isMissionComplete: 1
+      missionProgress: 0
+      isMissionComplete: 0
     - missionID: 1
       flavourText: Raise Ocean Biome Affinity to 20%
       missionType: 1
@@ -30,8 +30,8 @@ MonoBehaviour:
       missionRequiredTag: 9
       missionThreshold: 20
       isRequired: 1
-      missionProgress: 20
-      isMissionComplete: 1
+      missionProgress: 0
+      isMissionComplete: 0
   - stageChecklist:
     - missionID: 2
       flavourText: Place 2 Nature Items

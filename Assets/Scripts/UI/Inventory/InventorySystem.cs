@@ -15,7 +15,14 @@ public class InventorySystem: MonoBehaviour
     {
         InventoryEvents.OnItemCheckedIn+=ReAddToInventory;
         BiomeEditingEvents.OnItemPlaced+=SubtractFromInventory;
-        inventory = inventoryData.inventory;
+
+        List<InventoryItem> tempList = new List<InventoryItem>();
+        foreach(InventoryItem _item in inventoryData.inventory)
+        {
+            InventoryItem itemClone = new InventoryItem(_item);
+            tempList.Add(itemClone);
+        }
+        inventory = tempList.ToArray();
     }
 
         private void OnDisable()

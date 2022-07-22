@@ -49,6 +49,14 @@ public class BiomePercentageTuple
     [SerializeField] private int affinityPercentage;
     [SerializeField] private Sprite biomeIcon;
 
+    public BiomePercentageTuple(BiomeType _biome, int _affinityPercentage, Sprite _biomeIcon)
+    {
+        biome = _biome;
+        affinityPercentage = _affinityPercentage;
+        biomeIcon = _biomeIcon;
+    }
+
+
     public BiomeType getBiome()
     {
         return biome;

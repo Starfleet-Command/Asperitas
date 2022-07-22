@@ -18,7 +18,7 @@ MonoBehaviour:
       type: 3}
     itemSprite: {fileID: 21300000, guid: f99339724a2184b0d87525902e8a7677, type: 3}
     tags: 03000000
-    quantity: 3
+    quantity: 4
   - name: Flower
     itemPrefab: {fileID: 8923871759579115776, guid: cbc28bdf0099af84bbedc9aaf16589d0,
       type: 3}
@@ -41,7 +41,7 @@ MonoBehaviour:
       type: 3}
     itemSprite: {fileID: 21300000, guid: 1f0e0a9c08b95470ca6c3e5c0a8a142d, type: 3}
     tags: 
-    quantity: 9
+    quantity: 10
   - name: Foundation Ramp
     itemPrefab: {fileID: 5369998378245466215, guid: c896534d2b039824c9aa44fbe035ec2c,
       type: 3}
