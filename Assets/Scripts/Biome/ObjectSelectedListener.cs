@@ -55,6 +55,8 @@ public class ObjectSelectedListener : MonoBehaviour
             if(_selectedGameObject.TryGetComponent<PlacedObjectAttributes>(out PlacedObjectAttributes objectData))
             {
                 InventoryEvents.ItemCheckedInEvent(objectData.sourceItem);
+                BiomePercentageTuple inverseEffectTuple = new BiomePercentageTuple(objectData.biomeEffect.getBiome(),-1*objectData.biomeEffect.getBiomeAffinity(),objectData.biomeEffect.getBiomeIcon());
+                BiomeEditingEvents.BiomeHabitabilityModifiedEvent(inverseEffectTuple);
             }
             Destroy(_selectedGameObject);
         }

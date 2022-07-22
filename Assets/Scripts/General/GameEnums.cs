@@ -27,6 +27,7 @@ public enum MissionType
     BiomePercentage,
     FriendshipPercentage,
     TimesFed,
+    TimesInteracted,
 }
 
 public enum StackabilityType

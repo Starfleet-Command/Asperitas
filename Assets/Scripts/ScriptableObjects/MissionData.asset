@@ -1,0 +1,90 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42cf20714550b3f48a674eba83675ac3, type: 3}
+  m_Name: MissionData
+  m_EditorClassIdentifier: 
+  missions:
+  - stageChecklist:
+    - missionID: 0
+      flavourText: Place 3 Machine Items
+      missionType: 0
+      missionBiomeType: 3
+      missionRequiredTag: 3
+      missionThreshold: 3
+      isRequired: 1
+      missionProgress: 0
+      isMissionComplete: 0
+    - missionID: 1
+      flavourText: Raise Ocean Biome Affinity to 20%
+      missionType: 1
+      missionBiomeType: 0
+      missionRequiredTag: 9
+      missionThreshold: 20
+      isRequired: 1
+      missionProgress: 0
+      isMissionComplete: 0
+  - stageChecklist:
+    - missionID: 2
+      flavourText: Place 2 Nature Items
+      missionType: 0
+      missionBiomeType: 3
+      missionRequiredTag: 4
+      missionThreshold: 2
+      isRequired: 1
+      missionProgress: 0
+      isMissionComplete: 0
+    - missionID: 3
+      flavourText: Feed the Creature 2 Times
+      missionType: 3
+      missionBiomeType: 3
+      missionRequiredTag: 9
+      missionThreshold: 2
+      isRequired: 0
+      missionProgress: 0
+      isMissionComplete: 0
+    - missionID: 4
+      flavourText: Increase Creature Friendship to 20%
+      missionType: 2
+      missionBiomeType: 3
+      missionRequiredTag: 9
+      missionThreshold: 40
+      isRequired: 1
+      missionProgress: 0
+      isMissionComplete: 0
+  - stageChecklist:
+    - missionID: 5
+      flavourText: Increase Ocean Habitability to 60%
+      missionType: 1
+      missionBiomeType: 0
+      missionRequiredTag: 9
+      missionThreshold: 60
+      isRequired: 1
+      missionProgress: 0
+      isMissionComplete: 0
+    - missionID: 6
+      flavourText: Increase Creature Friendship to 40%
+      missionType: 2
+      missionBiomeType: 0
+      missionRequiredTag: 0
+      missionThreshold: 0
+      isRequired: 1
+      missionProgress: 0
+      isMissionComplete: 0
+    - missionID: 7
+      flavourText: Play/Pet Creature 3 Times
+      missionType: 3
+      missionBiomeType: 3
+      missionRequiredTag: 9
+      missionThreshold: 3
+      isRequired: 1
+      missionProgress: 0
+      isMissionComplete: 0
