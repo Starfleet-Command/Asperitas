@@ -7,11 +7,13 @@ public class ChecklistMissionSystem : MonoBehaviour
     [SerializeField] private BiomeHabitability habitabilityTrackingScript;
 
     [SerializeField] private CreatureFriendship creatureFriendshipScript;
+    [SerializeField] private MissionScriptableObject missionData;
     public ChecklistWrapper[] allMissions;
     [HideInInspector] public ChecklistMission[] currentChecklist;
     [HideInInspector] public int currentStage=0;
     private void OnEnable()
     {
+        allMissions = missionData.missions;
         BiomeEditingEvents.OnItemPlaced+=PlacedMissionProgressedCheck;
         CreatureEvents.OnMissionFinished+=StageCompleteCheck;
         CreatureEvents.OnCreatureEvolving+=SwitchChecklist;
@@ -96,6 +98,16 @@ public class ChecklistMissionSystem : MonoBehaviour
             foreach(ChecklistMission mission in currentChecklist)
             {
                 if(!mission.CheckMissionComplete() && mission.getMissionType()==MissionType.TimesFed)
+                {
+                    HandleMissionEvents(mission,1);
+                }
+            }
+        }
+        else
+        {
+            foreach(ChecklistMission mission in currentChecklist)
+            {
+                if(!mission.CheckMissionComplete() && mission.getMissionType()==MissionType.TimesInteracted)
                 {
                     HandleMissionEvents(mission,1);
                 }

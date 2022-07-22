@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 504462daa0ad017469ad5e432227f140, type: 3}
+  m_Name: InventoryData
+  m_EditorClassIdentifier: 
+  inventory:
+  - name: Mushroom
+    itemPrefab: {fileID: 7382518445037136056, guid: 5bbfc9d83f6f7453cabd682fb8b89150,
+      type: 3}
+    itemSprite: {fileID: 21300000, guid: f99339724a2184b0d87525902e8a7677, type: 3}
+    tags: 03000000
+    quantity: 3
+  - name: Flower
+    itemPrefab: {fileID: 8923871759579115776, guid: cbc28bdf0099af84bbedc9aaf16589d0,
+      type: 3}
+    itemSprite: {fileID: 21300000, guid: 15a729b96d6fb4722ac493158e5978a4, type: 3}
+    tags: 04000000
+    quantity: 2
+  - name: Creature Egg
+    itemPrefab: {fileID: 6932973193551974891, guid: 5a35933d17672e349a4f5d6fdeaf8318,
+      type: 3}
+    itemSprite: {fileID: 21300000, guid: 44fc7487bdc5346d988d5efaa043c7e8, type: 3}
+    tags: 
+    quantity: 1
+  - name: Toy
+    itemPrefab: {fileID: 177926, guid: 6e105d70ff341164b9f222fb43d7b7a7, type: 3}
+    itemSprite: {fileID: 21300000, guid: 8953308619bb52b4e9f3207a89826c02, type: 3}
+    tags: 03000000
+    quantity: 2
+  - name: Foundation Flat
+    itemPrefab: {fileID: 6800869362512379040, guid: cb4c93ba4410d2a4b92b5fc64d460b12,
+      type: 3}
+    itemSprite: {fileID: 21300000, guid: 1f0e0a9c08b95470ca6c3e5c0a8a142d, type: 3}
+    tags: 
+    quantity: 9
+  - name: Foundation Ramp
+    itemPrefab: {fileID: 5369998378245466215, guid: c896534d2b039824c9aa44fbe035ec2c,
+      type: 3}
+    itemSprite: {fileID: 21300000, guid: f67e5c25852344b7db79bcf101177126, type: 3}
+    tags: 
+    quantity: 10

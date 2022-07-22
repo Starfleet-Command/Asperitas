@@ -20,7 +20,7 @@ PrefabInstance:
     - target: {fileID: 7274722108685133058, guid: 1457d79d1702d884caa869ec7ef71109,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7274722108685133059, guid: 1457d79d1702d884caa869ec7ef71109,
         type: 3}
@@ -129,7 +129,7 @@ PrefabInstance:
     - target: {fileID: 7274722108685133058, guid: 1457d79d1702d884caa869ec7ef71109,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7274722108685133059, guid: 1457d79d1702d884caa869ec7ef71109,
         type: 3}
@@ -238,7 +238,7 @@ PrefabInstance:
     - target: {fileID: 7274722108685133058, guid: 1457d79d1702d884caa869ec7ef71109,
         type: 3}
       propertyPath: m_Layer
-      value: 2
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7274722108685133058, guid: 1457d79d1702d884caa869ec7ef71109,
         type: 3}
@@ -506,9 +506,9 @@ MonoBehaviour:
   initialPointQuantity: 3
   mainCamera: {fileID: 0}
   minDistanceFromPlayer: 1
-  maxDistanceFromPlayer: 3
-  minAltitude: 0.5
-  maxAltitude: 1.5
+  maxDistanceFromPlayer: 5
+  minAltitude: 0.1
+  maxAltitude: 0.5
   path:
     nodes:
     - {x: 10, y: 2, z: -3}
@@ -579,9 +579,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6f58141e9f357e448fd2fa6f1afc1f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxVelocity: 3.5
-  maxAcceleration: 10
-  turnSpeed: 20
+  maxVelocity: 1
+  maxAcceleration: 3
+  turnSpeed: 4
   targetRadius: 0.005
   slowRadius: 1
   timeToTarget: 0.1
@@ -606,3 +606,15 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967291
   slopeLimit: 80
+--- !u!114 &7517601490790458388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3034809429399643004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f164746d1950a5c49a9ecfefe99ad6cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

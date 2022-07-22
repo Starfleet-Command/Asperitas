@@ -1337,10 +1337,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -1316.7501220703125,
-            "y": 1047.650146484375,
-            "width": 0.0,
-            "height": 0.0
+            "x": -1241.0001220703125,
+            "y": 1066.0,
+            "width": 178.00001525878907,
+            "height": 34.0
         }
     },
     "m_Slots": [
@@ -1659,7 +1659,7 @@
     "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
     "m_ObjectId": "1d373a5da23c463885abb5498f6fe266",
     "m_Id": 0,
-    "m_DisplayName": "PomAmplitude",
+    "m_DisplayName": "PomAmplitudeNoise",
     "m_SlotType": 1,
     "m_Hidden": false,
     "m_ShaderOutputName": "Out",
@@ -1953,8 +1953,8 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -686.0000610351563,
-            "y": 150.0,
+            "x": -685.9999389648438,
+            "y": -333.99993896484377,
             "width": 183.99998474121095,
             "height": 253.0
         }
@@ -2083,8 +2083,8 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -608.9999389648438,
-            "y": -389.9999694824219,
+            "x": -609.0,
+            "y": -873.9999389648438,
             "width": 107.0,
             "height": 34.0
         }
@@ -2277,8 +2277,8 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -686.0000610351563,
-            "y": -102.99998474121094,
+            "x": -685.9999389648438,
+            "y": -587.0,
             "width": 183.99998474121095,
             "height": 253.0
         }
@@ -2425,8 +2425,8 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -686.0000610351563,
-            "y": 403.0,
+            "x": -685.9999389648438,
+            "y": -80.99996948242188,
             "width": 183.99998474121095,
             "height": 253.0
         }
@@ -3132,7 +3132,7 @@
     "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
     "m_ObjectId": "65f632e785be4ace837415e3b9edaa2d",
     "m_Id": 0,
-    "m_DisplayName": "POM AMP",
+    "m_DisplayName": "POM AMP Glitter",
     "m_SlotType": 1,
     "m_Hidden": false,
     "m_ShaderOutputName": "Out",
@@ -4403,7 +4403,7 @@
     "m_Type": "UnityEditor.ShaderGraph.Texture2DMaterialSlot",
     "m_ObjectId": "9385e38143014d358661e1fe33501b45",
     "m_Id": 0,
-    "m_DisplayName": "PomTexture",
+    "m_DisplayName": "PomTextureGlitter",
     "m_SlotType": 1,
     "m_Hidden": false,
     "m_ShaderOutputName": "Out",
@@ -4570,8 +4570,8 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -481.0,
-            "y": -404.0,
+            "x": -480.9999694824219,
+            "y": -887.9999389648438,
             "width": 130.0,
             "height": 118.0
         }
@@ -5253,8 +5253,8 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -449.0,
-            "y": 324.0,
+            "x": -448.9999084472656,
+            "y": -159.99998474121095,
             "width": 208.0,
             "height": 278.0
         }
@@ -6391,8 +6391,8 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -685.9998779296875,
-            "y": -356.0,
+            "x": -685.9999389648438,
+            "y": -839.9999389648438,
             "width": 183.99998474121095,
             "height": 253.0
         }
@@ -6683,10 +6683,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -1275.000244140625,
-            "y": 172.0,
+            "x": -1266.0001220703125,
+            "y": -81.0,
             "width": 208.0,
-            "height": 314.0
+            "height": 313.9999694824219
         }
     },
     "m_Slots": [

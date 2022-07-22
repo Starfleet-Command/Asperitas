@@ -53,7 +53,7 @@ MonoBehaviour:
     stageCreaturePrefab: {fileID: 3034809429399643004, guid: da470b6683b1bbf489f7c8330b2aff35,
       type: 3}
   - creatureStage: 2
-    stageCreaturePrefab: {fileID: 2223632638037285957, guid: 77fd1af8434ab574091828129d8024cd,
+    stageCreaturePrefab: {fileID: 5061541773199366894, guid: 4c5c319f86c956c4d80a1a3cffe5eb46,
       type: 3}
   - creatureStage: 3
     stageCreaturePrefab: {fileID: 3903431813430831482, guid: b682f93b1d3293d4a8aee1df175b7725,

@@ -5,7 +5,6 @@ using UnityMovementAI;
 
 [RequireComponent(typeof(SteeringBasics))]
 [RequireComponent(typeof(FollowPath))]
-[RequireComponent(typeof(WallAvoidance))]
 [RequireComponent(typeof(Wander1))]
 [RequireComponent(typeof(Collider))]
 public class CreatureNavigationAI : MonoBehaviour
@@ -26,7 +25,6 @@ public class CreatureNavigationAI : MonoBehaviour
     public List<Vector3> dynamicPath;
     private SteeringBasics steeringBasics;
     private FollowPath followPath;
-    private WallAvoidance wallAvoidance;
     private Wander1 wander;
 
     private Vector3 currentPathNode;
@@ -36,18 +34,21 @@ public class CreatureNavigationAI : MonoBehaviour
     private float objectHeight;
 
     private bool isBeingSummoned=false;
+    public bool mustFacePlayer=false;
     private Vector3 summonCoords;
 
     private void OnEnable()
     {
         CreatureEvents.OnCreatureSummoned+=HandleSummoning;
         CreatureEvents.OnCreatureReleased+=ReleaseFromSummon;
+        UiEvents.OnIsThrowingStatusChanged+=ToggleLookAt;
     }
 
     private void OnDisable()
     {
         CreatureEvents.OnCreatureSummoned-=HandleSummoning;
         CreatureEvents.OnCreatureReleased-=ReleaseFromSummon;
+        UiEvents.OnIsThrowingStatusChanged-=ToggleLookAt;
     }
 
     void Start()
@@ -59,7 +60,6 @@ public class CreatureNavigationAI : MonoBehaviour
 
         steeringBasics = GetComponent<SteeringBasics>();
         followPath = GetComponent<FollowPath>();
-        wallAvoidance = GetComponent<WallAvoidance>();
         wander = GetComponent<Wander1>();
         dynamicPath = new List<Vector3>();
 
@@ -80,13 +80,7 @@ public class CreatureNavigationAI : MonoBehaviour
     void FixedUpdate()
     {
 
-        Vector3 accel = wallAvoidance.GetSteering();
-        
-        if (accel.magnitude < 0.005f)
-        {
-            accel = followPath.GetSteering(path);
-            
-        }
+        Vector3 accel = followPath.GetSteering(path);
 
 
         if(canAddNewNode)
@@ -94,7 +88,12 @@ public class CreatureNavigationAI : MonoBehaviour
 
 
         steeringBasics.Steer(accel);
-        steeringBasics.LookWhereYoureGoing();
+
+        if(!mustFacePlayer)
+            steeringBasics.LookWhereYoureGoing();
+
+        else
+            steeringBasics.LookAtDirection(mainCamera.transform.position);
 
          path.Draw();
     }
@@ -130,6 +129,11 @@ public class CreatureNavigationAI : MonoBehaviour
     private void ReleaseFromSummon()
     {
         isBeingSummoned=false;
+    }
+
+    private void ToggleLookAt(bool _toggleState)
+    {
+        mustFacePlayer = _toggleState;
     }
 
 

@@ -446,7 +446,7 @@ MonoBehaviour:
   initialPointQuantity: 3
   mainCamera: {fileID: 0}
   minDistanceFromPlayer: 1
-  maxDistanceFromPlayer: 3
+  maxDistanceFromPlayer: 8
   minAltitude: 0.5
   maxAltitude: 1.5
   path:

@@ -8,11 +8,14 @@ using System;
 public class InventorySystem: MonoBehaviour
 {
     private InventoryItem _checkedItem;
+    [HideInInspector] public InventoryItem[] inventory;
+    [SerializeField] private InventoryScriptableObject inventoryData;
 
     private void OnEnable()
     {
         InventoryEvents.OnItemCheckedIn+=ReAddToInventory;
         BiomeEditingEvents.OnItemPlaced+=SubtractFromInventory;
+        inventory = inventoryData.inventory;
     }
 
         private void OnDisable()
@@ -20,7 +23,7 @@ public class InventorySystem: MonoBehaviour
         InventoryEvents.OnItemCheckedIn-=ReAddToInventory;
     }
 
-    public InventoryItem[] inventory;
+
     public void SortInventory()
     {
         Array.Sort(this.inventory, (x,y) => String.Compare(x.getName(), y.getName(),true));
