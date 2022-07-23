@@ -154,13 +154,14 @@ public class MissionUIController : MonoBehaviour
 
         foreach (ChecklistMission mission in missionDatabase.currentChecklist)
         {
-            if(mission.getMissionStatus())
-            {
-                completedMissions++;
-            }
             if(mission.getRequiredStatus())
             {
                 requiredMissions++;
+
+                if(mission.getMissionStatus())
+                {
+                    completedMissions++;
+                }
             }
         }
         

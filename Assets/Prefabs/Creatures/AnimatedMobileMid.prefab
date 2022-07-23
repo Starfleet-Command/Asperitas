@@ -917,6 +917,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -20.157839
       objectReference: {fileID: 0}
+    - target: {fileID: -3402352376307346679, guid: 60cb2bb8541505b48aac760c641ed2db,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7fd7b0a9121f2b140a43b923ba85658a, type: 2}
     - target: {fileID: -3399672879972469124, guid: 60cb2bb8541505b48aac760c641ed2db,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2405,6 +2410,7 @@ MonoBehaviour:
     - {x: 15, y: 8, z: -3}
     - {x: 2, y: 1, z: 4}
   dynamicPath: []
+  mustFacePlayer: 0
 --- !u!114 &1344800245
 MonoBehaviour:
   m_ObjectHideFlags: 0

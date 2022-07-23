@@ -323,6 +323,11 @@ public class PlaceOnDrag : MonoBehaviour
                         break;
                 }
             }
+
+            if(_selectedGameObject.tag=="Creature")
+            {
+                CreatureEvents.CreaturePlacedEvent(_selectedGameObject);
+            }
             
             _placedObjects.Add(_selectedGameObject);
             if (_placedObjects.Count > 0)

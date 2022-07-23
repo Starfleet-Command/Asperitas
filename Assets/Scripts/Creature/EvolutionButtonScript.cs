@@ -7,14 +7,17 @@ using UnityEngine.UI;
 public class EvolutionButtonScript : MonoBehaviour
 {
     private Button _attachedButton;
+    private bool isChecklistFinished= false;
+    private bool isCreaturePlaced= false;
     private void OnEnable()
     {
-        CreatureEvents.OnChecklistFinished+=EnableButton;
+        CreatureEvents.OnChecklistFinished+=SetChecklistFinished;
+        CreatureEvents.OnCreaturePlaced+=SetCreaturePlaced;
     }
 
     private void OnDisable()
     {
-        CreatureEvents.OnChecklistFinished-=EnableButton;
+        CreatureEvents.OnChecklistFinished-=SetChecklistFinished;
     }
 
     // Start is called before the first frame update
@@ -23,9 +26,22 @@ public class EvolutionButtonScript : MonoBehaviour
         _attachedButton = this.gameObject.GetComponent<Button>();
     }
 
-    private void EnableButton()
+    private void SetChecklistFinished()
     {
-        _attachedButton.interactable=true;
+        isChecklistFinished = true;
+        TryEnableButton();
+    }
+
+    private void SetCreaturePlaced(GameObject _ignoreThisItem)
+    {
+        isCreaturePlaced = true;
+        TryEnableButton();
+    }
+
+    private void TryEnableButton()
+    {
+        if(isChecklistFinished && isCreaturePlaced)
+            _attachedButton.interactable=true;
     }
 
     public void OnEvolutionButtonClicked()
