@@ -14,13 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventory:
   - name: Mushroom
-    itemPrefab: {fileID: 7382518445037136056, guid: 5bbfc9d83f6f7453cabd682fb8b89150,
+    itemPrefab: {fileID: 1018271837774453766, guid: 6182ea50c13304d149164e8e73e47283,
       type: 3}
     itemSprite: {fileID: 21300000, guid: f99339724a2184b0d87525902e8a7677, type: 3}
     tags: 03000000
     quantity: 4
-  - name: Flower
-    itemPrefab: {fileID: 8923871759579115776, guid: cbc28bdf0099af84bbedc9aaf16589d0,
+  - name: LampPlant
+    itemPrefab: {fileID: 7739092115614585678, guid: f3d4756c2670f4a3d95d3bcd4e9b6b88,
       type: 3}
     itemSprite: {fileID: 21300000, guid: 15a729b96d6fb4722ac493158e5978a4, type: 3}
     tags: 04000000
@@ -38,13 +38,13 @@ MonoBehaviour:
     tags: 03000000
     quantity: 2
   - name: Foundation Flat
-    itemPrefab: {fileID: 6800869362512379040, guid: cb4c93ba4410d2a4b92b5fc64d460b12,
+    itemPrefab: {fileID: 3972789032583708647, guid: cdeddcc636ba647cdaed0dc1e0a6c4d1,
       type: 3}
     itemSprite: {fileID: 21300000, guid: 1f0e0a9c08b95470ca6c3e5c0a8a142d, type: 3}
     tags: 
     quantity: 10
   - name: Foundation Ramp
-    itemPrefab: {fileID: 5369998378245466215, guid: c896534d2b039824c9aa44fbe035ec2c,
+    itemPrefab: {fileID: 1001313356139876901, guid: 52e4d831dbc3e4b979579376bf5dcec3,
       type: 3}
     itemSprite: {fileID: 21300000, guid: f67e5c25852344b7db79bcf101177126, type: 3}
     tags: 
