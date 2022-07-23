@@ -19,9 +19,13 @@ public class ReleaseCreature : MonoBehaviour
     {
         if(canPlay)
         {
-            CreatureEvents.InteractionTriggeredEvent(InteractionSocketType.Playing);
-            CreatureEvents.CreatureReleasedEvent();
-            canPlay = false;
+            if(other.gameObject.tag == "Creature")
+            {
+                CreatureEvents.InteractionTriggeredEvent(InteractionSocketType.Playing);
+                CreatureEvents.CreatureReleasedEvent();
+                canPlay = false;
+            }
+            
         }
         
     }

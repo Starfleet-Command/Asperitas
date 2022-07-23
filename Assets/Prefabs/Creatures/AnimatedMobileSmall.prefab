@@ -414,6 +414,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: AnimatedMobileSmall
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 960f2ec39c1890f47ae5103c53cf70b7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Creature
+      objectReference: {fileID: 0}
     - target: {fileID: 8083962556490746631, guid: 960f2ec39c1890f47ae5103c53cf70b7,
         type: 3}
       propertyPath: m_Materials.Array.data[0]

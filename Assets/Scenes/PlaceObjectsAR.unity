@@ -1414,7 +1414,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: -625.0002}
-  m_SizeDelta: {x: 1200, y: 0}
+  m_SizeDelta: {x: 1200, y: 225}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &353560900
 MonoBehaviour:
@@ -5847,7 +5847,7 @@ MonoBehaviour:
   swipeStartPosition: {x: 0, y: 0, z: 0}
   swipeDelta: {x: 0, y: 0, z: 0}
   currentSwipes: 0
-  distancePerRaycast: 0.2
+  distancePerRaycast: 0.1
   swipesRequired: 3
   levelCamera: {fileID: 1724626590}
 --- !u!114 &1195415634
@@ -6768,7 +6768,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1321666993
 RectTransform:
   m_ObjectHideFlags: 0
