@@ -41,8 +41,8 @@ public class EditOnSelect : MonoBehaviour
         if (_selectedGameObject.TryGetComponent<Renderer>(out var objectRenderer))
         {
             _previousObjectMaterial = objectRenderer.material;
+            objectRenderer.material = selectedObjectMaterial;
         }
-        objectRenderer.material = selectedObjectMaterial;
         BiomeEditingEvents.ObjectSelectedEvent(_selectedGameObject);
     }
     
