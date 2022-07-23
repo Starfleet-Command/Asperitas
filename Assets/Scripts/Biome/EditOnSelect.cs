@@ -38,16 +38,20 @@ public class EditOnSelect : MonoBehaviour
     public void ObjectSelected(LeanSelect selectedObject)
     {
         _selectedGameObject = gameObject;
-        var objectRenderer = _selectedGameObject.GetComponent<Renderer>();
-        _previousObjectMaterial = objectRenderer.material;
-        objectRenderer.material = selectedObjectMaterial;
+        if (_selectedGameObject.TryGetComponent<Renderer>(out var objectRenderer))
+        {
+            _previousObjectMaterial = objectRenderer.material;
+            objectRenderer.material = selectedObjectMaterial;
+        }
         BiomeEditingEvents.ObjectSelectedEvent(_selectedGameObject);
     }
     
     public void ObjectDeselected(LeanSelect deselectedObject)
     {
-        var objectRenderer = _selectedGameObject.GetComponent<Renderer>();
-        objectRenderer.material = _previousObjectMaterial;
+        if (_selectedGameObject.TryGetComponent<Renderer>(out var objectRenderer))
+        {
+            objectRenderer.material = _previousObjectMaterial;
+        }
         BiomeEditingEvents.ObjectDeselectedEvent(_selectedGameObject);
         _selectedGameObject = null;
     }
