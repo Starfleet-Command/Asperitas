@@ -311,6 +311,11 @@ public class PlaceOnDrag : MonoBehaviour
             {
                 objectRenderer.material = selectedObjMaterial;
             }
+
+            if(_selectedGameObject.tag=="Creature")
+            {
+                CreatureEvents.CreaturePlacedEvent(_selectedGameObject);
+            }
             
             _placedObjects.Add(_selectedGameObject);
 

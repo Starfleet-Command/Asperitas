@@ -414,6 +414,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: AnimatedMobileSmall
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 960f2ec39c1890f47ae5103c53cf70b7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Creature
+      objectReference: {fileID: 0}
+    - target: {fileID: 8083962556490746631, guid: 960f2ec39c1890f47ae5103c53cf70b7,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f7f66c30de2c16b4da7f299570182a28, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 960f2ec39c1890f47ae5103c53cf70b7, type: 3}
 --- !u!1 &3034809429399643004 stripped
@@ -515,6 +525,7 @@ MonoBehaviour:
     - {x: 15, y: 8, z: -3}
     - {x: 2, y: 1, z: 4}
   dynamicPath: []
+  mustFacePlayer: 0
 --- !u!114 &160484457
 MonoBehaviour:
   m_ObjectHideFlags: 0

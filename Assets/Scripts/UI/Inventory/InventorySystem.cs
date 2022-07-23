@@ -16,24 +16,21 @@ public class InventorySystem: MonoBehaviour
         InventoryEvents.OnItemCheckedIn+=ReAddToInventory;
         BiomeEditingEvents.OnItemPlaced+=SubtractFromInventory;
 
-        List<InventoryItem> tempList = new List<InventoryItem>();
-        foreach(InventoryItem _item in inventoryData.inventory)
-        {
-            InventoryItem itemClone = new InventoryItem(_item);
-            tempList.Add(itemClone);
-        }
-        inventory = tempList.ToArray();
+        InventoryScriptableObject dataInstance = Instantiate<InventoryScriptableObject>(inventoryData);
+        inventory = dataInstance.inventory;
+        SortInventory(inventory);
     }
 
         private void OnDisable()
     {
         InventoryEvents.OnItemCheckedIn-=ReAddToInventory;
+        BiomeEditingEvents.OnItemPlaced-=SubtractFromInventory;
     }
 
 
-    public void SortInventory()
+    public void SortInventory(InventoryItem[] _invToSort)
     {
-        Array.Sort(this.inventory, (x,y) => String.Compare(x.getName(), y.getName(),true));
+        Array.Sort(_invToSort, (x,y) => String.Compare(x.getName(), y.getName(),true));
     }
 
     public InventoryItem FindByName(string name)

@@ -44,17 +44,12 @@ public class FriendshipUIListener : MonoBehaviour
     }
 
     public void UpdateFriendshipBar(float currentFriendship)
-    {   
-        if(savedCurrentFriendship<savedMaxFriendship)
-        {
-             savedCurrentFriendship+=currentFriendship;
-            if(savedCurrentFriendship>savedMaxFriendship)
-            {
-                savedCurrentFriendship=savedMaxFriendship;
-            }
+    {
+
+        savedCurrentFriendship = Mathf.Clamp(savedCurrentFriendship,0,savedMaxFriendship); 
+        savedCurrentFriendship = Mathf.Round(savedCurrentFriendship);  
            
-            friendshipBar.value = savedCurrentFriendship;
-            progressText.text = ""+savedCurrentFriendship+"/"+savedMaxFriendship;
-        }
+        friendshipBar.value = savedCurrentFriendship;
+        progressText.text = ""+savedCurrentFriendship+"/"+savedMaxFriendship;
     }
 }
