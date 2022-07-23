@@ -13,22 +13,9 @@ public class ChecklistMissionSystem : MonoBehaviour
     [HideInInspector] public int currentStage=0;
     private void OnEnable()
     {
-        List<ChecklistWrapper> tempList = new List<ChecklistWrapper>();
-        foreach(ChecklistWrapper _checklistStage in missionData.missions)
-        {
-            List<ChecklistMission> copyList = new List<ChecklistMission>();
-
-            foreach(ChecklistMission mission in _checklistStage.stageChecklist)
-            {
-                ChecklistMission missionCopy = new ChecklistMission(mission);
-                copyList.Add(missionCopy);
-            }
-            
-            tempList.Add(new ChecklistWrapper(copyList.ToArray()));
-        }
-        allMissions = tempList.ToArray();
+        MissionScriptableObject dataInstance = Instantiate<MissionScriptableObject>(missionData);
+        allMissions = dataInstance.missions;
         
-        allMissions = missionData.missions;
         BiomeEditingEvents.OnItemPlaced+=PlacedMissionProgressedCheck;
         CreatureEvents.OnMissionFinished+=StageCompleteCheck;
         CreatureEvents.OnCreatureEvolving+=SwitchChecklist;
