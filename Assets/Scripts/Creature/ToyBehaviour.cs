@@ -6,6 +6,7 @@ public class ToyBehaviour : MonoBehaviour
 {
     private bool canSendToyEvent= false;
     private int currentCreatureStage=0;
+    [SerializeField] private int stageToEnableToy=0;
     private bool isSummoningCreature=false;
 
     private void OnEnable()
@@ -22,7 +23,7 @@ public class ToyBehaviour : MonoBehaviour
 
     private void EnableToyEvent()
     {
-        if(currentCreatureStage==0)
+        if(currentCreatureStage==stageToEnableToy)
         {
             canSendToyEvent=true;
         }
