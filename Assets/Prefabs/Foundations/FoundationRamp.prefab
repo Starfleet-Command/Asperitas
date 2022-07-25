@@ -15,17 +15,17 @@ PrefabInstance:
     - target: {fileID: 3258955585889456261, guid: 5ea6c97fa07ee43d2932343945752811,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 4
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3258955585889456261, guid: 5ea6c97fa07ee43d2932343945752811,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 4
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3258955585889456261, guid: 5ea6c97fa07ee43d2932343945752811,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 4
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3258955585889456261, guid: 5ea6c97fa07ee43d2932343945752811,
         type: 3}
@@ -94,6 +94,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3957016908274451303, guid: 5ea6c97fa07ee43d2932343945752811,
         type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3957016908274451303, guid: 5ea6c97fa07ee43d2932343945752811,
+        type: 3}
       propertyPath: m_Center.y
       value: 0.03
       objectReference: {fileID: 0}
@@ -108,5 +113,26 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -478882678752539408, guid: feda470e680b1ea4ba1c0c05f3d16a8c,
         type: 3}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3957016908274451303, guid: 5ea6c97fa07ee43d2932343945752811, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 5ea6c97fa07ee43d2932343945752811, type: 3}
+--- !u!1 &1001313356139876901 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7382518445037136056, guid: 5ea6c97fa07ee43d2932343945752811,
+    type: 3}
+  m_PrefabInstance: {fileID: 7752551314129123997}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &7811273016410184148
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1001313356139876901}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -478882678752539408, guid: feda470e680b1ea4ba1c0c05f3d16a8c, type: 3}

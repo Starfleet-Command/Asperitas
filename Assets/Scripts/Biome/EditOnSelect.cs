@@ -38,6 +38,13 @@ public class EditOnSelect : MonoBehaviour
     public void ObjectSelected(LeanSelect selectedObject)
     {
         _selectedGameObject = gameObject;
+        if (_selectedGameObject.CompareTag("Creature"))
+        {
+            // var childObject = _selectedGameObject.transform.GetChild(0).gameObject;
+            // if (childObject)
+            return;
+        }
+
         if (_selectedGameObject.TryGetComponent<Renderer>(out var objectRenderer))
         {
             _previousObjectMaterial = objectRenderer.material;
@@ -50,6 +57,12 @@ public class EditOnSelect : MonoBehaviour
     {
         if (_selectedGameObject == null)
             return;
+        if (_selectedGameObject.CompareTag("Creature"))
+        {
+            // var childObject = _selectedGameObject.transform.GetChild(0).gameObject;
+            // if (childObject)
+            return;
+        }
         if (_selectedGameObject.TryGetComponent<Renderer>(out var objectRenderer))
         {
             objectRenderer.material = _previousObjectMaterial;

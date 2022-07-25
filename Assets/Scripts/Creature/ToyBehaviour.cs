@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -48,5 +49,10 @@ public class ToyBehaviour : MonoBehaviour
     private void ResetSummoningStatus()
     {
         isSummoningCreature=false;
+    }
+
+    private void OnDestroy()
+    {
+        CreatureEvents.CreatureReleasedEvent();
     }
 }

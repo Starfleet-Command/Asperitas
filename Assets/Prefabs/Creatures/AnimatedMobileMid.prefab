@@ -150,17 +150,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 60cb2bb8541505b48aac760c641ed2db,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.4
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 60cb2bb8541505b48aac760c641ed2db,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.4
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 60cb2bb8541505b48aac760c641ed2db,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.4
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 60cb2bb8541505b48aac760c641ed2db,
         type: 3}
@@ -1500,7 +1500,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 60cb2bb8541505b48aac760c641ed2db,
         type: 3}
       propertyPath: m_Name
-      value: MidCreature_Base
+      value: AnimatedMobileMid
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 60cb2bb8541505b48aac760c641ed2db,
         type: 3}
@@ -2402,13 +2402,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canChangeAltitude: 1
-  timeBetweenPathAdditions: 5
+  timeBetweenPathAdditions: 4
   initialPointQuantity: 3
   mainCamera: {fileID: 0}
-  minDistanceFromPlayer: 4
-  maxDistanceFromPlayer: 10
-  minAltitude: 2
-  maxAltitude: 5
+  minDistanceFromPlayer: 0.5
+  maxDistanceFromPlayer: 2.5
+  minAltitude: 0.3
+  maxAltitude: 0.9
   path:
     nodes:
     - {x: 10, y: 2, z: -3}
@@ -2462,9 +2462,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6f58141e9f357e448fd2fa6f1afc1f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxVelocity: 2
-  maxAcceleration: 4
-  turnSpeed: 2
+  maxVelocity: 1
+  maxAcceleration: 2
+  turnSpeed: 3
   targetRadius: 2
   slowRadius: 1
   timeToTarget: 0.1
@@ -2486,26 +2486,6 @@ MonoBehaviour:
   wanderRadius: 40
   wanderRadiusY: 10
   wanderRate: 0.25
---- !u!114 &1344800249
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5061541773199366894}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a6f58141e9f357e448fd2fa6f1afc1f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxVelocity: 3.5
-  maxAcceleration: 10
-  turnSpeed: 20
-  targetRadius: 0.005
-  slowRadius: 1
-  timeToTarget: 0.1
-  smoothing: 1
-  numSamplesForSmoothing: 5
 --- !u!114 &1344800251
 MonoBehaviour:
   m_ObjectHideFlags: 0

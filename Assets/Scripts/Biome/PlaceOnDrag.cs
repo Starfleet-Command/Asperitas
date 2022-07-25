@@ -49,7 +49,6 @@ public class PlaceOnDrag : MonoBehaviour
     private List<GameObject> _placedObjects = new List<GameObject>();
     private GameboardAgent _agent;
     private bool _isReplacing;
-    private bool _arIsRunning;
     private bool _gameboardIsRunning;
     private Collider selectedObjCollider;
     private Material selectedObjMaterial;
@@ -61,13 +60,7 @@ public class PlaceOnDrag : MonoBehaviour
     private Vector3 rotation;
     private PlacedObjectAttributes ownAttributes;
 
-    
-
-            /// Inform about started ARSession.
-        public void ARSessionStarted()
-        {
-            _arIsRunning = true;
-        }
+        /// Inform about started ARSession.
 
         /// Inform about stopped ARSession, update UI and clear Gameboard.
         public void ARSessionStopped()
@@ -81,7 +74,7 @@ public class PlaceOnDrag : MonoBehaviour
             }
 
             _isReplacing = false;
-            _arIsRunning = false;
+            
 
             _gameboard.Clear();
         }

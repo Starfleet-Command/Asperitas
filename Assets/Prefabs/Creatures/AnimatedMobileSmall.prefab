@@ -515,8 +515,8 @@ MonoBehaviour:
   timeBetweenPathAdditions: 3
   initialPointQuantity: 3
   mainCamera: {fileID: 0}
-  minDistanceFromPlayer: 1
-  maxDistanceFromPlayer: 5
+  minDistanceFromPlayer: 0.2
+  maxDistanceFromPlayer: 2
   minAltitude: 0.1
   maxAltitude: 0.5
   path:

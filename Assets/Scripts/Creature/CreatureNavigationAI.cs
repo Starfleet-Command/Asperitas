@@ -134,7 +134,20 @@ public class CreatureNavigationAI : MonoBehaviour
 
     private void ToggleLookAt(bool _toggleState)
     {
-        mustFacePlayer = _toggleState;
+        
+        if (!_toggleState)
+        {
+            StartCoroutine("WaitToReset");
+        }
+        
+        else
+            mustFacePlayer = _toggleState;
+    }
+
+    IEnumerator WaitToReset()
+    {
+        yield return new WaitForSeconds(2);
+        mustFacePlayer = false;
     }
 
 
