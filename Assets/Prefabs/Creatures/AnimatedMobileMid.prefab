@@ -150,17 +150,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 60cb2bb8541505b48aac760c641ed2db,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.5
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 60cb2bb8541505b48aac760c641ed2db,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.5
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 60cb2bb8541505b48aac760c641ed2db,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.5
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 60cb2bb8541505b48aac760c641ed2db,
         type: 3}
@@ -1500,7 +1500,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 60cb2bb8541505b48aac760c641ed2db,
         type: 3}
       propertyPath: m_Name
-      value: AnimatedMobileMid
+      value: MidCreature_Base
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 60cb2bb8541505b48aac760c641ed2db,
         type: 3}
@@ -2368,8 +2368,8 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 6.18
-  m_Center: {x: -1.96, y: 1.99, z: 0}
+  m_Radius: 3.37
+  m_Center: {x: 0.17, y: 1.99, z: 0}
 --- !u!95 &1344800241
 Animator:
   serializedVersion: 3
@@ -2581,7 +2581,7 @@ PrefabInstance:
     - target: {fileID: 7274722108685133059, guid: 1457d79d1702d884caa869ec7ef71109,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4.24
+      value: -5.52
       objectReference: {fileID: 0}
     - target: {fileID: 7274722108685133059, guid: 1457d79d1702d884caa869ec7ef71109,
         type: 3}
@@ -2680,7 +2680,7 @@ PrefabInstance:
     - target: {fileID: 7274722108685133059, guid: 1457d79d1702d884caa869ec7ef71109,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 7274722108685133059, guid: 1457d79d1702d884caa869ec7ef71109,
         type: 3}
@@ -2764,7 +2764,7 @@ PrefabInstance:
     - target: {fileID: 7274722108685133059, guid: 1457d79d1702d884caa869ec7ef71109,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 3.0447998
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7274722108685133059, guid: 1457d79d1702d884caa869ec7ef71109,
         type: 3}
