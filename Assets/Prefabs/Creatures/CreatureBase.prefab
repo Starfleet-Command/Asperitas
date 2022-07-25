@@ -12,8 +12,6 @@ GameObject:
   - component: {fileID: 6932973193551974884}
   - component: {fileID: 6932973193551974886}
   - component: {fileID: 3198562592427570593}
-  - component: {fileID: 5115246157544809550}
-  - component: {fileID: -3590064095917884677}
   m_Layer: 0
   m_Name: CreatureBase
   m_TagString: Creature
@@ -29,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6932973193551974891}
   m_LocalRotation: {x: 0, y: 0.9396927, z: 0, w: 0.34202018}
-  m_LocalPosition: {x: 0.9200001, y: 1.02, z: -3.05}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8795117481074638730}
@@ -111,68 +109,6 @@ MonoBehaviour:
     itemSprite: {fileID: 0}
     tags: 
     quantity: 0
---- !u!114 &5115246157544809550
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6932973193551974891}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 479d695282ba6cf4ba3ab3c4848f05e8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  deselectWithNothing: 0
-  limit: 0
-  maxSelectables: 5
-  reselect: 3
-  selectables: []
-  onSelected:
-    m_PersistentCalls:
-      m_Calls: []
-  onDeselected:
-    m_PersistentCalls:
-      m_Calls: []
-  onNothing:
-    m_PersistentCalls:
-      m_Calls: []
-  ScreenQuery:
-    Method: 0
-    Layers:
-      serializedVersion: 2
-      m_Bits: 4294967291
-    Search: 1
-    RequiredTag: 
-    Camera: {fileID: 0}
-    Distance: 50
-  deselectWithFingers: 0
-  onSelectedFinger:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!114 &-3590064095917884677
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6932973193551974891}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4eda371e5375f454490a86f21559ee38, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Use:
-    Filter: 0
-    IgnoreStartedOverGui: 1
-    RequiredFingerCount: 0
-    RequiredMouseButtons: 0
-    RequiredSelectable: {fileID: 0}
-  _camera: {fileID: 0}
-  sensitivity: 1
-  damping: -1
-  inertia: 0
-  remainingTranslation: {x: 0, y: 0, z: 0}
 --- !u!1001 &1438931168319065694
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -193,17 +129,17 @@ PrefabInstance:
     - target: {fileID: 7635453522417119700, guid: cf1528dc3c67c466597217473423546c,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 2
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7635453522417119700, guid: cf1528dc3c67c466597217473423546c,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 2
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7635453522417119700, guid: cf1528dc3c67c466597217473423546c,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 2
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7635453522417119700, guid: cf1528dc3c67c466597217473423546c,
         type: 3}

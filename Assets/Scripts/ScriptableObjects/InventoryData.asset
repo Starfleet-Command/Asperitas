@@ -22,7 +22,7 @@ MonoBehaviour:
   - name: LampPlant
     itemPrefab: {fileID: 7739092115614585678, guid: f3d4756c2670f4a3d95d3bcd4e9b6b88,
       type: 3}
-    itemSprite: {fileID: 21300000, guid: 15a729b96d6fb4722ac493158e5978a4, type: 3}
+    itemSprite: {fileID: 21300000, guid: abcf6af1d98384b5c9b0c293df47774a, type: 3}
     tags: 04000000
     quantity: 2
   - name: Creature Egg
@@ -34,7 +34,7 @@ MonoBehaviour:
   - name: Toy
     itemPrefab: {fileID: 5191304151149554435, guid: ea3d7eef12d958048888f4ef4c9d7b74,
       type: 3}
-    itemSprite: {fileID: 21300000, guid: 8953308619bb52b4e9f3207a89826c02, type: 3}
+    itemSprite: {fileID: 21300000, guid: cad773e55514b465482365e89cc687ec, type: 3}
     tags: 03000000
     quantity: 2
   - name: Foundation Flat
