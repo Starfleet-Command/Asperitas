@@ -150,17 +150,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 60cb2bb8541505b48aac760c641ed2db,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.5
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 60cb2bb8541505b48aac760c641ed2db,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.5
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 60cb2bb8541505b48aac760c641ed2db,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.5
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 60cb2bb8541505b48aac760c641ed2db,
         type: 3}
@@ -1500,7 +1500,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 60cb2bb8541505b48aac760c641ed2db,
         type: 3}
       propertyPath: m_Name
-      value: AnimatedMobileMid
+      value: MidCreature_Base
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 60cb2bb8541505b48aac760c641ed2db,
         type: 3}
@@ -2368,8 +2368,8 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 6.18
-  m_Center: {x: -1.96, y: 1.99, z: 0}
+  m_Radius: 3.37
+  m_Center: {x: 0.17, y: 1.99, z: 0}
 --- !u!95 &1344800241
 Animator:
   serializedVersion: 3
@@ -2462,9 +2462,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6f58141e9f357e448fd2fa6f1afc1f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxVelocity: 2
-  maxAcceleration: 4
-  turnSpeed: 2
+  maxVelocity: 1
+  maxAcceleration: 2
+  turnSpeed: 3
   targetRadius: 2
   slowRadius: 1
   timeToTarget: 0.1
@@ -2486,26 +2486,6 @@ MonoBehaviour:
   wanderRadius: 40
   wanderRadiusY: 10
   wanderRate: 0.25
---- !u!114 &1344800249
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5061541773199366894}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a6f58141e9f357e448fd2fa6f1afc1f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxVelocity: 3.5
-  maxAcceleration: 10
-  turnSpeed: 20
-  targetRadius: 0.005
-  slowRadius: 1
-  timeToTarget: 0.1
-  smoothing: 1
-  numSamplesForSmoothing: 5
 --- !u!114 &1344800251
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2581,7 +2561,7 @@ PrefabInstance:
     - target: {fileID: 7274722108685133059, guid: 1457d79d1702d884caa869ec7ef71109,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4.24
+      value: -5.52
       objectReference: {fileID: 0}
     - target: {fileID: 7274722108685133059, guid: 1457d79d1702d884caa869ec7ef71109,
         type: 3}
@@ -2680,7 +2660,7 @@ PrefabInstance:
     - target: {fileID: 7274722108685133059, guid: 1457d79d1702d884caa869ec7ef71109,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 7274722108685133059, guid: 1457d79d1702d884caa869ec7ef71109,
         type: 3}
@@ -2764,7 +2744,7 @@ PrefabInstance:
     - target: {fileID: 7274722108685133059, guid: 1457d79d1702d884caa869ec7ef71109,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 3.0447998
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7274722108685133059, guid: 1457d79d1702d884caa869ec7ef71109,
         type: 3}

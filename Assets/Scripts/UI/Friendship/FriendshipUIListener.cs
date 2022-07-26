@@ -43,9 +43,9 @@ public class FriendshipUIListener : MonoBehaviour
         savedCurrentFriendship = currentFriendship;
     }
 
-    public void UpdateFriendshipBar(float currentFriendship)
+    public void UpdateFriendshipBar(float friendshipToAdd)
     {
-
+        savedCurrentFriendship+=friendshipToAdd;
         savedCurrentFriendship = Mathf.Clamp(savedCurrentFriendship,0,savedMaxFriendship); 
         savedCurrentFriendship = Mathf.Round(savedCurrentFriendship);  
            

@@ -9,8 +9,6 @@ using UnityMovementAI;
 [RequireComponent(typeof(Collider))]
 public class CreatureNavigationAI : MonoBehaviour
 {
-    
-    //1 means holding pattern at max altitude, 0 means constant y-axis movement.
     [SerializeField] private bool canChangeAltitude;
     [SerializeField] private float timeBetweenPathAdditions;
     [SerializeField] private float initialPointQuantity;
@@ -93,7 +91,10 @@ public class CreatureNavigationAI : MonoBehaviour
             steeringBasics.LookWhereYoureGoing();
 
         else
-            steeringBasics.LookAtDirection(mainCamera.transform.position);
+        {
+            steeringBasics.LookAtDirection(mainCamera.transform.position-this.gameObject.transform.position);
+        }
+            
 
          path.Draw();
     }
