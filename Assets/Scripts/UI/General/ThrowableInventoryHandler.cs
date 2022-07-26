@@ -7,6 +7,7 @@ public class ThrowableInventoryHandler : MonoBehaviour
     public ThrowableObject[] throwableInventory;
     [SerializeField] private GameObject throwableUiCanvas;
     [SerializeField] private GameObject sceneCamera;
+    [SerializeField] private GameObject aioButton;
     private bool isInThrowingMode= false;
 
     private Vector3 swipeStartPos;
@@ -36,7 +37,7 @@ public class ThrowableInventoryHandler : MonoBehaviour
     public void StopThrowMode()
     {
         isInThrowingMode=false;
-        
+        aioButton.SetActive(true);
         UiEvents.IsThrowingStatusChangedEvent(isInThrowingMode);
     }
 

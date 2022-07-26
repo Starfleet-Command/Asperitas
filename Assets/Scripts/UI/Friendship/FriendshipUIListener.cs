@@ -6,8 +6,6 @@ using UnityEngine.UI;
 public class FriendshipUIListener : MonoBehaviour
 {
     public Slider friendshipBar;
-    public Text progressText;
-    
     public float savedCurrentFriendship;
     public float savedMaxFriendship;
 
@@ -38,7 +36,6 @@ public class FriendshipUIListener : MonoBehaviour
         friendshipBar.minValue = 0;
         friendshipBar.value = currentFriendship;
         friendshipBar.maxValue = maxFriendship;
-        progressText.text = ""+currentFriendship+"/"+maxFriendship;
         savedMaxFriendship = maxFriendship;
         savedCurrentFriendship = currentFriendship;
     }
@@ -50,6 +47,5 @@ public class FriendshipUIListener : MonoBehaviour
         savedCurrentFriendship = Mathf.Round(savedCurrentFriendship);  
            
         friendshipBar.value = savedCurrentFriendship;
-        progressText.text = ""+savedCurrentFriendship+"/"+savedMaxFriendship;
     }
 }

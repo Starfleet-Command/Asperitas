@@ -9,6 +9,10 @@ public class EvolutionButtonScript : MonoBehaviour
     private Button _attachedButton;
     private bool isChecklistFinished= false;
     private bool isCreaturePlaced= false;
+    
+    [SerializeField] private Image buttonImage;
+    [SerializeField] private Sprite deactivatedSprite;
+    [SerializeField] private Sprite activatedSprite;
     private void OnEnable()
     {
         CreatureEvents.OnChecklistFinished+=SetChecklistFinished;
@@ -41,7 +45,17 @@ public class EvolutionButtonScript : MonoBehaviour
     private void TryEnableButton()
     {
         if(isChecklistFinished && isCreaturePlaced)
+        {
+            buttonImage.sprite = activatedSprite;
             _attachedButton.interactable=true;
+        }
+            
+    }
+
+    private void ResetButton()
+    {
+        buttonImage.sprite = deactivatedSprite;
+        _attachedButton.interactable= false;
     }
 
     public void OnEvolutionButtonClicked()
