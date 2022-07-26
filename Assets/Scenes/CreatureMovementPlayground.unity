@@ -1154,30 +1154,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1344800247, guid: 4c5c319f86c956c4d80a1a3cffe5eb46, type: 3}
-      propertyPath: turnSpeed
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1344800247, guid: 4c5c319f86c956c4d80a1a3cffe5eb46, type: 3}
-      propertyPath: maxVelocity
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1344800247, guid: 4c5c319f86c956c4d80a1a3cffe5eb46, type: 3}
-      propertyPath: maxAcceleration
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1344800249, guid: 4c5c319f86c956c4d80a1a3cffe5eb46, type: 3}
-      propertyPath: turnSpeed
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1344800249, guid: 4c5c319f86c956c4d80a1a3cffe5eb46, type: 3}
-      propertyPath: maxVelocity
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1344800249, guid: 4c5c319f86c956c4d80a1a3cffe5eb46, type: 3}
-      propertyPath: maxAcceleration
-      value: 2.25
-      objectReference: {fileID: 0}
     - target: {fileID: 5061541773199366894, guid: 4c5c319f86c956c4d80a1a3cffe5eb46,
         type: 3}
       propertyPath: m_Name
@@ -1247,22 +1223,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 554279698, guid: 3ba471308326f5d4e8c20885df2c9621, type: 3}
-      propertyPath: mustFacePlayer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 554279701, guid: 3ba471308326f5d4e8c20885df2c9621, type: 3}
-      propertyPath: turnSpeed
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 554279701, guid: 3ba471308326f5d4e8c20885df2c9621, type: 3}
-      propertyPath: maxVelocity
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 554279701, guid: 3ba471308326f5d4e8c20885df2c9621, type: 3}
-      propertyPath: maxAcceleration
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6923501752673567432, guid: 3ba471308326f5d4e8c20885df2c9621,
         type: 3}
       propertyPath: m_RootOrder
