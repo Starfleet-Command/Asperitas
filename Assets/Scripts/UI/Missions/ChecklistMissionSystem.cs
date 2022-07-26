@@ -137,6 +137,8 @@ public class ChecklistMissionSystem : MonoBehaviour
     private void SwitchChecklist()
     {
         currentStage++;
+        if (allMissions.Length <= currentStage) 
+            return;
         UiEvents.MissionSetChangedEvent(currentStage);
         currentChecklist = allMissions[currentStage].stageChecklist;
         

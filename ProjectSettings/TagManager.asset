@@ -8,6 +8,7 @@ TagManager:
   - Stop
   - Food
   - Creature
+  - Egg
   layers:
   - Default
   - TransparentFX
