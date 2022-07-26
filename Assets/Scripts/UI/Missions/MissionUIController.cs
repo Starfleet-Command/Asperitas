@@ -80,10 +80,14 @@ public class MissionUIController : MonoBehaviour
 
     public void HandleChecklistFinished(int newStage)
     {
-        if(connectingArrows[currentStage].TryGetComponent<Text>(out Text _arrow))
+        if (connectingArrows.Length > currentStage)
         {
-            _arrow.color=activeMissionColor;
+            if(connectingArrows[currentStage].TryGetComponent<Text>(out Text _arrow))
+            {
+                _arrow.color=activeMissionColor;
+            }
         }
+        
 
         currentStage=newStage;
 

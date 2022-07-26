@@ -10,6 +10,12 @@ public class ToyAnimTriggerer : MonoBehaviour
         CreatureEvents.OnCreatureSummoned+=TriggerDeploy;
         CreatureEvents.OnCreatureReleased+=TriggerCollapse;
     }
+    
+    private void OnDisable()
+    {
+        CreatureEvents.OnCreatureSummoned-=TriggerDeploy;
+        CreatureEvents.OnCreatureReleased-=TriggerCollapse;
+    }
 
     private void TriggerDeploy(Vector3 _ignoreThisItem)
     {

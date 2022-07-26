@@ -56,7 +56,7 @@ MonoBehaviour:
       missionType: 2
       missionBiomeType: 3
       missionRequiredTag: 9
-      missionThreshold: 40
+      missionThreshold: 20
       isRequired: 1
       missionProgress: 0
       isMissionComplete: 0
@@ -73,15 +73,15 @@ MonoBehaviour:
     - missionID: 6
       flavourText: Increase Creature Friendship to 40%
       missionType: 2
-      missionBiomeType: 0
-      missionRequiredTag: 0
-      missionThreshold: 0
+      missionBiomeType: 3
+      missionRequiredTag: 9
+      missionThreshold: 40
       isRequired: 1
       missionProgress: 0
       isMissionComplete: 0
     - missionID: 7
       flavourText: Play/Pet Creature 3 Times
-      missionType: 3
+      missionType: 4
       missionBiomeType: 3
       missionRequiredTag: 9
       missionThreshold: 3

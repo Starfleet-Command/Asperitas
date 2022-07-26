@@ -59,7 +59,7 @@ MonoBehaviour:
     stageCreaturePrefab: {fileID: 5061541773199366894, guid: 4c5c319f86c956c4d80a1a3cffe5eb46,
       type: 3}
   - creatureStage: 3
-    stageCreaturePrefab: {fileID: 3903431813430831482, guid: b682f93b1d3293d4a8aee1df175b7725,
+    stageCreaturePrefab: {fileID: 7736876871879972978, guid: 117e0f5ef4d32445281e698f2075cc53,
       type: 3}
   currentCreatureMesh: {fileID: 8162027123712222512}
   preferredBiome: 0
@@ -119,7 +119,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6932973193551974891}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4eda371e5375f454490a86f21559ee38, type: 3}
   m_Name: 
@@ -150,19 +150,7 @@ MonoBehaviour:
   selfSelected: 0
   onSelected:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 7568705275906194765}
-        m_TargetAssemblyTypeName: EditOnSelect, Assembly-CSharp
-        m_MethodName: ObjectSelected
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   onDeselected:
     m_PersistentCalls:
       m_Calls:
@@ -190,7 +178,19 @@ MonoBehaviour:
       m_Calls: []
   onSelectedSelectFingerUp:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7568705275906194765}
+        m_TargetAssemblyTypeName: EditOnSelect, Assembly-CSharp
+        m_MethodName: ObjectSelected
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &7568705275906194765
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -253,12 +253,12 @@ PrefabInstance:
     - target: {fileID: 7274722108685133059, guid: 1457d79d1702d884caa869ec7ef71109,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 6.0895996
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7274722108685133059, guid: 1457d79d1702d884caa869ec7ef71109,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 10
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 7274722108685133059, guid: 1457d79d1702d884caa869ec7ef71109,
         type: 3}
@@ -273,7 +273,7 @@ PrefabInstance:
     - target: {fileID: 7274722108685133059, guid: 1457d79d1702d884caa869ec7ef71109,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 10.07
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 7274722108685133059, guid: 1457d79d1702d884caa869ec7ef71109,
         type: 3}
@@ -517,8 +517,8 @@ MonoBehaviour:
   mainCamera: {fileID: 0}
   minDistanceFromPlayer: 0.2
   maxDistanceFromPlayer: 2
-  minAltitude: 0.1
-  maxAltitude: 0.5
+  minAltitude: 0.05
+  maxAltitude: 0.25
   path:
     nodes:
     - {x: 10, y: 2, z: -3}
