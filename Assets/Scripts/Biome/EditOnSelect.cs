@@ -38,6 +38,13 @@ public class EditOnSelect : MonoBehaviour
     public void ObjectSelected(LeanSelect selectedObject)
     {
         _selectedGameObject = gameObject;
+        if (_selectedGameObject.CompareTag("Creature"))
+        {
+            // var childObject = _selectedGameObject.transform.GetChild(0).gameObject;
+            // if (childObject)
+            return;
+        }
+
         if (_selectedGameObject.TryGetComponent<Renderer>(out var objectRenderer))
         {
             _previousObjectMaterial = objectRenderer.material;
@@ -48,11 +55,39 @@ public class EditOnSelect : MonoBehaviour
     
     public void ObjectDeselected(LeanSelect deselectedObject)
     {
+        if (_selectedGameObject == null)
+            return;
+        if (_selectedGameObject.CompareTag("Creature"))
+        {
+            // var childObject = _selectedGameObject.transform.GetChild(0).gameObject;
+            // if (childObject)
+            return;
+        }
         if (_selectedGameObject.TryGetComponent<Renderer>(out var objectRenderer))
         {
             objectRenderer.material = _previousObjectMaterial;
         }
         BiomeEditingEvents.ObjectDeselectedEvent(_selectedGameObject);
         _selectedGameObject = null;
+    }
+    
+    public void FunctionalObjectSelected(LeanSelectByFinger selectedObject, LeanFinger leanFinger)
+    {
+        if (leanFinger.SnapshotDuration > 0.5f)
+        {
+            if(gameObject.TryGetComponent<ToyBehaviour>(out ToyBehaviour toyTrigger))
+            {
+                toyTrigger.OnItemInteracted();
+            }
+            return;
+        }
+
+        _selectedGameObject = gameObject;
+        if (_selectedGameObject.TryGetComponent<Renderer>(out var objectRenderer))
+        {
+            _previousObjectMaterial = objectRenderer.material;
+            objectRenderer.material = selectedObjectMaterial;
+        }
+        BiomeEditingEvents.ObjectSelectedEvent(_selectedGameObject);
     }
 }

@@ -253,12 +253,12 @@ PrefabInstance:
     - target: {fileID: 7274722108685133059, guid: 1457d79d1702d884caa869ec7ef71109,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 6.0895996
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7274722108685133059, guid: 1457d79d1702d884caa869ec7ef71109,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 10
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 7274722108685133059, guid: 1457d79d1702d884caa869ec7ef71109,
         type: 3}
@@ -273,7 +273,7 @@ PrefabInstance:
     - target: {fileID: 7274722108685133059, guid: 1457d79d1702d884caa869ec7ef71109,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 10.07
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 7274722108685133059, guid: 1457d79d1702d884caa869ec7ef71109,
         type: 3}
@@ -347,17 +347,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 960f2ec39c1890f47ae5103c53cf70b7,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.25
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 960f2ec39c1890f47ae5103c53cf70b7,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.25
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 960f2ec39c1890f47ae5103c53cf70b7,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.25
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 960f2ec39c1890f47ae5103c53cf70b7,
         type: 3}
@@ -515,10 +515,10 @@ MonoBehaviour:
   timeBetweenPathAdditions: 3
   initialPointQuantity: 3
   mainCamera: {fileID: 0}
-  minDistanceFromPlayer: 1
-  maxDistanceFromPlayer: 5
-  minAltitude: 0.1
-  maxAltitude: 0.5
+  minDistanceFromPlayer: 0.2
+  maxDistanceFromPlayer: 2
+  minAltitude: 0.05
+  maxAltitude: 0.25
   path:
     nodes:
     - {x: 10, y: 2, z: -3}

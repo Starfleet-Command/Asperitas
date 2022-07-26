@@ -40,7 +40,8 @@ public class ObjectSelectedListener : MonoBehaviour
 
     private void DisableDeleteButton(GameObject item)
     {
-        if (_selectedGameObjects.Count <= 1)
+        // ToDo: check if it will solve the break on accessing the removed button
+        if (_selectedGameObjects.Count == 1)
         {
             deleteButton.gameObject.SetActive(false);
         }

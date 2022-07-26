@@ -47,14 +47,10 @@ namespace Niantic.ARDKExamples
         private GameObject _agentGameObject;
         private GameboardAgent _agent;
         private bool _isReplacing;
-        private bool _arIsRunning;
         private bool _gameboardIsRunning;
 
         /// Inform about started ARSession.
-        public void ARSessionStarted()
-        {
-            _arIsRunning = true;
-        }
+
 
         /// Inform about stopped ARSession, update UI and clear Gameboard.
         public void ARSessionStopped()
@@ -68,7 +64,6 @@ namespace Niantic.ARDKExamples
             _callButton.interactable = false;
 
             _isReplacing = false;
-            _arIsRunning = false;
 
             _gameboard.Clear();
         }
@@ -144,7 +139,7 @@ namespace Niantic.ARDKExamples
 
         private void TouchBegan(Touch touch)
         {
-            if (!_arIsRunning || _agent == null || _arCamera == null)
+            if (_agent == null || _arCamera == null)
                 return;
 
             //as we are using meshing we can use a standard ray cast
