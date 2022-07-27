@@ -47,11 +47,11 @@ MonoBehaviour:
     itemPrefab: {fileID: 3972789032583708647, guid: cdeddcc636ba647cdaed0dc1e0a6c4d1,
       type: 3}
     itemSprite: {fileID: 21300000, guid: 1f0e0a9c08b95470ca6c3e5c0a8a142d, type: 3}
-    tags: 
+    tags: 02000000
     quantity: 10
   - name: Foundation Ramp
     itemPrefab: {fileID: 1001313356139876901, guid: 52e4d831dbc3e4b979579376bf5dcec3,
       type: 3}
     itemSprite: {fileID: 21300000, guid: f67e5c25852344b7db79bcf101177126, type: 3}
-    tags: 
+    tags: 02000000
     quantity: 10
