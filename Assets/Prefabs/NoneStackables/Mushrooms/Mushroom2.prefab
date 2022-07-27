@@ -185,3 +185,41 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: edf95250d89a848f9a8b00853cd52b5b, type: 3}
+--- !u!1 &7579200268200159275 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7382518445037136056, guid: edf95250d89a848f9a8b00853cd52b5b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1107114843219460243}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &-14035804940728592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7579200268200159275}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee7abbac048f81d44bafe6a4fb1135b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boundSource: 0
+  interactive: 0
+  lineMaterial: {fileID: 2100000, guid: 982b0c6dd4bcd894b9576f123b17edd3, type: 2}
+  wire_renderer: 1
+  wireColor: {r: 0.16197933, g: 0.9811321, b: 0.9307356, a: 0}
+  line_renderer: 0
+  linePrefab: {fileID: 4162750834140578371, guid: af75a81bbd49eeb4caaa718e740affc7,
+    type: 3}
+  lineWidth: 0.03
+  lineColor: {r: 1, g: 0, b: 0, a: 1}
+  numCapVertices: 0
+  colliderBound:
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 0, y: 0, z: 0}
+  colliderBoundOffset: {x: 0, y: 0, z: 0}
+  meshBound:
+    m_Center: {x: -0.000000029802322, y: 0.4115164, z: 0.00000008940697}
+    m_Extent: {x: 0.42795292, y: 0.45377296, z: 0.42795298}
+  meshBoundOffset: {x: -0.000000029802322, y: 0.4115164, z: 0.00000008940697}
+  startingScale: {x: 0.25, y: 0.25, z: 0.25}

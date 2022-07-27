@@ -65,7 +65,7 @@ MonoBehaviour:
     itemPrefab: {fileID: 6932973193551974891, guid: 5a35933d17672e349a4f5d6fdeaf8318,
       type: 3}
     itemSprite: {fileID: 21300000, guid: 44fc7487bdc5346d988d5efaa043c7e8, type: 3}
-    tags: 01000000
+    tags: 010000000a000000
     quantity: 1
   - name: Foundation Large
     itemPrefab: {fileID: 3972789032583708647, guid: cdeddcc636ba647cdaed0dc1e0a6c4d1,
@@ -100,7 +100,7 @@ MonoBehaviour:
   - name: Dead Tree
     itemPrefab: {fileID: 3127708017209479817, guid: 618a9c24a71124f82861587ad1fea0e4,
       type: 3}
-    itemSprite: {fileID: 21300000, guid: 1f0e0a9c08b95470ca6c3e5c0a8a142d, type: 3}
+    itemSprite: {fileID: 21300000, guid: b7b496c69fe35a541bd8024e0a7903b5, type: 3}
     tags: 0100000004000000
     quantity: 1
   - name: Medium Tree
@@ -118,25 +118,25 @@ MonoBehaviour:
   - name: Large Island
     itemPrefab: {fileID: 354811321820474697, guid: ac23d1bc92d1d47e3abee1d807ee1101,
       type: 3}
-    itemSprite: {fileID: 21300000, guid: 1f0e0a9c08b95470ca6c3e5c0a8a142d, type: 3}
+    itemSprite: {fileID: 21300000, guid: 9ebeab7dadaa0ed46b0ea1567f8e1904, type: 3}
     tags: 00000000
     quantity: 1
   - name: Medium Island
     itemPrefab: {fileID: 1058198990126893165, guid: ed25576307333408ca5eb1dd0109fb6f,
       type: 3}
-    itemSprite: {fileID: 21300000, guid: 1f0e0a9c08b95470ca6c3e5c0a8a142d, type: 3}
+    itemSprite: {fileID: 21300000, guid: f43aef29b927b9d4c82364835ab1a8c6, type: 3}
     tags: 00000000
     quantity: 2
   - name: Stepped Island
     itemPrefab: {fileID: 7137587413915870183, guid: e7ec66290790d449e9466b5b3069cf40,
       type: 3}
-    itemSprite: {fileID: 21300000, guid: 1f0e0a9c08b95470ca6c3e5c0a8a142d, type: 3}
+    itemSprite: {fileID: 21300000, guid: 34cc0e0f7f695924eb19004c605eceea, type: 3}
     tags: 00000000
     quantity: 2
   - name: Small Island
     itemPrefab: {fileID: 454416398033812722, guid: 84bfa845c12b6469688254995fe89925,
       type: 3}
-    itemSprite: {fileID: 21300000, guid: 1f0e0a9c08b95470ca6c3e5c0a8a142d, type: 3}
+    itemSprite: {fileID: 21300000, guid: c3018870a1b91ca40a4ee2d2ca7482b3, type: 3}
     tags: 00000000
     quantity: 3
   - name: Fence1
@@ -172,7 +172,7 @@ MonoBehaviour:
   - name: Tree Stump
     itemPrefab: {fileID: 8124941252488808885, guid: d27816ea171e947cb80a8fdb5414f46f,
       type: 3}
-    itemSprite: {fileID: 21300000, guid: e6ddf773365a06a4d991085b4e509aab, type: 3}
+    itemSprite: {fileID: 21300000, guid: ae12e42637c43ff4fa44599c1582a000, type: 3}
     tags: 00000000
     quantity: 1
   - name: Tree Trunk
