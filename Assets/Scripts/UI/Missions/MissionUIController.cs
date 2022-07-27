@@ -8,6 +8,7 @@ public class MissionUIController : MonoBehaviour
     [SerializeField] private GameObject[] connectingArrows;
     [SerializeField] private GameObject missionCanvas;
     [SerializeField] private Color activeMissionColor;
+    [SerializeField] private Sprite activeMissionHolderSprite;
     [SerializeField] private Color filledSliderColor;
     [SerializeField] private GameObject missionEntryPrefab;
     private ChecklistMissionSystem missionDatabase;
@@ -145,7 +146,9 @@ public class MissionUIController : MonoBehaviour
         {
             _holderData.percentageText.color=Color.black;
             _holderData.titleText.color=Color.black;
-            _holderData.backgroundImage.GetComponent<Image>().color = activeMissionColor;
+            _holderData.largeNumberText.color=Color.black;
+            _holderData.backgroundImage.GetComponent<Image>().sprite = activeMissionHolderSprite;
+            _holderData.backgroundImage.GetComponent<Image>().color=Color.white;
             _holderData.expandButton.interactable=true;
         }
     }
