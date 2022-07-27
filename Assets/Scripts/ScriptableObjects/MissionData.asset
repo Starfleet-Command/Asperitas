@@ -15,16 +15,16 @@ MonoBehaviour:
   missions:
   - stageChecklist:
     - missionID: 0
-      flavourText: Place 3 Machine Items
+      flavourText: Create a Biome with 3 natural items
       missionType: 0
       missionBiomeType: 3
-      missionRequiredTag: 3
+      missionRequiredTag: 4
       missionThreshold: 3
       isRequired: 1
       missionProgress: 0
       isMissionComplete: 0
     - missionID: 1
-      flavourText: Raise Ocean Biome Affinity to 20%
+      flavourText: Increase Habitability to 20 points
       missionType: 1
       missionBiomeType: 0
       missionRequiredTag: 9
@@ -32,27 +32,36 @@ MonoBehaviour:
       isRequired: 1
       missionProgress: 0
       isMissionComplete: 0
+    - missionID: 8
+      flavourText: Place an egg in the scene
+      missionType: 0
+      missionBiomeType: 0
+      missionRequiredTag: 10
+      missionThreshold: 1
+      isRequired: 1
+      missionProgress: 0
+      isMissionComplete: 0
   - stageChecklist:
     - missionID: 2
-      flavourText: Place 2 Nature Items
+      flavourText: Place 2 machines in the Biome
       missionType: 0
       missionBiomeType: 3
-      missionRequiredTag: 4
+      missionRequiredTag: 3
       missionThreshold: 2
       isRequired: 1
       missionProgress: 0
       isMissionComplete: 0
     - missionID: 3
-      flavourText: Feed the Creature 2 Times
+      flavourText: Feed the Creature 2 times
       missionType: 3
       missionBiomeType: 3
       missionRequiredTag: 9
       missionThreshold: 2
-      isRequired: 0
+      isRequired: 1
       missionProgress: 0
       isMissionComplete: 0
     - missionID: 4
-      flavourText: Increase Creature Friendship to 20%
+      flavourText: Increase Creature Friendship by 20 points
       missionType: 2
       missionBiomeType: 3
       missionRequiredTag: 9
@@ -60,9 +69,18 @@ MonoBehaviour:
       isRequired: 1
       missionProgress: 0
       isMissionComplete: 0
+    - missionID: 9
+      flavourText: Increase Habitability to 40 points
+      missionType: 1
+      missionBiomeType: 0
+      missionRequiredTag: 9
+      missionThreshold: 40
+      isRequired: 1
+      missionProgress: 0
+      isMissionComplete: 0
   - stageChecklist:
     - missionID: 5
-      flavourText: Increase Ocean Habitability to 60%
+      flavourText: Increase Habitability to 60 points
       missionType: 1
       missionBiomeType: 0
       missionRequiredTag: 9
@@ -71,7 +89,7 @@ MonoBehaviour:
       missionProgress: 0
       isMissionComplete: 0
     - missionID: 6
-      flavourText: Increase Creature Friendship to 40%
+      flavourText: Increase Creature Friendship to 40 points
       missionType: 2
       missionBiomeType: 3
       missionRequiredTag: 9
@@ -85,6 +103,15 @@ MonoBehaviour:
       missionBiomeType: 3
       missionRequiredTag: 9
       missionThreshold: 3
+      isRequired: 1
+      missionProgress: 0
+      isMissionComplete: 0
+    - missionID: 10
+      flavourText: Feed the Creature 2 more times
+      missionType: 3
+      missionBiomeType: 3
+      missionRequiredTag: 9
+      missionThreshold: 2
       isRequired: 1
       missionProgress: 0
       isMissionComplete: 0
