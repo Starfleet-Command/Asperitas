@@ -59,8 +59,8 @@ MonoBehaviour:
     itemPrefab: {fileID: 5191304151149554435, guid: ea3d7eef12d958048888f4ef4c9d7b74,
       type: 3}
     itemSprite: {fileID: 21300000, guid: b154bba5aa27bdc42a376793207bb103, type: 3}
-    tags: 0300000001000000
-    quantity: 1
+    tags: 0100000003000000
+    quantity: 3
   - name: Creature Egg
     itemPrefab: {fileID: 6932973193551974891, guid: 5a35933d17672e349a4f5d6fdeaf8318,
       type: 3}
@@ -181,3 +181,63 @@ MonoBehaviour:
     itemSprite: {fileID: 21300000, guid: f0901a1d423a9044ab30c1ab5defae8d, type: 3}
     tags: 00000000
     quantity: 1
+  - name: Rock1
+    itemPrefab: {fileID: 5159085934375391932, guid: 5d5eeb348f2264824af10d733d602a99,
+      type: 3}
+    itemSprite: {fileID: 21300000, guid: 03ed6ea340aa1584a95e675933a686f7, type: 3}
+    tags: 0000000004000000
+    quantity: 3
+  - name: Rock2
+    itemPrefab: {fileID: 4398708850632051990, guid: ebf1a2fcd7769462b81a0d1950b456f9,
+      type: 3}
+    itemSprite: {fileID: 21300000, guid: 5c72073be29205940bed4034820ef8c9, type: 3}
+    tags: 0000000004000000
+    quantity: 3
+  - name: Rock3
+    itemPrefab: {fileID: 1613835938386179526, guid: 5c18f5333336f4970b2a0ca0604cbae4,
+      type: 3}
+    itemSprite: {fileID: 21300000, guid: b954cd91f405fd14e8532e384bbd299b, type: 3}
+    tags: 0000000004000000
+    quantity: 3
+  - name: Stalactite1
+    itemPrefab: {fileID: 2892103012808166847, guid: 36c7d687fee9e42e88ae9a5329d9c03e,
+      type: 3}
+    itemSprite: {fileID: 21300000, guid: 7b2a917056b8ca84b9cdc9bf82b12aec, type: 3}
+    tags: 0100000004000000
+    quantity: 2
+  - name: Stalactite2
+    itemPrefab: {fileID: 3185402596234626959, guid: 42a60a35e84cd4648a72096c90d8fd4a,
+      type: 3}
+    itemSprite: {fileID: 21300000, guid: b786c6eda3ed30648b87a813900de7a7, type: 3}
+    tags: 0100000004000000
+    quantity: 2
+  - name: Stone1
+    itemPrefab: {fileID: 1145793174421674969, guid: 4d811bf791f1746748899b23ddd44796,
+      type: 3}
+    itemSprite: {fileID: 21300000, guid: 3da0c4dec5227ae41a9c1f40362d2407, type: 3}
+    tags: 0100000004000000
+    quantity: 3
+  - name: Stone2
+    itemPrefab: {fileID: 2981654413799729054, guid: 7fb45f03a01e548e39a29a4657b4570e,
+      type: 3}
+    itemSprite: {fileID: 21300000, guid: d91fd15028a370b4690a2c1dde9d5451, type: 3}
+    tags: 0100000004000000
+    quantity: 3
+  - name: Stone3
+    itemPrefab: {fileID: 5054604144252350108, guid: 9a3f57e67ea3241259d7644829fbe208,
+      type: 3}
+    itemSprite: {fileID: 21300000, guid: 1d8d7d3ba5c99eb4da31f206b05321b4, type: 3}
+    tags: 0100000004000000
+    quantity: 3
+  - name: Stone4
+    itemPrefab: {fileID: 1535996471894290616, guid: a81bb1017a0ed47b8800fbf6581d26c6,
+      type: 3}
+    itemSprite: {fileID: 21300000, guid: 7206d9a0c2f4bad4aba9d724e0b462b3, type: 3}
+    tags: 0100000004000000
+    quantity: 3
+  - name: Stone5
+    itemPrefab: {fileID: 2784612336516451343, guid: d8032e558bbba43278f7eed4c6cdc531,
+      type: 3}
+    itemSprite: {fileID: 21300000, guid: e117c2ec272a1474fa96fd2ddb2700b2, type: 3}
+    tags: 0100000004000000
+    quantity: 3
