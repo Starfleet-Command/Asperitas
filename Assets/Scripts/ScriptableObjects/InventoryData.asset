@@ -13,30 +13,60 @@ MonoBehaviour:
   m_Name: InventoryData
   m_EditorClassIdentifier: 
   inventory:
-  - name: Mushroom
-    itemPrefab: {fileID: 1018271837774453766, guid: 6182ea50c13304d149164e8e73e47283,
+  - name: Mushroom1
+    itemPrefab: {fileID: 8263540016839607653, guid: f0d5caa3a5204435bb265b5a125f393b,
       type: 3}
-    itemSprite: {fileID: 21300000, guid: f99339724a2184b0d87525902e8a7677, type: 3}
-    tags: 03000000
-    quantity: 4
-  - name: LampPlant
-    itemPrefab: {fileID: 7739092115614585678, guid: f3d4756c2670f4a3d95d3bcd4e9b6b88,
+    itemSprite: {fileID: 21300000, guid: 70b100b36f3d5b143ad69b6087b4026d, type: 3}
+    tags: 0100000004000000
+    quantity: 1
+  - name: Mushroom2
+    itemPrefab: {fileID: 7579200268200159275, guid: e15fe997d1a3c4cf6afd8b52efbcbceb,
       type: 3}
-    itemSprite: {fileID: 21300000, guid: abcf6af1d98384b5c9b0c293df47774a, type: 3}
-    tags: 04000000
+    itemSprite: {fileID: 21300000, guid: 058605a2982ce8d409f02668af6563da, type: 3}
+    tags: 0100000004000000
+    quantity: 1
+  - name: Mushroom3
+    itemPrefab: {fileID: 6933948606301040308, guid: 9e28c3886c937425894e6d2b521d00b1,
+      type: 3}
+    itemSprite: {fileID: 21300000, guid: c83aa81bf2076584e94e5b2091a3c4d4, type: 3}
+    tags: 0100000004000000
+    quantity: 1
+  - name: Mushroom4
+    itemPrefab: {fileID: 5698239360107251257, guid: bdbcf02ef90194ca08f9539b5e71e2e6,
+      type: 3}
+    itemSprite: {fileID: 21300000, guid: 5ab75e813cfbfe7449c995bab978659a, type: 3}
+    tags: 0100000004000000
+    quantity: 1
+  - name: Mushroom5
+    itemPrefab: {fileID: 1872884813701624069, guid: 9052ce38f045e40be8228b1c008a3c33,
+      type: 3}
+    itemSprite: {fileID: 21300000, guid: c56dded8b0718944b86bbd2d900a9bae, type: 3}
+    tags: 0100000004000000
+    quantity: 1
+  - name: Mushroom6
+    itemPrefab: {fileID: 8025257047398894335, guid: 1e16386994b6e41ffb03881c6db639fe,
+      type: 3}
+    itemSprite: {fileID: 21300000, guid: 364e495882fb60a409fb13d95cf592dc, type: 3}
+    tags: 0100000004000000
+    quantity: 1
+  - name: CountPlantula
+    itemPrefab: {fileID: 5161686091156989134, guid: a4644d374a61b45139f1f2857b943042,
+      type: 3}
+    itemSprite: {fileID: 21300000, guid: a92df5c03895b7c44b11cf53103a3f0e, type: 3}
+    tags: 0100000004000000
     quantity: 2
+  - name: Toy
+    itemPrefab: {fileID: 5191304151149554435, guid: ea3d7eef12d958048888f4ef4c9d7b74,
+      type: 3}
+    itemSprite: {fileID: 21300000, guid: b154bba5aa27bdc42a376793207bb103, type: 3}
+    tags: 0300000001000000
+    quantity: 1
   - name: Creature Egg
     itemPrefab: {fileID: 6932973193551974891, guid: 5a35933d17672e349a4f5d6fdeaf8318,
       type: 3}
     itemSprite: {fileID: 21300000, guid: 44fc7487bdc5346d988d5efaa043c7e8, type: 3}
-    tags: 0a000000
+    tags: 01000000
     quantity: 1
-  - name: Toy
-    itemPrefab: {fileID: 5191304151149554435, guid: ea3d7eef12d958048888f4ef4c9d7b74,
-      type: 3}
-    itemSprite: {fileID: 21300000, guid: cad773e55514b465482365e89cc687ec, type: 3}
-    tags: 03000000
-    quantity: 2
   - name: Foundation Large
     itemPrefab: {fileID: 3972789032583708647, guid: cdeddcc636ba647cdaed0dc1e0a6c4d1,
       type: 3}
@@ -49,3 +79,105 @@ MonoBehaviour:
     itemSprite: {fileID: 21300000, guid: f67e5c25852344b7db79bcf101177126, type: 3}
     tags: 02000000
     quantity: 10
+  - name: Foundation flat
+    itemPrefab: {fileID: 6027840505667979119, guid: cf59c48a7bb894cac8dd4f19a2a9f0e9,
+      type: 3}
+    itemSprite: {fileID: 21300000, guid: 1f0e0a9c08b95470ca6c3e5c0a8a142d, type: 3}
+    tags: 02000000
+    quantity: 10
+  - name: Foundation small
+    itemPrefab: {fileID: 5031961587750215841, guid: 81762d7f072774491a28ed1a3d27c45b,
+      type: 3}
+    itemSprite: {fileID: 21300000, guid: 1f0e0a9c08b95470ca6c3e5c0a8a142d, type: 3}
+    tags: 02000000
+    quantity: 10
+  - name: Large Tree
+    itemPrefab: {fileID: 6204732119378836720, guid: f037321e8b85c42b287a6f55bb81a8bd,
+      type: 3}
+    itemSprite: {fileID: 21300000, guid: 3c59f0e164b3162438dced2531f020bf, type: 3}
+    tags: 0100000004000000
+    quantity: 1
+  - name: Dead Tree
+    itemPrefab: {fileID: 3127708017209479817, guid: 618a9c24a71124f82861587ad1fea0e4,
+      type: 3}
+    itemSprite: {fileID: 21300000, guid: 1f0e0a9c08b95470ca6c3e5c0a8a142d, type: 3}
+    tags: 0100000004000000
+    quantity: 1
+  - name: Medium Tree
+    itemPrefab: {fileID: 2814900399929903227, guid: 6d4a5fdf688744542bf2e5bfc19739ee,
+      type: 3}
+    itemSprite: {fileID: 21300000, guid: c0ad48757a7cd4d44a6e74d608ff0199, type: 3}
+    tags: 0100000004000000
+    quantity: 2
+  - name: TechTree
+    itemPrefab: {fileID: 2192416663094583982, guid: d4f03f1da8a274dfbb45ffec675b3ce8,
+      type: 3}
+    itemSprite: {fileID: 21300000, guid: 422dd199f155dfa4da9f263a8588d869, type: 3}
+    tags: 0100000004000000
+    quantity: 1
+  - name: Large Island
+    itemPrefab: {fileID: 354811321820474697, guid: ac23d1bc92d1d47e3abee1d807ee1101,
+      type: 3}
+    itemSprite: {fileID: 21300000, guid: 1f0e0a9c08b95470ca6c3e5c0a8a142d, type: 3}
+    tags: 00000000
+    quantity: 1
+  - name: Medium Island
+    itemPrefab: {fileID: 1058198990126893165, guid: ed25576307333408ca5eb1dd0109fb6f,
+      type: 3}
+    itemSprite: {fileID: 21300000, guid: 1f0e0a9c08b95470ca6c3e5c0a8a142d, type: 3}
+    tags: 00000000
+    quantity: 2
+  - name: Stepped Island
+    itemPrefab: {fileID: 7137587413915870183, guid: e7ec66290790d449e9466b5b3069cf40,
+      type: 3}
+    itemSprite: {fileID: 21300000, guid: 1f0e0a9c08b95470ca6c3e5c0a8a142d, type: 3}
+    tags: 00000000
+    quantity: 2
+  - name: Small Island
+    itemPrefab: {fileID: 454416398033812722, guid: 84bfa845c12b6469688254995fe89925,
+      type: 3}
+    itemSprite: {fileID: 21300000, guid: 1f0e0a9c08b95470ca6c3e5c0a8a142d, type: 3}
+    tags: 00000000
+    quantity: 3
+  - name: Fence1
+    itemPrefab: {fileID: 5668299915669147749, guid: c7021810949fc405b946fddbba63324e,
+      type: 3}
+    itemSprite: {fileID: 21300000, guid: 8fd58af8546563448903ceb58d498acf, type: 3}
+    tags: 01000000
+    quantity: 1
+  - name: Fence2
+    itemPrefab: {fileID: 784240450248984962, guid: 61ba25441f4404d64b89cc859de07c11,
+      type: 3}
+    itemSprite: {fileID: 21300000, guid: cfaad6ca56e0ef84c92d985516d9b88b, type: 3}
+    tags: 01000000
+    quantity: 1
+  - name: Fence3
+    itemPrefab: {fileID: 4493144788553401412, guid: 899c34d8b5dd44ae29d0b25a00ca0d01,
+      type: 3}
+    itemSprite: {fileID: 21300000, guid: e6ddf773365a06a4d991085b4e509aab, type: 3}
+    tags: 01000000
+    quantity: 1
+  - name: Barrel
+    itemPrefab: {fileID: 2775843076176037062, guid: cf59c483f04cb4f7cae00044ab4ee655,
+      type: 3}
+    itemSprite: {fileID: 21300000, guid: 54fda52d1806a8d469899916d667339c, type: 3}
+    tags: 00000000
+    quantity: 2
+  - name: Dock
+    itemPrefab: {fileID: 7296735866116762098, guid: 46f5270a5ed2445dbbe41c85ff168594,
+      type: 3}
+    itemSprite: {fileID: 21300000, guid: 422ad0c2b519afe4cbe1c2f03401f742, type: 3}
+    tags: 00000000
+    quantity: 1
+  - name: Tree Stump
+    itemPrefab: {fileID: 8124941252488808885, guid: d27816ea171e947cb80a8fdb5414f46f,
+      type: 3}
+    itemSprite: {fileID: 21300000, guid: e6ddf773365a06a4d991085b4e509aab, type: 3}
+    tags: 00000000
+    quantity: 1
+  - name: Tree Trunk
+    itemPrefab: {fileID: 1634828801212823825, guid: 10e75aab36b3f440b8e86786910c12d2,
+      type: 3}
+    itemSprite: {fileID: 21300000, guid: f0901a1d423a9044ab30c1ab5defae8d, type: 3}
+    tags: 00000000
+    quantity: 1
