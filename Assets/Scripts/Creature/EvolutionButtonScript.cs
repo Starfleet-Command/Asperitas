@@ -61,5 +61,6 @@ public class EvolutionButtonScript : MonoBehaviour
     public void OnEvolutionButtonClicked()
     {
         CreatureEvents.CreatureEvolvingEvent();
+        ResetButton();
     }
 }
