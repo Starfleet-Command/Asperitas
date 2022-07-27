@@ -6,6 +6,7 @@ public class MissionHolderData : MonoBehaviour
 {
     public Text percentageText;
     public Text titleText;
+    public Text largeNumberText;
     public GameObject alarmIcon;
     public GameObject missionParent;
     public GameObject backgroundImage;

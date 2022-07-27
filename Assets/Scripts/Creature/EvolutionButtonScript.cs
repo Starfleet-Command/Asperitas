@@ -8,10 +8,6 @@ public class EvolutionButtonScript : MonoBehaviour
     [SerializeField] private GameObject _attachedButton;
     private bool isChecklistFinished= false;
     private bool isCreaturePlaced= false;
-    
-    [SerializeField] private Image buttonImage;
-    [SerializeField] private Sprite deactivatedSprite;
-    [SerializeField] private Sprite activatedSprite;
     private void OnEnable()
     {
         CreatureEvents.OnChecklistFinished+=SetChecklistFinished;
@@ -22,12 +18,6 @@ public class EvolutionButtonScript : MonoBehaviour
     {
         CreatureEvents.OnChecklistFinished-=SetChecklistFinished;
         CreatureEvents.OnCreaturePlaced-=SetCreaturePlaced;
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
     }
 
     private void SetChecklistFinished()
@@ -46,7 +36,6 @@ public class EvolutionButtonScript : MonoBehaviour
     {
         if(isChecklistFinished && isCreaturePlaced)
         {
-            buttonImage.sprite = activatedSprite;
             _attachedButton.SetActive(true);
         }
             
@@ -54,7 +43,6 @@ public class EvolutionButtonScript : MonoBehaviour
 
     private void ResetButton()
     {
-        buttonImage.sprite = deactivatedSprite;
         _attachedButton.SetActive(false);
     }
 
