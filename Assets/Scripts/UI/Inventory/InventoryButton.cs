@@ -7,7 +7,6 @@ public class InventoryButton : MonoBehaviour
     [SerializeField] private InventoryItem itemToSpawn;
     [SerializeField] private InventorySystem itemInventoryReference;
     [SerializeField]private Image _thumbnail;
-    [SerializeField]private Text nameText;
     [SerializeField] private Text qtyText;
 
     [SerializeField] private Button itemButton;
@@ -47,7 +46,6 @@ public class InventoryButton : MonoBehaviour
 
     public void InitialSetup(InventoryItem _item, InventorySystem _systemReference)
     {
-        nameText.text = _item.getName();
         qtyText.text = _item.getItemQuantity().ToString();
         _thumbnail.sprite = _item.getItemSprite();
 
