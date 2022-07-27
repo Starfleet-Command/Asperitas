@@ -127,7 +127,7 @@ public class MissionUIController : MonoBehaviour
                 }
 
                 _holderData.missionObjects.Add(missionEntry);
-                missionEntry.transform.SetParent(_holderData.missionParent.transform);
+                missionEntry.transform.SetParent(_holderData.missionParent.transform,false);
             }
             currentSet++;
         }
