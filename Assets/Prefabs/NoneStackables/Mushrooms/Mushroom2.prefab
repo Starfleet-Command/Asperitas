@@ -9,6 +9,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1649233525578474146, guid: af75a81bbd49eeb4caaa718e740affc7,
         type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1649233525578474146, guid: af75a81bbd49eeb4caaa718e740affc7,
+        type: 3}
       propertyPath: m_Parameters.numCapVertices
       value: 0
       objectReference: {fileID: 0}
@@ -211,6 +216,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2479057610978873366}
     m_Modifications:
+    - target: {fileID: 1649233525578474146, guid: af75a81bbd49eeb4caaa718e740affc7,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1649233525578474146, guid: af75a81bbd49eeb4caaa718e740affc7,
         type: 3}
       propertyPath: m_Parameters.numCapVertices
@@ -417,6 +427,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1649233525578474146, guid: af75a81bbd49eeb4caaa718e740affc7,
         type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1649233525578474146, guid: af75a81bbd49eeb4caaa718e740affc7,
+        type: 3}
       propertyPath: m_Parameters.numCapVertices
       value: 0
       objectReference: {fileID: 0}
@@ -619,6 +634,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2479057610978873366}
     m_Modifications:
+    - target: {fileID: 1649233525578474146, guid: af75a81bbd49eeb4caaa718e740affc7,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1649233525578474146, guid: af75a81bbd49eeb4caaa718e740affc7,
         type: 3}
       propertyPath: m_Parameters.numCapVertices
@@ -825,6 +845,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1649233525578474146, guid: af75a81bbd49eeb4caaa718e740affc7,
         type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1649233525578474146, guid: af75a81bbd49eeb4caaa718e740affc7,
+        type: 3}
       propertyPath: m_Parameters.numCapVertices
       value: 0
       objectReference: {fileID: 0}
@@ -1029,6 +1054,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1649233525578474146, guid: af75a81bbd49eeb4caaa718e740affc7,
         type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1649233525578474146, guid: af75a81bbd49eeb4caaa718e740affc7,
+        type: 3}
       propertyPath: m_Parameters.numCapVertices
       value: 0
       objectReference: {fileID: 0}
@@ -1231,6 +1261,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2479057610978873366}
     m_Modifications:
+    - target: {fileID: 1649233525578474146, guid: af75a81bbd49eeb4caaa718e740affc7,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1649233525578474146, guid: af75a81bbd49eeb4caaa718e740affc7,
         type: 3}
       propertyPath: m_Parameters.numCapVertices
@@ -1613,6 +1648,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1649233525578474146, guid: af75a81bbd49eeb4caaa718e740affc7,
         type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1649233525578474146, guid: af75a81bbd49eeb4caaa718e740affc7,
+        type: 3}
       propertyPath: m_Parameters.numCapVertices
       value: 0
       objectReference: {fileID: 0}
@@ -1815,6 +1855,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2479057610978873366}
     m_Modifications:
+    - target: {fileID: 1649233525578474146, guid: af75a81bbd49eeb4caaa718e740affc7,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1649233525578474146, guid: af75a81bbd49eeb4caaa718e740affc7,
         type: 3}
       propertyPath: m_Parameters.numCapVertices
@@ -2021,6 +2066,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1649233525578474146, guid: af75a81bbd49eeb4caaa718e740affc7,
         type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1649233525578474146, guid: af75a81bbd49eeb4caaa718e740affc7,
+        type: 3}
       propertyPath: m_Parameters.numCapVertices
       value: 0
       objectReference: {fileID: 0}
@@ -2225,6 +2275,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1649233525578474146, guid: af75a81bbd49eeb4caaa718e740affc7,
         type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1649233525578474146, guid: af75a81bbd49eeb4caaa718e740affc7,
+        type: 3}
       propertyPath: m_Parameters.numCapVertices
       value: 0
       objectReference: {fileID: 0}
@@ -2427,6 +2482,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2479057610978873366}
     m_Modifications:
+    - target: {fileID: 1649233525578474146, guid: af75a81bbd49eeb4caaa718e740affc7,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1649233525578474146, guid: af75a81bbd49eeb4caaa718e740affc7,
         type: 3}
       propertyPath: m_Parameters.numCapVertices
