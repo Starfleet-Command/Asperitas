@@ -6,9 +6,10 @@ public class InventoryButton : MonoBehaviour
 {
     [SerializeField] private InventoryItem itemToSpawn;
     [SerializeField] private InventorySystem itemInventoryReference;
-    [SerializeField]private Image _thumbnail;
+    [SerializeField] private Image _thumbnail;
     [SerializeField] private Text qtyText;
-
+    [SerializeField] private Image biomeIcon;
+    [SerializeField] private Image tagIcon;
     [SerializeField] private Button itemButton;
 
     public bool isNewSpawn = true;
@@ -50,6 +51,16 @@ public class InventoryButton : MonoBehaviour
         _thumbnail.sprite = _item.getItemSprite();
 
         itemInventoryReference = _systemReference;
+        TagSpriteTuple _tuple = null;
+        foreach (ItemTag _tag in _item.getTagsList())
+        {
+            _tuple = itemInventoryReference.FindSpriteTupleWithTag(_tag);
+
+            if(_tuple!=null)
+            {
+                tagIcon.sprite = _tuple.getSprite();
+            }
+        }
         
         if(_item.getItemQuantity()<=0)
         {

@@ -18,6 +18,7 @@ public enum ItemTag
     Medium,
     Large,
     None,
+    Egg,
 }
 
 

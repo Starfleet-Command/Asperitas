@@ -24,10 +24,7 @@ public class PlaceOnDrag : MonoBehaviour
         [SerializeField] [Tooltip("Button that places the agent object")]
         private Button _doneButton;
 
-        [FormerlySerializedAs("_isFreeForm")]
-        [SerializeField]
-        [Tooltip("Free Form Toggle Button")]
-        private Toggle _freeFormToggle;
+        private bool _freeFormToggle=true;
 
         [FormerlySerializedAs("solidWhiteMaterial")]
         [SerializeField] 
@@ -136,7 +133,7 @@ public class PlaceOnDrag : MonoBehaviour
           // Otherwise, use FindRandomPosition() to try to place the object automatically.
 
           // Get a ray pointing in the user's look direction
-          if (_freeFormToggle.isOn)
+          if (_freeFormToggle)
           {
               FreeFormPlacementHandler();
               return;
@@ -238,7 +235,7 @@ public class PlaceOnDrag : MonoBehaviour
             selectedObjCollider = _selectedGameObject.GetComponent<Collider>();
             ownAttributes = null;
             _selectedGameObject.TryGetComponent<PlacedObjectAttributes>(out ownAttributes);
-            if (_freeFormToggle.isOn)
+            if (_freeFormToggle)
             {
                 PlaceObjectWithFixedDistance();
             }
@@ -261,7 +258,7 @@ public class PlaceOnDrag : MonoBehaviour
             selectedObjCollider = _selectedGameObject.GetComponent<Collider>();
             _selectedGameObject.TryGetComponent<PlacedObjectAttributes>(out ownAttributes);
             _isReplacing = !_isReplacing;
-            if (_freeFormToggle.isOn)
+            if (_freeFormToggle)
             {
                 PlaceObjectWithFixedDistance();
             }

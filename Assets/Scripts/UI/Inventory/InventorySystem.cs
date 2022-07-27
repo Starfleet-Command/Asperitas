@@ -9,7 +9,9 @@ public class InventorySystem: MonoBehaviour
 {
     private InventoryItem _checkedItem;
     [HideInInspector] public InventoryItem[] inventory;
+    public TagSpriteTuple[] tagSprites;
     [SerializeField] private InventoryScriptableObject inventoryData;
+    
 
     private void OnEnable()
     {
@@ -38,6 +40,19 @@ public class InventorySystem: MonoBehaviour
         InventoryItem foundItem= null;
         foundItem = Array.Find(this.inventory, element => element.getName() == name);
         return foundItem;
+    }
+
+    public TagSpriteTuple FindSpriteTupleWithTag(ItemTag tag)
+    {
+        foreach (TagSpriteTuple _tuple in tagSprites)
+        {
+            if(_tuple.getTag()==tag)
+            {
+                return _tuple;
+            }
+        }
+
+        return null;
     }
 
     public InventoryItem[] FindAllWithTag(ItemTag tag)
@@ -191,6 +206,25 @@ public class InventoryItem
     public int getItemQuantity()
     {
         return this.quantity;
+    }
+
+
+}
+
+[System.Serializable]
+public class TagSpriteTuple
+{
+    [SerializeField] private ItemTag tag;
+    [SerializeField] private Sprite itemSprite;
+
+    public ItemTag getTag()
+    {
+        return tag;
+    }
+
+    public Sprite getSprite()
+    {
+        return itemSprite;
     }
 
 
