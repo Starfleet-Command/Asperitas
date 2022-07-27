@@ -61,11 +61,11 @@ public class InventoryUiBuilder : MonoBehaviour
             {
                 itemsInRow=0;
                 currentRow = Instantiate(rowUiPrefab);
-                currentRow.transform.SetParent(UiParent.transform);
+                currentRow.transform.SetParent(UiParent.transform,false);
             }
 
             currentButton = Instantiate(buttonPrefab);
-            currentButton.transform.SetParent(currentRow.transform);
+            currentButton.transform.SetParent(currentRow.transform,false);
             currentButton.GetComponent<InventoryButton>().SetInventoryItem(gameInventory.inventory[i]);
             currentButton.GetComponent<InventoryButton>().InitialSetup(gameInventory.inventory[i],gameInventory);
             itemsInRow++;
