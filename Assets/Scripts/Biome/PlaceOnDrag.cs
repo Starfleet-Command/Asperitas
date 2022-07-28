@@ -48,7 +48,7 @@ public class PlaceOnDrag : MonoBehaviour
     private bool _isReplacing;
     private bool _gameboardIsRunning;
     private Collider selectedObjCollider;
-    private Material selectedObjMaterial;
+    private Material[] selectedObjMaterials;
 
     //[SerializeField] private int decimalToSnapTo =1;
 
@@ -204,7 +204,13 @@ public class PlaceOnDrag : MonoBehaviour
             }
             if (_selectedGameObject.TryGetComponent<Renderer>(out var objectRenderer))
             {
-                objectRenderer.material = _doneButton.interactable ? placeableMaterial : notPlaceableMaterial;
+                Material[] updatedMaterialArray = new Material[objectRenderer.materials.Length];
+                Material updatedMaterial = _doneButton.interactable ? placeableMaterial : notPlaceableMaterial;
+                for (int i = 0; i < objectRenderer.materials.Length; i++)
+                {
+                    updatedMaterialArray[i] = updatedMaterial;
+                }
+                objectRenderer.materials = updatedMaterialArray;
             }
         }
 
@@ -252,8 +258,16 @@ public class PlaceOnDrag : MonoBehaviour
             _selectedGameObject = spawnedItem;
             if (_selectedGameObject.TryGetComponent<Renderer>(out var objectRenderer))
             {
-                selectedObjMaterial = objectRenderer.material;
-                objectRenderer.material = notPlaceableMaterial;
+                var materialsLength = objectRenderer.materials.Length;
+                selectedObjMaterials = new Material[materialsLength];
+                Material[] notPlaceableMaterialArray = new Material[materialsLength];
+                for (int i = 0; i < materialsLength; i++)
+                {
+                    selectedObjMaterials[i] = objectRenderer.materials[i];
+                    notPlaceableMaterialArray[i] = notPlaceableMaterial;
+                }
+
+                objectRenderer.materials = notPlaceableMaterialArray;
             }
             selectedObjCollider = _selectedGameObject.GetComponent<Collider>();
             _selectedGameObject.TryGetComponent<PlacedObjectAttributes>(out ownAttributes);
@@ -299,7 +313,7 @@ public class PlaceOnDrag : MonoBehaviour
             BiomeEditingEvents.ItemPlacedEvent(_selectedGameObject);
             if (_selectedGameObject.TryGetComponent<Renderer>(out var objectRenderer))
             {
-                objectRenderer.material = selectedObjMaterial;
+                objectRenderer.materials = selectedObjMaterials;
             }
 
             // if(_selectedGameObject.tag=="Creature")
