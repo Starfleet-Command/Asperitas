@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class ShowPlacingUI : MonoBehaviour
 {
     [SerializeField] GameObject placingPanel;
+    [SerializeField] GameObject preventSelectionPanel;
     [SerializeField] Image placingPanelImage;
 
     private Sprite itemBeingPlacedImage;
@@ -61,5 +62,6 @@ public class ShowPlacingUI : MonoBehaviour
     private void ToggleUI(bool status)
     {
         placingPanel.SetActive(status);
+        preventSelectionPanel.SetActive(status);
     }
 }
