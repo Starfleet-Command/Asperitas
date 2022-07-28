@@ -1900,6 +1900,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5616799319057935979, guid: bb369fc987d3c8d49b7587c8c8ce4822,
+        type: 3}
+      propertyPath: biomeEffect.affinityPercentage
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 6087256227369132853, guid: bb369fc987d3c8d49b7587c8c8ce4822,
         type: 3}
       propertyPath: m_Enabled

@@ -25,7 +25,7 @@ PrefabInstance:
     - target: {fileID: -5147528021192260775, guid: bb369fc987d3c8d49b7587c8c8ce4822,
         type: 3}
       propertyPath: wireColor.a
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -5147528021192260775, guid: bb369fc987d3c8d49b7587c8c8ce4822,
         type: 3}
@@ -240,17 +240,17 @@ PrefabInstance:
     - target: {fileID: 3258955585889456261, guid: bb369fc987d3c8d49b7587c8c8ce4822,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.1
+      value: 0.08
       objectReference: {fileID: 0}
     - target: {fileID: 3258955585889456261, guid: bb369fc987d3c8d49b7587c8c8ce4822,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.1
+      value: 0.08
       objectReference: {fileID: 0}
     - target: {fileID: 3258955585889456261, guid: bb369fc987d3c8d49b7587c8c8ce4822,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.1
+      value: 0.08
       objectReference: {fileID: 0}
     - target: {fileID: 3258955585889456261, guid: bb369fc987d3c8d49b7587c8c8ce4822,
         type: 3}
@@ -450,7 +450,7 @@ PrefabInstance:
     - target: {fileID: 5616799319057935979, guid: bb369fc987d3c8d49b7587c8c8ce4822,
         type: 3}
       propertyPath: biomeEffect.affinityPercentage
-      value: 5
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6087256227369132853, guid: bb369fc987d3c8d49b7587c8c8ce4822,
         type: 3}

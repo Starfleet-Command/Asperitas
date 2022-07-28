@@ -235,7 +235,7 @@ PrefabInstance:
     - target: {fileID: 5616799319057935979, guid: bb369fc987d3c8d49b7587c8c8ce4822,
         type: 3}
       propertyPath: biomeEffect.affinityPercentage
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7382518445037136056, guid: bb369fc987d3c8d49b7587c8c8ce4822,
         type: 3}
