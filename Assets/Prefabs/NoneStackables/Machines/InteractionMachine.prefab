@@ -307,7 +307,7 @@ MonoBehaviour:
   offsetAfterPlacement: {x: 0, y: 0, z: 0}
   biomeEffect:
     biome: 0
-    affinityPercentage: 5
+    affinityPercentage: 10
     biomeIcon: {fileID: 0}
   sourceItem:
     name: 

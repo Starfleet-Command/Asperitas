@@ -175,7 +175,7 @@ PrefabInstance:
     - target: {fileID: 5616799319057935979, guid: edf95250d89a848f9a8b00853cd52b5b,
         type: 3}
       propertyPath: biomeEffect.affinityPercentage
-      value: 7
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7382518445037136056, guid: edf95250d89a848f9a8b00853cd52b5b,
         type: 3}
@@ -222,7 +222,7 @@ MonoBehaviour:
   interactive: 0
   lineMaterial: {fileID: 2100000, guid: 982b0c6dd4bcd894b9576f123b17edd3, type: 2}
   wire_renderer: 1
-  wireColor: {r: 0.16197933, g: 0.9811321, b: 0.9307356, a: 0}
+  wireColor: {r: 0.16197933, g: 0.9811321, b: 0.9307356, a: 1}
   line_renderer: 0
   linePrefab: {fileID: 4162750834140578371, guid: af75a81bbd49eeb4caaa718e740affc7,
     type: 3}

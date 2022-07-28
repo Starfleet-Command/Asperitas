@@ -112,6 +112,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 8107b55ed95584d4eaa01163ba98a507, type: 2}
+    - target: {fileID: 5616799319057935979, guid: edf95250d89a848f9a8b00853cd52b5b,
+        type: 3}
+      propertyPath: biomeEffect.affinityPercentage
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7382518445037136056, guid: edf95250d89a848f9a8b00853cd52b5b,
         type: 3}
       propertyPath: m_Name

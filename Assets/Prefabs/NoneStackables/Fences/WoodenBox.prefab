@@ -1,12 +1,47 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &5697915051981606694
+--- !u!1001 &5491705441869260663
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -6008876543844750079, guid: edf95250d89a848f9a8b00853cd52b5b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -5571124563185688952, guid: edf95250d89a848f9a8b00853cd52b5b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4175702192380188022, guid: edf95250d89a848f9a8b00853cd52b5b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3670056536155794968, guid: edf95250d89a848f9a8b00853cd52b5b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3257517281508551879, guid: edf95250d89a848f9a8b00853cd52b5b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3215269229314793195, guid: edf95250d89a848f9a8b00853cd52b5b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1738433877474500545, guid: edf95250d89a848f9a8b00853cd52b5b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3258955585889456261, guid: edf95250d89a848f9a8b00853cd52b5b,
         type: 3}
       propertyPath: m_RootOrder
@@ -80,69 +115,94 @@ PrefabInstance:
     - target: {fileID: 3957016908274451303, guid: edf95250d89a848f9a8b00853cd52b5b,
         type: 3}
       propertyPath: m_Size.x
-      value: 1.6330247
+      value: 2.0937595
       objectReference: {fileID: 0}
     - target: {fileID: 3957016908274451303, guid: edf95250d89a848f9a8b00853cd52b5b,
         type: 3}
       propertyPath: m_Size.y
-      value: 0.92379117
+      value: 1.689209
       objectReference: {fileID: 0}
     - target: {fileID: 3957016908274451303, guid: edf95250d89a848f9a8b00853cd52b5b,
         type: 3}
       propertyPath: m_Size.z
-      value: 1.5867295
+      value: 2.0551128
       objectReference: {fileID: 0}
     - target: {fileID: 3957016908274451303, guid: edf95250d89a848f9a8b00853cd52b5b,
         type: 3}
       propertyPath: m_Center.x
-      value: 0.0053245723
+      value: -0.0029898286
       objectReference: {fileID: 0}
     - target: {fileID: 3957016908274451303, guid: edf95250d89a848f9a8b00853cd52b5b,
         type: 3}
       propertyPath: m_Center.y
-      value: 0.027904496
+      value: 0.852929
       objectReference: {fileID: 0}
     - target: {fileID: 3957016908274451303, guid: edf95250d89a848f9a8b00853cd52b5b,
         type: 3}
       propertyPath: m_Center.z
-      value: 0.0545139
+      value: 0.0037803054
+      objectReference: {fileID: 0}
+    - target: {fileID: 4162750834140578371, guid: edf95250d89a848f9a8b00853cd52b5b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5148518629850015138, guid: edf95250d89a848f9a8b00853cd52b5b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5163226405430703110, guid: edf95250d89a848f9a8b00853cd52b5b,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 510735ab0b20571438a5c0e3988a52bc, type: 2}
+      objectReference: {fileID: 2100000, guid: b6c22e1aa32d1d44981c168821c7a48d, type: 2}
+    - target: {fileID: 5488951220226128644, guid: edf95250d89a848f9a8b00853cd52b5b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5616799319057935979, guid: edf95250d89a848f9a8b00853cd52b5b,
         type: 3}
       propertyPath: biomeEffect.affinityPercentage
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7382518445037136056, guid: edf95250d89a848f9a8b00853cd52b5b,
         type: 3}
       propertyPath: m_Name
-      value: Stone2
+      value: WoodenBox
+      objectReference: {fileID: 0}
+    - target: {fileID: 8266363212260988962, guid: edf95250d89a848f9a8b00853cd52b5b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8931031429377564718, guid: edf95250d89a848f9a8b00853cd52b5b,
         type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 839161379293372367, guid: cb71a043d65b1fc4a99b2670e0ddeb79,
+      objectReference: {fileID: 2624406897426950558, guid: 32204b983943f164cabde3d54f103720,
         type: 3}
+    - target: {fileID: 9165589335156379732, guid: edf95250d89a848f9a8b00853cd52b5b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: edf95250d89a848f9a8b00853cd52b5b, type: 3}
---- !u!1 &2981654413799729054 stripped
+--- !u!1 &3045995108027027407 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7382518445037136056, guid: edf95250d89a848f9a8b00853cd52b5b,
     type: 3}
-  m_PrefabInstance: {fileID: 5697915051981606694}
+  m_PrefabInstance: {fileID: 5491705441869260663}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &-1352683467815178880
+--- !u!114 &2133390531714229507
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2981654413799729054}
+  m_GameObject: {fileID: 3045995108027027407}
   m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ee7abbac048f81d44bafe6a4fb1135b2, type: 3}
@@ -164,7 +224,7 @@ MonoBehaviour:
     m_Extent: {x: 0, y: 0, z: 0}
   colliderBoundOffset: {x: 0, y: 0, z: 0}
   meshBound:
-    m_Center: {x: 0.06686437, y: 2.104784, z: 0.11315453}
-    m_Extent: {x: 1.0833178, y: 2.3067694, z: 1.2114676}
-  meshBoundOffset: {x: 0.06686437, y: 2.104784, z: 0.11315453}
+    m_Center: {x: -0.002989769, y: 0.85292894, z: 0.0037802458}
+    m_Extent: {x: 1.0468798, y: 0.8446045, z: 1.0275564}
+  meshBoundOffset: {x: -0.002989769, y: 0.85292894, z: 0.0037802458}
   startingScale: {x: 1, y: 1, z: 1}
