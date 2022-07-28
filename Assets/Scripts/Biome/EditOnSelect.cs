@@ -19,6 +19,7 @@ public class EditOnSelect : MonoBehaviour
     
     public void ObjectSelected(LeanSelectByFinger selectedObject, LeanFinger leanFinger)
     {
+        
         if (leanFinger.SnapshotDuration < 0.08f)
             return;
 
@@ -34,8 +35,11 @@ public class EditOnSelect : MonoBehaviour
             BiomeEditingEvents.ObjectSelectedEvent(_selectedGameObject);
         }
 
-        if (_selectedGameObject.TryGetComponent<LeanDragTranslate>(out var dragTranslate)) 
+        
+        if (_selectedGameObject.TryGetComponent<LeanDragTranslate>(out var dragTranslate))
             dragTranslate.enabled = true;
+
+            
         if (_selectedGameObject.TryGetComponent<BoundBox>(out var boundingBox))
         {
             boundingBox.lineColor.a = 200;
@@ -79,6 +83,9 @@ public class EditOnSelect : MonoBehaviour
         }
         else
         {
+            if (_selectedGameObject.TryGetComponent<LeanDragTranslate>(out var dragTranslate)) 
+                dragTranslate.enabled = true;
+
             if (_selectedGameObject.TryGetComponent<BoundBox>(out var boundingBox))
             {
                 boundingBox.lineColor.a = 200;
