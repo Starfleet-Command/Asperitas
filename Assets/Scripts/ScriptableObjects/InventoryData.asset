@@ -281,5 +281,17 @@ MonoBehaviour:
     itemPrefab: {fileID: 4988167583642682057, guid: a56d8dac9db95fd47b6fd5ba6e7421df,
       type: 3}
     itemSprite: {fileID: 21300000, guid: 481c913fa1b65fe4b9a8fa8fe9be9fc0, type: 3}
-    tags: 0200000004000000
+    tags: 0100000004000000
+    quantity: 2
+  - name: Bush1
+    itemPrefab: {fileID: 8066419280061579358, guid: f9500f20da50948da8999c50c84f24ee,
+      type: 3}
+    itemSprite: {fileID: 21300000, guid: 2b107559da2ae7b419823c77c62a5f21, type: 3}
+    tags: 0100000004000000
+    quantity: 2
+  - name: Bush2
+    itemPrefab: {fileID: 5832576415183179440, guid: abf9e8fa9c61842d686e399031bebe87,
+      type: 3}
+    itemSprite: {fileID: 21300000, guid: ac4a1f0f4036aed488c50712b46963c4, type: 3}
+    tags: 0100000004000000
     quantity: 2
