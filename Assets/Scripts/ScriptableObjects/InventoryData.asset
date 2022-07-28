@@ -60,7 +60,7 @@ MonoBehaviour:
       type: 3}
     itemSprite: {fileID: 21300000, guid: b154bba5aa27bdc42a376793207bb103, type: 3}
     tags: 0100000003000000
-    quantity: 3
+    quantity: 1
   - name: Creature Egg
     itemPrefab: {fileID: 6932973193551974891, guid: 5a35933d17672e349a4f5d6fdeaf8318,
       type: 3}
@@ -281,8 +281,8 @@ MonoBehaviour:
     itemPrefab: {fileID: 4988167583642682057, guid: a56d8dac9db95fd47b6fd5ba6e7421df,
       type: 3}
     itemSprite: {fileID: 21300000, guid: 481c913fa1b65fe4b9a8fa8fe9be9fc0, type: 3}
-    tags: 0100000004000000
-    quantity: 2
+    tags: 0100000003000000
+    quantity: 3
   - name: Bush1
     itemPrefab: {fileID: 8066419280061579358, guid: f9500f20da50948da8999c50c84f24ee,
       type: 3}
