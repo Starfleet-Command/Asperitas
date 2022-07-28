@@ -14,6 +14,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3258955585889456261, guid: edf95250d89a848f9a8b00853cd52b5b,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3258955585889456261, guid: edf95250d89a848f9a8b00853cd52b5b,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3258955585889456261, guid: edf95250d89a848f9a8b00853cd52b5b,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3258955585889456261, guid: edf95250d89a848f9a8b00853cd52b5b,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -133,11 +148,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee7abbac048f81d44bafe6a4fb1135b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boundSource: 0
-  interactive: 1
+  boundSource: 1
+  interactive: 0
   lineMaterial: {fileID: 2100000, guid: 982b0c6dd4bcd894b9576f123b17edd3, type: 2}
   wire_renderer: 1
-  wireColor: {r: 0, g: 1, b: 0.4, a: 0.74}
+  wireColor: {r: 0.16197933, g: 0.9811321, b: 0.9307356, a: 1}
   line_renderer: 0
   linePrefab: {fileID: 4162750834140578371, guid: af75a81bbd49eeb4caaa718e740affc7,
     type: 3}

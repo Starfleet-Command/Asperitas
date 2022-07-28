@@ -113,25 +113,25 @@ MonoBehaviour:
     itemPrefab: {fileID: 2192416663094583982, guid: d4f03f1da8a274dfbb45ffec675b3ce8,
       type: 3}
     itemSprite: {fileID: 21300000, guid: 422dd199f155dfa4da9f263a8588d869, type: 3}
-    tags: 0100000004000000
+    tags: 0100000003000000
     quantity: 1
   - name: Large Island
     itemPrefab: {fileID: 354811321820474697, guid: ac23d1bc92d1d47e3abee1d807ee1101,
       type: 3}
     itemSprite: {fileID: 21300000, guid: 9ebeab7dadaa0ed46b0ea1567f8e1904, type: 3}
-    tags: 00000000
+    tags: 0200000004000000
     quantity: 1
   - name: Medium Island
     itemPrefab: {fileID: 1058198990126893165, guid: ed25576307333408ca5eb1dd0109fb6f,
       type: 3}
     itemSprite: {fileID: 21300000, guid: f43aef29b927b9d4c82364835ab1a8c6, type: 3}
-    tags: 00000000
+    tags: 0000000004000000
     quantity: 2
   - name: Stepped Island
     itemPrefab: {fileID: 7137587413915870183, guid: e7ec66290790d449e9466b5b3069cf40,
       type: 3}
     itemSprite: {fileID: 21300000, guid: 34cc0e0f7f695924eb19004c605eceea, type: 3}
-    tags: 00000000
+    tags: 0000000004000000
     quantity: 2
   - name: Small Island
     itemPrefab: {fileID: 454416398033812722, guid: 84bfa845c12b6469688254995fe89925,
@@ -241,3 +241,39 @@ MonoBehaviour:
     itemSprite: {fileID: 21300000, guid: e117c2ec272a1474fa96fd2ddb2700b2, type: 3}
     tags: 0100000004000000
     quantity: 3
+  - name: Cliff1
+    itemPrefab: {fileID: 4944878625737094102, guid: 47c68f84b4d314b428c1cf34a503edd5,
+      type: 3}
+    itemSprite: {fileID: 21300000, guid: 3a90f009bf3292b4db8e40f7dd3d8264, type: 3}
+    tags: 0000000004000000
+    quantity: 2
+  - name: Cliff2
+    itemPrefab: {fileID: 2844811494684517441, guid: c5fe5f6d363544ebcb71ddd53cf8f343,
+      type: 3}
+    itemSprite: {fileID: 21300000, guid: 2130aec47c6174a40ab2ceadce4bc181, type: 3}
+    tags: 0000000004000000
+    quantity: 2
+  - name: Cliff3
+    itemPrefab: {fileID: 2273078028730709110, guid: 9574da38d49fb4cdeb7d3916965114b1,
+      type: 3}
+    itemSprite: {fileID: 21300000, guid: 48cf009b4e1d9f440a52b4cf80504368, type: 3}
+    tags: 0000000004000000
+    quantity: 2
+  - name: Cliff4
+    itemPrefab: {fileID: 5129632372045524595, guid: 3f65894ce8deb4d4181ca940c2d566ae,
+      type: 3}
+    itemSprite: {fileID: 21300000, guid: c8779fac6cc7e8543b0cc878b3d70c04, type: 3}
+    tags: 0000000004000000
+    quantity: 2
+  - name: WoodenBox
+    itemPrefab: {fileID: 3045995108027027407, guid: d9823ce36b391474f92a5683f050ff88,
+      type: 3}
+    itemSprite: {fileID: 21300000, guid: 2a98faada2ee5e740834c13fe26e23c7, type: 3}
+    tags: 01000000
+    quantity: 2
+  - name: FoundationThelma
+    itemPrefab: {fileID: 2806033395847640208, guid: 6f02b6d7294da9c43b11e7e6bebd6de8,
+      type: 3}
+    itemSprite: {fileID: 21300000, guid: 1f0e0a9c08b95470ca6c3e5c0a8a142d, type: 3}
+    tags: 0200000004000000
+    quantity: 10
