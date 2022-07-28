@@ -115,32 +115,32 @@ PrefabInstance:
     - target: {fileID: 3957016908274451303, guid: edf95250d89a848f9a8b00853cd52b5b,
         type: 3}
       propertyPath: m_Size.x
-      value: 18.636875
+      value: 19.816334
       objectReference: {fileID: 0}
     - target: {fileID: 3957016908274451303, guid: edf95250d89a848f9a8b00853cd52b5b,
         type: 3}
       propertyPath: m_Size.y
-      value: 20.5827
+      value: 20.546484
       objectReference: {fileID: 0}
     - target: {fileID: 3957016908274451303, guid: edf95250d89a848f9a8b00853cd52b5b,
         type: 3}
       propertyPath: m_Size.z
-      value: 20.318642
+      value: 18.89557
       objectReference: {fileID: 0}
     - target: {fileID: 3957016908274451303, guid: edf95250d89a848f9a8b00853cd52b5b,
         type: 3}
       propertyPath: m_Center.x
-      value: -0.81520844
+      value: 3.8267107
       objectReference: {fileID: 0}
     - target: {fileID: 3957016908274451303, guid: edf95250d89a848f9a8b00853cd52b5b,
         type: 3}
       propertyPath: m_Center.y
-      value: -2.965299
+      value: 9.516242
       objectReference: {fileID: 0}
     - target: {fileID: 3957016908274451303, guid: edf95250d89a848f9a8b00853cd52b5b,
         type: 3}
       propertyPath: m_Center.z
-      value: -0.7808833
+      value: 4.3992357
       objectReference: {fileID: 0}
     - target: {fileID: 4162750834140578371, guid: edf95250d89a848f9a8b00853cd52b5b,
         type: 3}
@@ -191,7 +191,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: -2017699588578722885, guid: d4b81ed3d8503c14d95040b8b328d7c1,
+      objectReference: {fileID: 2679503102833533491, guid: fe76f5e531156b145a9ada9420ce6941,
         type: 3}
     - target: {fileID: 9165589335156379732, guid: edf95250d89a848f9a8b00853cd52b5b,
         type: 3}
@@ -219,10 +219,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boundSource: 0
-  interactive: 0
+  interactive: 1
   lineMaterial: {fileID: 2100000, guid: 982b0c6dd4bcd894b9576f123b17edd3, type: 2}
   wire_renderer: 1
-  wireColor: {r: 0.16197933, g: 0.9811321, b: 0.9307356, a: 1}
+  wireColor: {r: 0.16078432, g: 0.98039216, b: 0.92941177, a: 0.74}
   line_renderer: 0
   linePrefab: {fileID: 4162750834140578371, guid: af75a81bbd49eeb4caaa718e740affc7,
     type: 3}
@@ -234,7 +234,7 @@ MonoBehaviour:
     m_Extent: {x: 0, y: 0, z: 0}
   colliderBoundOffset: {x: 0, y: 0, z: 0}
   meshBound:
-    m_Center: {x: -0.81520844, y: -2.9652987, z: -0.78088284}
-    m_Extent: {x: 9.318438, y: 10.29135, z: 10.159321}
-  meshBoundOffset: {x: -0.81520844, y: -2.9652987, z: -0.78088284}
-  startingScale: {x: 0.1, y: 0.1, z: 0.1}
+    m_Center: {x: 3.8267107, y: 9.516242, z: 4.3992352}
+    m_Extent: {x: 9.908167, y: 10.273242, z: 9.447785}
+  meshBoundOffset: {x: 3.8267107, y: 9.516242, z: 4.3992352}
+  startingScale: {x: 0.02, y: 0.02, z: 0.02}
