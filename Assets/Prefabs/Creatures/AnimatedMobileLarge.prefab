@@ -167,8 +167,8 @@ MonoBehaviour:
   mainCamera: {fileID: 0}
   minDistanceFromPlayer: 0.7
   maxDistanceFromPlayer: 2
-  minAltitude: 0.15
-  maxAltitude: 0.35
+  minAltitude: 0.1
+  maxAltitude: 0.3
   path:
     nodes:
     - {x: 10, y: 2, z: -3}
