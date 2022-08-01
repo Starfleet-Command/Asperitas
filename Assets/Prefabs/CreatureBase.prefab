@@ -1,0 +1,192 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6932973193551974891
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6932973193551974885}
+  - component: {fileID: 6932973193551974884}
+  - component: {fileID: 6932973193551974886}
+  - component: {fileID: 3198562592427570593}
+  m_Layer: 0
+  m_Name: CreatureBase
+  m_TagString: Creature
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6932973193551974885
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6932973193551974891}
+  m_LocalRotation: {x: 0, y: 0.9396927, z: 0, w: 0.34202018}
+  m_LocalPosition: {x: 0.9200001, y: 1.02, z: -3.05}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4865546526664643782}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 140, z: 0}
+--- !u!114 &6932973193551974884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6932973193551974891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30453ca2043de05499c4dec625003e1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  creatureStage: 0
+  creatureName: Ajolote
+  creatureStageData:
+  - creatureStage: 1
+    stageCreaturePrefab: {fileID: 3034809429399643004, guid: da470b6683b1bbf489f7c8330b2aff35,
+      type: 3}
+  - creatureStage: 2
+    stageCreaturePrefab: {fileID: 5061541773199366894, guid: 4c5c319f86c956c4d80a1a3cffe5eb46,
+      type: 3}
+  - creatureStage: 3
+    stageCreaturePrefab: {fileID: 3903431813430831482, guid: b682f93b1d3293d4a8aee1df175b7725,
+      type: 3}
+  currentCreatureMesh: {fileID: 5246188224821005948}
+  preferredBiome: 0
+--- !u!114 &6932973193551974886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6932973193551974891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d64af7e65faf9643bd1d6e9eacacb54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  frGrowthMultiplier: 0.5
+  currentFriendship: 0
+  maxFriendship: 100
+  maxBiomeAffinity: 100
+  biomeToGrowthMult: 0.01
+  _creatureData: {fileID: 6932973193551974884}
+  friendshipGainTable:
+  - interactionType: 0
+    friendshipGain: 10
+  - interactionType: 1
+    friendshipGain: 5
+  - interactionType: 2
+    friendshipGain: 7.5
+--- !u!114 &3198562592427570593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6932973193551974891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af9f0456ff30f8b4f9d1cfcb3aae96ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stackabilityType: 3
+  offsetAfterPlacement: {x: 0, y: 0, z: 0}
+  biomeEffect:
+    biome: 0
+    affinityPercentage: 0
+    biomeIcon: {fileID: 0}
+  sourceItem:
+    name: 
+    itemPrefab: {fileID: 0}
+    itemSprite: {fileID: 0}
+    tags: 
+    quantity: 0
+--- !u!1001 &1188788593540241927
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 6932973193551974885}
+    m_Modifications:
+    - target: {fileID: 6051298741300481729, guid: ecd7932bce58943188443da6d4a68dc1,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6051298741300481729, guid: ecd7932bce58943188443da6d4a68dc1,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6051298741300481729, guid: ecd7932bce58943188443da6d4a68dc1,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6051298741300481729, guid: ecd7932bce58943188443da6d4a68dc1,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6051298741300481729, guid: ecd7932bce58943188443da6d4a68dc1,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7072302
+      objectReference: {fileID: 0}
+    - target: {fileID: 6051298741300481729, guid: ecd7932bce58943188443da6d4a68dc1,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7069834
+      objectReference: {fileID: 0}
+    - target: {fileID: 6051298741300481729, guid: ecd7932bce58943188443da6d4a68dc1,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6051298741300481729, guid: ecd7932bce58943188443da6d4a68dc1,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6051298741300481729, guid: ecd7932bce58943188443da6d4a68dc1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -89.98
+      objectReference: {fileID: 0}
+    - target: {fileID: 6051298741300481729, guid: ecd7932bce58943188443da6d4a68dc1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6051298741300481729, guid: ecd7932bce58943188443da6d4a68dc1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6390986689406014587, guid: ecd7932bce58943188443da6d4a68dc1,
+        type: 3}
+      propertyPath: m_Name
+      value: LP_Egg 1 Variant
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ecd7932bce58943188443da6d4a68dc1, type: 3}
+--- !u!1 &5246188224821005948 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6390986689406014587, guid: ecd7932bce58943188443da6d4a68dc1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1188788593540241927}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &4865546526664643782 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6051298741300481729, guid: ecd7932bce58943188443da6d4a68dc1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1188788593540241927}
+  m_PrefabAsset: {fileID: 0}
