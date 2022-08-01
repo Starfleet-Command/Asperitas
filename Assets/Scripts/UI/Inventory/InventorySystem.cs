@@ -5,6 +5,10 @@ using System;
 
 
 
+/// <summary>
+/// This class acts as the controller for the inventory system, handling item additions and withdrawals <br/>
+/// It also contains helper functions for finding elements, sorting, and so on. 
+/// </summary>
 public class InventorySystem: MonoBehaviour
 {
     private InventoryItem _checkedItem;
@@ -103,6 +107,10 @@ public class InventorySystem: MonoBehaviour
     }
 }
 
+/// <summary>
+/// This class is the primary data structure for the inventory <br/>
+/// and contains all items required for its button and placement. 
+/// </summary>
 [System.Serializable]
 public class InventoryItem
 {

@@ -2,6 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// This class controls the triggering of the play interaction event, and sets a time after which <br/>
+/// the creature is forcibly released
+/// </summary>
 public class ReleaseCreature : MonoBehaviour
 {
     private bool canPlay = false;

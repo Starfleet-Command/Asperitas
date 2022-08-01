@@ -2,6 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+
+/// <summary>
+/// This class forces the layout groups of all mission holders to actively reload when opened. <br/>
+/// This prevents a bug where the dynamic resizing is delayed by a frame.
+/// </summary>
 public class LayoutGroupUpdate : MonoBehaviour
 {
     public VerticalLayoutGroup layoutGroup;

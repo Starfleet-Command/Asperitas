@@ -2,6 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+
+
+/// <summary>
+/// This class handles the behaviour of the programatically generated inventory buttons, including <br/>
+/// interfacing with the inventory and the placement system. 
+/// </summary>
 public class InventoryButton : MonoBehaviour
 {
     [SerializeField] private InventoryItem itemToSpawn;
@@ -45,6 +51,10 @@ public class InventoryButton : MonoBehaviour
 
     }
 
+    
+    /// <summary>
+    /// This method initialises all the icons, thumbnails and values for the button.
+    /// </summary>
     public void InitialSetup(InventoryItem _item, InventorySystem _systemReference)
     {
         qtyText.text = _item.getItemQuantity().ToString();

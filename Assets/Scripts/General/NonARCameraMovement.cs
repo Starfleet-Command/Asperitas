@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// This class simulates the in-editor camera movement for 3D scenes, used for testing the systems in a Unity 3D scene
+/// </summary>
 public class NonARCameraMovement : MonoBehaviour
 {
     [SerializeField] float speed = 0.5f;

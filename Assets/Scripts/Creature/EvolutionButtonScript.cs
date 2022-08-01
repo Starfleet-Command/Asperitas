@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// This class controls the behaviour of the evolution button, and controls its active state<br/>
+/// </summary>
 public class EvolutionButtonScript : MonoBehaviour
 {
     [SerializeField] private GameObject _attachedButton;

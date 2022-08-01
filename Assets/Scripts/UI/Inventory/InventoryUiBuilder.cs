@@ -2,6 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+/// <summary>
+/// This class programatically generates the inventory UI
+/// </summary>
 public class InventoryUiBuilder : MonoBehaviour
 {
     [SerializeField]private InventorySystem gameInventory;
@@ -47,6 +51,11 @@ public class InventoryUiBuilder : MonoBehaviour
         }
     }
 
+
+    /// <summary>
+    /// This method instantiates all required rows, columns and individual items, <br/>
+    /// and sets them as children to the specified UI elements. 
+    /// </summary>
     private void FirstTimeBuildUI()
     {
         inventoryCanvas.SetActive(true);

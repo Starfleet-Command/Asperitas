@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// This class centralises all the events that have to do exclusively with the UI
+/// </summary>
 public class UiEvents : MonoBehaviour
 {
     public delegate void IsThrowingStatusChanged(bool _status);

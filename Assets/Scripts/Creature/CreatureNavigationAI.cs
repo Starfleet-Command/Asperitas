@@ -3,6 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityMovementAI;
 
+
+/// <summary>
+/// This class controls the behaviour of the creature movement, using scripts from the external plugin<br/>
+/// UnityMovementAI.
+/// </summary>
 [RequireComponent(typeof(SteeringBasics))]
 [RequireComponent(typeof(FollowPath))]
 [RequireComponent(typeof(Wander1))]
@@ -28,8 +33,6 @@ public class CreatureNavigationAI : MonoBehaviour
     private Vector3 currentPathNode;
     private bool canAddNewNode = true;
     private Vector2 screenBounds;
-    private float objectWidth;
-    private float objectHeight;
 
     private bool isBeingSummoned=false;
     public bool mustFacePlayer=false;
@@ -60,9 +63,6 @@ public class CreatureNavigationAI : MonoBehaviour
         followPath = GetComponent<FollowPath>();
         wander = GetComponent<Wander1>();
         dynamicPath = new List<Vector3>();
-
-        objectWidth = this.gameObject.GetComponent<Collider>().bounds.extents.x;
-        objectHeight = this.gameObject.GetComponent<Collider>().bounds.extents.y;
 
         for (int i = 0; i < initialPointQuantity; i++)
         {
@@ -162,6 +162,13 @@ public class CreatureNavigationAI : MonoBehaviour
         canAddNewNode=true;
     }
 
+    /// <summary>
+    /// This method prevents the wander point generation from exceeding the user-set bounds<br/>
+    /// If the point is out of bounds it will mirror the point with the bound as the center<br/>
+    /// And if the mirrored point is still out of bounds it will clamp it to them.
+    /// </summary>
+    /// <param name="navPoint"> The coordinates from the wander point generation </param>
+    /// <returns> The adjusted coordinate </returns>
     private Vector3 PreventOutOfBounds(Vector3 navPoint)
     {
         Vector3 viewPos = navPoint;

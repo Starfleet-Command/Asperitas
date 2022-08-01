@@ -3,6 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// This class controls the toy and handles all of its interaction events. <br/>
+/// It also prevents the toy from triggering when the creature is a baby.
+/// </summary>
 public class ToyBehaviour : MonoBehaviour
 {
     private bool canSendToyEvent= false;

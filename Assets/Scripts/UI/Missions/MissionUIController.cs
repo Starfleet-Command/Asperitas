@@ -2,6 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+
+/// <summary>
+/// This class acts as a controller for the mission UI, programatically generating <br/>
+/// the individual mission UI components, assigning them to their corresponding mission holders, <br/>
+/// and establishing the listeners that update the mission progress bars and percentages. 
+/// </summary>
 public class MissionUIController : MonoBehaviour
 {
     [SerializeField] private GameObject[] stageMissionHolders;
@@ -37,7 +43,11 @@ public class MissionUIController : MonoBehaviour
         UiEvents.OnMissionSetChanged-=HandleChecklistFinished;
     }
 
-
+    /// <summary>
+    /// This method responds to a MissionProgressedEvent and attempts to find the mission that was progressed <br/>
+    /// in the current set of missions. If it does, it updates its progress bar and percentage. 
+    /// </summary>
+    ///<param name="_progressedMission"> The mission that was progressed. </param>
     public void PollForMissionUpdates(ChecklistMission _progressedMission)
     {
         
@@ -104,6 +114,11 @@ public class MissionUIController : MonoBehaviour
         missionCanvas.SetActive(true);
     }
 
+    /// <summary>
+    /// This method builds the low-level elements of the mission UI programatically.<br/>
+    /// The UI elements like the I separators and the name and number of the mission holders <br/>
+    /// are currently created manually.
+    /// </summary>
     private void FirstTimeBuildUI()
     {
         

@@ -2,6 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// This class is attached to any creature base, and holds the meshes for all the stages of the creature.<br/>
+/// It is also responsible for swapping the creature models during the evolution
+/// </summary>
 public class CreatureData : MonoBehaviour
 {
 
@@ -38,6 +42,9 @@ public class CreatureData : MonoBehaviour
         ReplaceCreatureMesh(creatureStage);
     }
 
+    /// <summary>
+    /// This method replaces the creature's model according to the data for the current stage
+    /// </summary>
     private void ReplaceCreatureMesh(EvolutionStage newStage)
     {
         GameObject newMesh = null;

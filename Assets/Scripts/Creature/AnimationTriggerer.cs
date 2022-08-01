@@ -2,6 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+/// <summary>
+/// This class modifies the animator state of the creature after the player has interacted with it
+/// </summary>
 public class AnimationTriggerer : MonoBehaviour
 {
     [SerializeField] private Animator animController;
@@ -18,6 +22,11 @@ public class AnimationTriggerer : MonoBehaviour
         CreatureEvents.OnCreatureBeginPet-=TriggerPetting;
     }
 
+    /// <summary>
+    /// This method subscribes to the OnInteractionTriggered event, and triggers the appropriate animation
+    /// for the relevant interaction
+    /// </summary>
+    /// <param> _interactionType is the type of interaction being triggered </param>
     private void ReactToInteraction(InteractionSocketType _interactionType)
     {
         if(_interactionType== InteractionSocketType.Feeding)

@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// This class updates the friendship bar whenever friendship is gained in the course of the game
+/// </summary>
 public class FriendshipUIListener : MonoBehaviour
 {
     public Slider friendshipBar;
@@ -21,6 +24,9 @@ public class FriendshipUIListener : MonoBehaviour
         CreatureEvents.OnCreaturePlaced-=ReadCreatureSettings;
     }
 
+    /// <summary>
+    /// This method reads the friendship settings from a creature after it's been placed, and adjusts the slider settings accordingly
+    /// </summary>
     public void ReadCreatureSettings(GameObject _creature)
     {
         CreatureFriendship creatureFriendshipScript = null;

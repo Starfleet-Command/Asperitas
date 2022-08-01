@@ -2,6 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// This class is only used to centralise all enums used in the game. <br/>
+/// Enums are used to simplify in-editor parameter modification
+/// </summary>
 public class GameEnums : MonoBehaviour
 {
 

@@ -2,6 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+/// <summary>
+/// This class acts as a controller for the mission system, subscribing to a myriad events <br/>
+/// to check for mission progress. 
+/// </summary>
 public class ChecklistMissionSystem : MonoBehaviour
 {
     [SerializeField] private BiomeHabitability habitabilityTrackingScript;
@@ -46,7 +51,7 @@ public class ChecklistMissionSystem : MonoBehaviour
         _creatureObject.TryGetComponent<CreatureFriendship>(out creatureFriendshipScript);
     }
 
-    //Currently only checks for placed object progress. 
+    #region MissionProgressChecks
     private void PlacedMissionProgressedCheck(GameObject placedItem)
     {
         ItemTag[] itemTags = placedItem.GetComponent<PlacedObjectAttributes>().sourceItem.getTags();
@@ -134,6 +139,8 @@ public class ChecklistMissionSystem : MonoBehaviour
         }
     }
 
+    #endregion
+
     private void SwitchChecklist()
     {
         currentStage++;
@@ -145,6 +152,10 @@ public class ChecklistMissionSystem : MonoBehaviour
         PollFriendshipAndBiomeStatus();
     }
 
+    /// <summary>
+    /// This method carries over any progress made in habitability and friendship to the next stage <br/>
+    /// and automatically progresses the missions that hinge on them.
+    /// </summary>
     private void PollFriendshipAndBiomeStatus()
     {
         foreach(ChecklistMission mission in currentChecklist)
@@ -188,6 +199,10 @@ public class ChecklistWrapper
     }
 }
 
+/// <summary>
+/// This class acts as the primary data structure for the mission system <br/>
+/// while not all fields are used for all missions, hiding the unused fields would require a custom inspector
+/// </summary>
 [System.Serializable]
 public class ChecklistMission
 {

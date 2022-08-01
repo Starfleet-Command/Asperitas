@@ -2,6 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+
+
+/// <summary>
+/// This class toggles the AIO menu's alarm state in response to the OnChangeAlarmState event <br/> 
+/// </summary>
 public class AlarmDisplayer : MonoBehaviour
 {
     [SerializeField] private Sprite openBaseMenuSprite;

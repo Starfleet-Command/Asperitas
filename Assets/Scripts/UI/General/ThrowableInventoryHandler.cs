@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// This class handles the inventory selection for all throwable items, and describes their basic functionality
+/// </summary>
 public class ThrowableInventoryHandler : MonoBehaviour
 {
     public ThrowableObject[] throwableInventory;

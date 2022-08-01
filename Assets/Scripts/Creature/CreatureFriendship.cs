@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 //Intended to go on a creature, same as CreatureData. 
+/// <summary>
+/// This class is attached to any creature base, and holds the settings for friendship and friendship growth
+/// </summary>
 public class CreatureFriendship : MonoBehaviour
 {
     [SerializeField] private float frGrowthMultiplier=0.5f;
@@ -13,8 +16,6 @@ public class CreatureFriendship : MonoBehaviour
 
     [SerializeField] private CreatureData _creatureData;
     [SerializeField] private BondGainPerInteraction[] friendshipGainTable;
-
-    // Start is called before the first frame update
 
     private void OnEnable()
     {

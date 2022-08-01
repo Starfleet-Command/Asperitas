@@ -2,6 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// This class detects swipes, which are used for the petting interaction and throwing the food <br/>
+/// it also sends raycasts along the swipe path, which are used for the petting. 
+/// </summary>
 public class SwipeDetection : MonoBehaviour
 {
     public Vector3 swipeStartPosition;

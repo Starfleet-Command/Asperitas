@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// This class holds all the events related to creatures, creature behaviours, and missions
+/// </summary>
 public class CreatureEvents : MonoBehaviour
 {
     public delegate void MissionProgressed(ChecklistMission _mission);

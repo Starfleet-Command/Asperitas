@@ -2,6 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+
+/// <summary>
+/// This class handles the "currently placing" panel behaviour, including toggling visibility and setting the thumbnail.
+/// </summary>
 public class ShowPlacingUI : MonoBehaviour
 {
     [SerializeField] GameObject placingPanel;

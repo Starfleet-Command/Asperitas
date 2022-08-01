@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// This class handles the triggering of the feeding event, after receiving a collision from any collider in the creature hierarchy 
+/// </summary>
 public class CollisionRelay : MonoBehaviour
 {
     private bool canCollide = true;

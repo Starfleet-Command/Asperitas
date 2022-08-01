@@ -4,7 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 public class HabitabilityUIListener : MonoBehaviour
 {
-    
+    /// <summary>
+    /// This class creates and updates the habitability bar whenever it is gained in the course of the game
+    /// </summary>
     [SerializeField] private Slider habitatSlider;
     [SerializeField] private Image biomeIcon;
     private BiomeType currentBiome;
