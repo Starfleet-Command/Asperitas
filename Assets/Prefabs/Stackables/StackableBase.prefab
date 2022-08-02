@@ -239,6 +239,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 451a9110bb8e24c2d8197dbe05c249cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minThreshold: 0.08
+  minLongPressThreshold: 0.4
 --- !u!114 &-5147528021192260775
 MonoBehaviour:
   m_ObjectHideFlags: 0

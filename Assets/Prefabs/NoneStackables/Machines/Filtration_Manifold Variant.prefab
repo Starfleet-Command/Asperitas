@@ -237,7 +237,7 @@ MonoBehaviour:
   interactive: 0
   lineMaterial: {fileID: 2100000, guid: cc8706a00ac218944b45252bdfba6aeb, type: 2}
   wire_renderer: 1
-  wireColor: {r: 0.16197933, g: 0.9811321, b: 0.9307356, a: 1}
+  wireColor: {r: 0.16197933, g: 0.9811321, b: 0.9307356, a: 0}
   line_renderer: 0
   linePrefab: {fileID: 4162750834140578371, guid: af75a81bbd49eeb4caaa718e740affc7,
     type: 3}
@@ -265,3 +265,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 451a9110bb8e24c2d8197dbe05c249cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minThreshold: 0.08
+  minLongPressThreshold: 0.4

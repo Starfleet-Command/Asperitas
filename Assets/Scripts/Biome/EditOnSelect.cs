@@ -18,6 +18,14 @@ using UnityEngine.Serialization;
 /// </summary>
 public class EditOnSelect : MonoBehaviour
 {
+    [SerializeField]
+    [Tooltip("Minimum touch threshold")]
+    private float minThreshold;
+    
+    [SerializeField]
+    [Tooltip("Minimum Long Press threshold")]
+    private float minLongPressThreshold;
+    
     private GameObject _selectedGameObject;
     
     /// <summary>
@@ -33,7 +41,7 @@ public class EditOnSelect : MonoBehaviour
     public void ObjectSelected(LeanSelectByFinger selectedObject, LeanFinger leanFinger)
     {
         
-        if (leanFinger.SnapshotDuration < 0.08f)
+        if (leanFinger.SnapshotDuration < minThreshold)
             return;
 
         _selectedGameObject = gameObject;
@@ -103,10 +111,10 @@ public class EditOnSelect : MonoBehaviour
     /// <param name="leanFinger"></param>
     public void FunctionalObjectSelected(LeanSelectByFinger selectedObject, LeanFinger leanFinger)
     {
-        if (leanFinger.SnapshotDuration < 0.08f)
+        if (leanFinger.SnapshotDuration < minThreshold)
             return;
         _selectedGameObject = gameObject;
-        if (leanFinger.SnapshotDuration > 0.4f)
+        if (leanFinger.SnapshotDuration > minLongPressThreshold)
         {
             if(gameObject.TryGetComponent<ToyBehaviour>(out ToyBehaviour toyTrigger))
             {
