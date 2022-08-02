@@ -2,6 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+
+/// <summary>
+/// This class was used for testing snap-placement system in non AR mode in Unity
+/// </summary>
 public class NonARPlacement : MonoBehaviour
 {
 
@@ -89,10 +93,6 @@ public class NonARPlacement : MonoBehaviour
 
             //All 
             _selectedGameObject.transform.position = hitPoint+ownAttributes.offsetAfterPlacement;
-
-
-            
-            
         }
 
         public void SpawnButtonOnClick(GameObject spawnObject)

@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// This class holds all the events related to biome building, biome editing, and Inventory
+/// </summary>
 public class BiomeEditingEvents : MonoBehaviour
 {
 
@@ -77,6 +80,4 @@ public class BiomeEditingEvents : MonoBehaviour
     {
         OnBiomeHabitabilityModified?.Invoke(modifiedBiome);
     }
-
-    
 }

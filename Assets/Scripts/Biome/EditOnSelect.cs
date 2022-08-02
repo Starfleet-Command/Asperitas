@@ -13,10 +13,23 @@ using Niantic.ARDK.Utilities;
 using Niantic.ARDK.Utilities.Input.Legacy;
 using UnityEngine.Serialization;
 
+/// <summary>
+/// This Class is responsible for handling the selected object attributes and functionalities. 
+/// </summary>
 public class EditOnSelect : MonoBehaviour
 {
     private GameObject _selectedGameObject;
     
+    /// <summary>
+    /// This function will check for the duration of touch.
+    /// Then set the following selected game object's components settings:
+    /// - Enable LeanDragTranslate from the LeanTouch plugin
+    /// - Enable the bounding box for the object from the BoundBox plugin
+    ///
+    /// It will also enable delete button for all none creature objects.
+    /// </summary>
+    /// <param name="selectedObject"> The selected object (current object this script is attached to)</param>
+    /// <param name="leanFinger"> A variable containing the current touch information form LeanFinger class</param>
     public void ObjectSelected(LeanSelectByFinger selectedObject, LeanFinger leanFinger)
     {
         
@@ -48,6 +61,14 @@ public class EditOnSelect : MonoBehaviour
         
     }
     
+    /// <summary>
+    /// This function will reset the following game object's components settings:
+    /// - Disable LeanDragTranslate from the LeanTouch plugin
+    /// - Disable the bounding box for the object from the BoundBox plugin
+    ///
+    /// It will also disable delete button for all deselected objects.
+    /// </summary>
+    /// <param name="deselectedObject"> the object that has been deselected </param>
     public void ObjectDeselected(LeanSelect deselectedObject)
     {
         if (_selectedGameObject == null)
@@ -69,6 +90,17 @@ public class EditOnSelect : MonoBehaviour
         _selectedGameObject = null;
     }
 
+    /// <summary>
+    /// This function will check for the duration of touch.
+    /// If it's a long touch, activate the toy and trigger the OnItemInteracted event.
+    /// Otherwise, set the following selected game object's components settings:
+    /// - Enable LeanDragTranslate from the LeanTouch plugin
+    /// - Enable the bounding box for the object from the BoundBox plugin
+    ///
+    /// It will also enable delete button for the object.
+    /// </summary>
+    /// <param name="selectedObject"></param>
+    /// <param name="leanFinger"></param>
     public void FunctionalObjectSelected(LeanSelectByFinger selectedObject, LeanFinger leanFinger)
     {
         if (leanFinger.SnapshotDuration < 0.08f)

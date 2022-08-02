@@ -16,7 +16,11 @@ public class BiomeHabitability : MonoBehaviour
         BiomeEditingEvents.OnBiomeHabitabilityModified-=ModifyHabitability;
     }
 
-
+    /// <summary>
+    /// It Modifies the habitability of a specific biome (Ocean, Desert, Plains, etc.) by the amount associated to the
+    /// object
+    /// </summary>
+    /// <param name="modifiedTuple"></param>
     public void ModifyHabitability(BiomePercentageTuple modifiedTuple)
     {
         foreach(BiomePercentageTuple biomeTuple in biomeHabitabilityList)
@@ -41,7 +45,9 @@ public class BiomeHabitability : MonoBehaviour
     }
 }
 
-
+/// <summary>
+/// This class holds the affinity percentage, type and thumbnail for a biome and each of the biome game objects
+/// </summary>
 [System.Serializable]
 public class BiomePercentageTuple
 {

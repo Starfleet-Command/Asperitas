@@ -2,6 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+
+/// <summary>
+/// This class holds the biome attributes such as stackability hierarchy, habitability effect and their related functions
+/// </summary>
 public class PlacedObjectAttributes : MonoBehaviour
 {
     public StackabilityType stackabilityType;
@@ -10,10 +14,12 @@ public class PlacedObjectAttributes : MonoBehaviour
     public BiomePercentageTuple biomeEffect;
 
     [HideInInspector]public InventoryItem sourceItem;
-    private void Start()
-    {
-    }
 
+    /// <summary>
+    /// Can place checks if the calling object can be placed on top of the object being passed
+    /// </summary>
+    /// <param name="collidedObjectStackability"> Object that the current object is being placed upon</param>
+    /// <returns> true if placeable, false if not placeable</returns>
     public bool CanPlace(StackabilityType collidedObjectStackability)
     {
         if(stackabilityType==StackabilityType.Foundation)
@@ -47,33 +53,6 @@ public class PlacedObjectAttributes : MonoBehaviour
         }
        
     }
-
-   /*  private void OnCollisionEnter(Collision other)
-    {
-        noOfCollisions++;
-
-        if(noOfCollisions>0)
-        {
-            doneButton.interactable=false;
-        }
-    }
-
-    private void OnCollisionExit(Collision other)
-    {
-         if(noOfCollisions>0)
-        {
-            
-            noOfCollisions--;
-        }
-        
-
-        if(noOfCollisions<=0)
-        {
-            
-            doneButton.interactable=true;
-        }
-    } */   
-
 }
 
 
